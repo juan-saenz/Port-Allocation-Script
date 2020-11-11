@@ -2,6 +2,16 @@
 
 This script helps facilitate to export all the port allocations from a cisco switch to an excel sheet. (currently limited to .xls)
 
+
+## Requirements
+
+```bash
+sudo easy_install pip
+```
+```bash
+pip install xlwt
+```
+
 ## Usage
 
 Drag and drop python script in folder with all the other subfolders of schools that each contain complete MDF/IDF .txt files. 
