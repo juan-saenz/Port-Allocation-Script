@@ -4,10 +4,10 @@ This script helps facilitate to export all the port allocations from a cisco swi
 
 ## Usage
 
-```bash
-python combine_txt.py
-```
+Drag and drop python script in folder with all the other subfolders of schools that each contain complete MDF/IDF .txt files. 
 
 ```bash
-python create_excel.py <sample_output.xls> <sample_file.txt>
+python format_logs.py 
 ```
+
+Next add the provided .xlam to your Excel Add-Ins to have the macro filter and sort the information to it's respective location.
