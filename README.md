@@ -8,8 +8,13 @@ This script helps facilitate to export all the port allocations from a cisco swi
 ```bash
 sudo easy_install pip
 ```
+
 ```bash
 pip install xlwt
+```
+
+```bash
+pip3 install easygui
 ```
 
 ## Usage

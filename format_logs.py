@@ -9,7 +9,8 @@ import re, glob, sys, csv, collections
 import xlwt
 import time
 import os
-
+import easygui
+from os import name
 
 def expand(s, list):
     for item in list:
@@ -31,12 +32,43 @@ def expand_string(s, list):
 
 start_time = time.time()
 
+port_allocation = False;
+full_log = False;
+
 if len(sys.argv) < 3:
+    if name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+    while True:
+        print("Select what you would like to do: ")
+        print("(1) Port Allocations -> Excel")
+        print("(2) Full Log -> Excel")
+        print("(3) Help \n\n")
+        try:
+            option = int(input("Enter your option: ")) 
+            if option>0 and option<4:
+                if option == 1:
+                    port_allocation = True;
+                    break;
+                elif option == 2:
+                    full_log = True;
+                    break;
+                else:
+                    print("\n\n(1) Port Allocations\nThis selection allows you to effectively consolidate a full cisco log to only grab the sh int status portion and allocate it to an excel sheet.")
+                    print("\n(2) Full Log \nThis selection creates a comprehensive excel file from a full log including cdp neighbors and sh run details.\n\n")
+                    continue
+            else:
+                print("Please select a valid option.\n\n")
+        except NameError:
+            print("Provide an integer value 1 through 3\n\n")
+            continue
+
     always_print = False
     files = []
-    #basepath = '/Users/mauriciosaenz/Downloads/Logs/' # maybe just '.'
-    basepath = '.'
-    #print "To create the excelsheet, use the following commands:"
+    
+    basepath = easygui.diropenbox()
+
     for dir_name in os.listdir(basepath):
         dir_path = os.path.join(basepath, dir_name)
         if dir_name != "format_logs.py":
@@ -50,19 +82,21 @@ if len(sys.argv) < 3:
                 file_path = os.path.join(dir_path, file_name)
                 with open(file_path) as infile:
                     for line in infile:
-                        if "sh int status" in line:
-                            always_print = True
-                        if "sh power inline" in line:
-                            always_print = False
-                        if always_print == True:
+                        if port_allocation == True:
+                            if "sh int status" in line:
+                                always_print = True
+                            if "sh power inline" in line:
+                                always_print = False
+                            if always_print == True:
+                                outfile.write(line)
+                        elif full_log == True:
                             outfile.write(line)
+                        
     for i in files:
         temp = i
-        print(temp)
-        #print(i[:-4])
+        #print(temp)
         os.system('python format_logs.py "'+i+'.xls" "'+temp+'.txt"')
-        #os.system('python create_excel.py "'+i[:-4]+'.xls" "'+temp+'"')
-
+        
 time.sleep(.5)
 
 
