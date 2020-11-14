@@ -1,0 +1,1475 @@
+﻿B-3750-77712#ter len 0
+B-3750-77712#sh ver
+Cisco IOS Software, C3750 Software (C3750-IPBASEK9-M), Version 12.2(55)SE9, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Mon 03-Mar-14 22:44 by prod_rel_team
+Image text-base: 0x01000000, data-base: 0x02D00000
+
+ROM: Bootstrap program is C3750 boot loader
+BOOTLDR: C3750 Boot Loader (C3750-HBOOT-M) Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)
+
+B-3750-77712 uptime is 22 weeks, 1 day, 7 hours, 41 minutes
+System returned to ROM by power-on
+System restarted at 09:59:20 CDT Wed May 20 2020
+System image file is "flash:/c3750-ipbasek9-mz.122-55.SE9/c3750-ipbasek9-mz.122-55.SE9.bin"
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+cisco WS-C3750-48P (PowerPC405) processor (revision J0) with 131072K bytes of memory.
+Processor board ID CAT1005R1UQ
+Last reset from power-on
+2 Virtual Ethernet interfaces
+48 FastEthernet interfaces
+4 Gigabit Ethernet interfaces
+The password-recovery mechanism is enabled.
+
+512K bytes of flash-simulated non-volatile configuration memory.
+Base ethernet MAC Address       : 00:17:0E:1A:78:00
+Motherboard assembly number     : 73-9675-10
+Power supply part number        : 341-0029-04
+Motherboard serial number       : CAT100413N1
+Power supply serial number      : LIT100106SS
+Model revision number           : J0
+Motherboard revision number     : A0
+Model number                    : WS-C3750-48PS-E
+System serial number            : CAT1005R1UQ
+SFP Module assembly part number : 73-7757-03
+SFP Module revision Number      : A0
+SFP Module serial number        : CAT10040RZD
+Top Assembly Part Number        : 800-26377-03
+Top Assembly Revision Number    : E0
+Version ID                      : V05
+CLEI Code Number                : COM1Y00ARB
+Hardware Board Revision Number  : 0x01
+
+
+Switch Ports Model              SW Version            SW Image                 
+------ ----- -----              ----------            ----------               
+*    1 52    WS-C3750-48P       12.2(55)SE9           C3750-IPBASEK9-M         
+
+
+Configuration register is 0xF
+
+B-3750-77712#sh inventory
+NAME: "1", DESCR: "WS-C3750-48P"
+PID: WS-C3750-48PS-E   , VID: V05  , SN: CAT1005R1UQ
+
+NAME: "GigabitEthernet1/0/1", DESCR: "1000BaseSX SFP"
+PID: Unspecified       , VID:      , SN: FNS14251AP8     
+
+
+B-3750-77712#sh switch
+Switch/Stack Mac Address : 0017.0e1a.7800
+                                           H/W   Current
+Switch#  Role   Mac Address     Priority Version  State 
+----------------------------------------------------------
+*1       Master 0017.0e1a.7800     3      0       Ready               
+
+
+
+B-3750-77712#sh run
+Building configuration...
+
+Current configuration : 11962 bytes
+!
+! Last configuration change at 08:39:45 CDT Thu May 28 2020 by admin
+! NVRAM config last updated at 08:39:54 CDT Thu May 28 2020 by admin
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname B-3750-77712
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$1HFl$3py7mfq6lrDFWG460YZ85.
+!
+!
+!
+macro global description cisco-global
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ enable
+aaa authentication enable default group tacacs+ enable
+aaa authentication dot1x default group radius
+aaa authorization network default group radius 
+aaa accounting dot1x default start-stop group radius
+!
+!
+aaa server radius dynamic-author
+ client 10.200.10.221 server-key 7 052E323C1E786F2E26363F333929201518010B011016
+ client 10.200.10.222 server-key 7 03216F38393B006B713A312425372F33370F08160D07
+ auth-type any
+!
+aaa session-id common
+clock timezone CST -6
+clock summer-time CDT recurring
+switch 1 provision ws-c3750-48p
+system mtu routing 1500
+udld aggressive
+
+no ip domain-lookup
+ip domain-name wisd.us
+ip name-server 10.200.10.33
+!
+!
+ip device tracking
+!
+mls qos map policed-dscp  0 10 18 to 8
+mls qos map cos-dscp 0 8 16 24 32 46 48 56
+mls qos srr-queue input bandwidth 70 30
+mls qos srr-queue input threshold 1 80 90
+mls qos srr-queue input priority-queue 2 bandwidth 30
+mls qos srr-queue input cos-map queue 1 threshold 2 3
+mls qos srr-queue input cos-map queue 1 threshold 3 6 7
+mls qos srr-queue input cos-map queue 2 threshold 1 4
+mls qos srr-queue input dscp-map queue 1 threshold 2 24
+mls qos srr-queue input dscp-map queue 1 threshold 3 48 49 50 51 52 53 54 55
+mls qos srr-queue input dscp-map queue 1 threshold 3 56 57 58 59 60 61 62 63
+mls qos srr-queue input dscp-map queue 2 threshold 3 32 33 40 41 42 43 44 45
+mls qos srr-queue input dscp-map queue 2 threshold 3 46 47
+mls qos srr-queue output cos-map queue 1 threshold 3 4 5
+mls qos srr-queue output cos-map queue 2 threshold 1 2
+mls qos srr-queue output cos-map queue 2 threshold 2 3
+mls qos srr-queue output cos-map queue 2 threshold 3 6 7
+mls qos srr-queue output cos-map queue 3 threshold 3 0
+mls qos srr-queue output cos-map queue 4 threshold 3 1
+mls qos srr-queue output dscp-map queue 1 threshold 3 32 33 40 41 42 43 44 45
+mls qos srr-queue output dscp-map queue 1 threshold 3 46 47
+mls qos srr-queue output dscp-map queue 2 threshold 1 16 17 18 19 20 21 22 23
+mls qos srr-queue output dscp-map queue 2 threshold 1 26 27 28 29 30 31 34 35
+mls qos srr-queue output dscp-map queue 2 threshold 1 36 37 38 39
+mls qos srr-queue output dscp-map queue 2 threshold 2 24
+mls qos srr-queue output dscp-map queue 2 threshold 3 48 49 50 51 52 53 54 55
+mls qos srr-queue output dscp-map queue 2 threshold 3 56 57 58 59 60 61 62 63
+mls qos srr-queue output dscp-map queue 3 threshold 3 0 1 2 3 4 5 6 7
+mls qos srr-queue output dscp-map queue 4 threshold 1 8 9 11 13 15
+mls qos srr-queue output dscp-map queue 4 threshold 2 10 12 14
+mls qos queue-set output 1 threshold 1 100 100 50 200
+mls qos queue-set output 1 threshold 2 125 125 100 400
+mls qos queue-set output 1 threshold 3 100 100 100 400
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+policy-map AUTOQOS-SRND4-CISCOPHONE-POLICY
+!
+!
+!
+interface FastEthernet1/0/1
+ description Printer
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/2
+ description Printer
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/3
+ description Printer
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/4
+ description Printer
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/5
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/6
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/7
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/8
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/9
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/10
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/11
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/12
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/13
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/14
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/15
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/16
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/17
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/18
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/19
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/20
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/21
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/22
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/23
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/24
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/25
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/26
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/27
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/28
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/29
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/30
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/31
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/32
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/33
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/34
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/35
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/36
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/37
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/38
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/39
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/40
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/41
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/42
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/43
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/44
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/45
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/46
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/47
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/48
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/1
+ description LAN
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/2
+!
+interface GigabitEthernet1/0/3
+!
+interface GigabitEthernet1/0/4
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan777
+ ip address 10.9.0.22 255.255.255.0
+ no ip redirects
+ no ip unreachables
+!
+ip default-gateway 10.9.0.1
+ip classless
+no ip http server
+no ip http secure-server
+!
+ip access-list extended AUTOQOS-ACL-DEFAULT
+ permit ip any any
+!
+ip radius source-interface Vlan777 
+ip sla enable reaction-alerts
+!
+!
+line con 0
+ logging synchronous
+line vty 0 4
+ logging synchronous
+ length 0
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+ntp clock-period 36029012
+ntp server 10.200.0.1
+end
+
+B-3750-77712#sh vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi1/0/2, Gi1/0/3, Gi1/0/4
+3    Printers                         active    Fa1/0/1, Fa1/0/2, Fa1/0/3, Fa1/0/4
+5    Security                         active    Fa1/0/47
+6    UPS                              active    
+8    Projectors                       active    
+9    Video                            active    
+10   Servers                          active    
+20   Management                       active    
+22   printer                          active    
+30   misc                             active    
+50   PC_Data                          active    Fa1/0/5, Fa1/0/6, Fa1/0/7, Fa1/0/8, Fa1/0/9, Fa1/0/10, Fa1/0/11
+                                                Fa1/0/12, Fa1/0/13, Fa1/0/14, Fa1/0/15, Fa1/0/16, Fa1/0/17
+                                                Fa1/0/18, Fa1/0/19, Fa1/0/20, Fa1/0/21, Fa1/0/22, Fa1/0/23
+                                                Fa1/0/24, Fa1/0/25, Fa1/0/26, Fa1/0/27, Fa1/0/28, Fa1/0/29
+                                                Fa1/0/30, Fa1/0/31, Fa1/0/32, Fa1/0/33, Fa1/0/34, Fa1/0/35
+                                                Fa1/0/36, Fa1/0/37, Fa1/0/38, Fa1/0/39, Fa1/0/40, Fa1/0/41
+                                                Fa1/0/42, Fa1/0/43, Fa1/0/44, Fa1/0/45, Fa1/0/46, Fa1/0/48
+172  Voice                            active    Fa1/0/5, Fa1/0/6, Fa1/0/7, Fa1/0/8, Fa1/0/9, Fa1/0/10, Fa1/0/11
+                                                Fa1/0/12, Fa1/0/13, Fa1/0/14, Fa1/0/15, Fa1/0/16, Fa1/0/17
+                                                Fa1/0/18, Fa1/0/19, Fa1/0/20, Fa1/0/21, Fa1/0/22, Fa1/0/23
+                                                Fa1/0/24, Fa1/0/25, Fa1/0/26, Fa1/0/27, Fa1/0/28, Fa1/0/29
+                                                Fa1/0/30, Fa1/0/31, Fa1/0/32, Fa1/0/33, Fa1/0/34, Fa1/0/35
+                                                Fa1/0/36, Fa1/0/37, Fa1/0/38, Fa1/0/39, Fa1/0/40, Fa1/0/41
+                                                Fa1/0/42, Fa1/0/43, Fa1/0/44, Fa1/0/45, Fa1/0/46, Fa1/0/48
+777  LAN                              active    
+778  wireless_1200                    active    
+1002 fddi-default                     act/unsup 
+1003 trcrf-default                    act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trbrf-default                    act/unsup 
+B-3750-77712#sh vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 2
+VTP Domain Name                 : Lblack
+VTP Pruning Mode                : Enabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0017.0e1a.7800
+Configuration last modified by 10.9.3.1 at 5-22-19 13:30:44
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Client
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 18
+Configuration Revision            : 16
+MD5 digest                        : 0xF1 0xC8 0x9E 0x29 0x57 0xFA 0x8E 0x55 
+                                    0xF1 0x70 0x22 0xD0 0x86 0x99 0xD2 0x14 
+B-3750-77712#sh vtp pass
+The VTP password is not configured.
+B-3750-77712#sh ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES NVRAM  administratively down down    
+Vlan777                10.9.0.22       YES NVRAM  up                    up      
+FastEthernet1/0/1      unassigned      YES unset  down                  down    
+FastEthernet1/0/2      unassigned      YES unset  down                  down    
+FastEthernet1/0/3      unassigned      YES unset  down                  down    
+FastEthernet1/0/4      unassigned      YES unset  down                  down    
+FastEthernet1/0/5      unassigned      YES unset  up                    up      
+FastEthernet1/0/6      unassigned      YES unset  down                  down    
+FastEthernet1/0/7      unassigned      YES unset  down                  down    
+FastEthernet1/0/8      unassigned      YES unset  down                  down    
+FastEthernet1/0/9      unassigned      YES unset  down                  down    
+FastEthernet1/0/10     unassigned      YES unset  down                  down    
+FastEthernet1/0/11     unassigned      YES unset  down                  down    
+FastEthernet1/0/12     unassigned      YES unset  down                  down    
+FastEthernet1/0/13     unassigned      YES unset  up                    up      
+FastEthernet1/0/14     unassigned      YES unset  down                  down    
+FastEthernet1/0/15     unassigned      YES unset  down                  down    
+FastEthernet1/0/16     unassigned      YES unset  up                    up      
+FastEthernet1/0/17     unassigned      YES unset  up                    up      
+FastEthernet1/0/18     unassigned      YES unset  down                  down    
+FastEthernet1/0/19     unassigned      YES unset  up                    up      
+FastEthernet1/0/20     unassigned      YES unset  down                  down    
+FastEthernet1/0/21     unassigned      YES unset  down                  down    
+FastEthernet1/0/22     unassigned      YES unset  up                    up      
+FastEthernet1/0/23     unassigned      YES unset  down                  down    
+FastEthernet1/0/24     unassigned      YES unset  down                  down    
+FastEthernet1/0/25     unassigned      YES unset  down                  down    
+FastEthernet1/0/26     unassigned      YES unset  up                    up      
+FastEthernet1/0/27     unassigned      YES unset  up                    up      
+FastEthernet1/0/28     unassigned      YES unset  down                  down    
+FastEthernet1/0/29     unassigned      YES unset  down                  down    
+FastEthernet1/0/30     unassigned      YES unset  down                  down    
+FastEthernet1/0/31     unassigned      YES unset  down                  down    
+FastEthernet1/0/32     unassigned      YES unset  up                    up      
+FastEthernet1/0/33     unassigned      YES unset  down                  down    
+FastEthernet1/0/34     unassigned      YES unset  down                  down    
+FastEthernet1/0/35     unassigned      YES unset  down                  down    
+FastEthernet1/0/36     unassigned      YES unset  down                  down    
+FastEthernet1/0/37     unassigned      YES unset  up                    up      
+FastEthernet1/0/38     unassigned      YES unset  down                  down    
+FastEthernet1/0/39     unassigned      YES unset  down                  down    
+FastEthernet1/0/40     unassigned      YES unset  down                  down    
+FastEthernet1/0/41     unassigned      YES unset  down                  down    
+FastEthernet1/0/42     unassigned      YES unset  up                    up      
+FastEthernet1/0/43     unassigned      YES unset  down                  down    
+FastEthernet1/0/44     unassigned      YES unset  down                  down    
+FastEthernet1/0/45     unassigned      YES unset  down                  down    
+FastEthernet1/0/46     unassigned      YES unset  down                  down    
+FastEthernet1/0/47     unassigned      YES unset  up                    up      
+FastEthernet1/0/48     unassigned      YES unset  down                  down    
+GigabitEthernet1/0/1   unassigned      YES unset  up                    up      
+GigabitEthernet1/0/2   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/3   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/4   unassigned      YES unset  down                  down    
+B-3750-77712#sh ip route
+Default gateway is 10.9.0.1
+
+Host               Gateway           Last Use    Total Uses  Interface
+ICMP redirect cache is empty
+B-3750-77712#sh cdp neigh
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+SEPD0C282422A8E  Fas 1/0/22        123             H P M  IP Phone  Port 1
+B-3750-77721.wisd.us
+                 Gig 1/0/1         133              S I   WS-C3750- Gig 1/0/3
+B-3750-77712#sh cdp neigh detail
+-------------------------
+Device ID: SEPD0C282422A8E
+Entry address(es): 
+  IP address: 172.16.21.39
+Platform: Cisco IP Phone 7911,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: FastEthernet1/0/22,  Port ID (outgoing port): Port 1
+Holdtime : 123 sec
+Second Port Status: Up
+
+Version :
+SCCP11.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 5.000 Watts
+Power request id: 10894, Power management id: 3
+Power request levels are:5000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: B-3750-77721.wisd.us
+Entry address(es): 
+  IP address: 10.9.0.21
+Platform: cisco WS-C3750-48P,  Capabilities: Switch IGMP 
+Interface: GigabitEthernet1/0/1,  Port ID (outgoing port): GigabitEthernet1/0/3
+Holdtime : 133 sec
+
+Version :
+Cisco IOS Software, C3750 Software (C3750-IPBASEK9-M), Version 12.2(55)SE9, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Mon 03-Mar-14 22:44 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010221FF00000000000000170E299880FF0000
+VTP Management Domain: 'Lblack'
+Native VLAN: 1
+Duplex: full
+Management address(es): 
+  IP address: 10.9.0.21
+
+B-3750-77712#sh int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down     
+Vl777                          up             up       
+Fa1/0/1                        down           down     Printer
+Fa1/0/2                        down           down     Printer
+Fa1/0/3                        down           down     Printer
+Fa1/0/4                        down           down     Printer
+Fa1/0/5                        up             up       
+Fa1/0/6                        down           down     
+Fa1/0/7                        down           down     
+Fa1/0/8                        down           down     
+Fa1/0/9                        down           down     
+Fa1/0/10                       down           down     
+Fa1/0/11                       down           down     
+Fa1/0/12                       down           down     
+Fa1/0/13                       up             up       
+Fa1/0/14                       down           down     
+Fa1/0/15                       down           down     
+Fa1/0/16                       up             up       
+Fa1/0/17                       up             up       
+Fa1/0/18                       down           down     
+Fa1/0/19                       up             up       
+Fa1/0/20                       down           down     
+Fa1/0/21                       down           down     
+Fa1/0/22                       up             up       
+Fa1/0/23                       down           down     
+Fa1/0/24                       down           down     
+Fa1/0/25                       down           down     
+Fa1/0/26                       up             up       
+Fa1/0/27                       up             up       
+Fa1/0/28                       down           down     
+Fa1/0/29                       down           down     
+Fa1/0/30                       down           down     
+Fa1/0/31                       down           down     
+Fa1/0/32                       up             up       
+Fa1/0/33                       down           down     
+Fa1/0/34                       down           down     
+Fa1/0/35                       down           down     
+Fa1/0/36                       down           down     
+Fa1/0/37                       up             up       
+Fa1/0/38                       down           down     
+Fa1/0/39                       down           down     
+Fa1/0/40                       down           down     
+Fa1/0/41                       down           down     
+Fa1/0/42                       up             up       
+Fa1/0/43                       down           down     
+Fa1/0/44                       down           down     
+Fa1/0/45                       down           down     
+Fa1/0/46                       down           down     
+Fa1/0/47                       up             up       Security Camera
+Fa1/0/48                       down           down     
+Gi1/0/1                        up             up       LAN
+Gi1/0/2                        down           down     
+Gi1/0/3                        down           down     
+Gi1/0/4                        down           down     
+B-3750-77712#sh ip eigrp neigh
+
+B-3750-77712#sh ip protocols
+*** IP Routing is NSF aware ***
+
+B-3750-77712#sh int status
+
+Port      Name               Status       Vlan       Duplex  Speed Type
+Fa1/0/1   Printer            notconnect   3            auto   auto 10/100BaseTX
+Fa1/0/2   Printer            notconnect   3            auto   auto 10/100BaseTX
+Fa1/0/3   Printer            notconnect   3            auto   auto 10/100BaseTX
+Fa1/0/4   Printer            notconnect   3            auto   auto 10/100BaseTX
+Fa1/0/5                      connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/6                      notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/7                      notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/8                      notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/9                      notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/10                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/11                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/12                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/13                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/14                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/15                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/16                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/17                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/18                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/19                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/20                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/21                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/22                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/23                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/24                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/25                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/26                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/27                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/28                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/29                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/30                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/31                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/32                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/33                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/34                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/35                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/36                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/37                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/38                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/39                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/40                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/41                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/42                     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/43                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/44                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/45                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/46                     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/47  Security Camera    connected    5          a-full  a-100 10/100BaseTX
+Fa1/0/48                     notconnect   50           auto   auto 10/100BaseTX
+Gi1/0/1   LAN                connected    trunk      a-full a-1000 1000BaseSX SFP
+Gi1/0/2                      notconnect   1            auto   auto Not Present
+Gi1/0/3                      notconnect   1            auto   auto Not Present
+Gi1/0/4                      notconnect   1            auto   auto Not Present
+B-3750-77712#sh power inline
+
+Module   Available     Used     Remaining
+          (Watts)     (Watts)    (Watts) 
+------   ---------   --------   ---------
+1           370.0       20.4       349.6
+Interface Admin  Oper       Power   Device              Class Max
+                            (Watts)                            
+--------- ------ ---------- ------- ------------------- ----- ----
+Fa1/0/1   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/2   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/3   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/4   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/5   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/6   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/7   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/8   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/9   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/10  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/11  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/12  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/13  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/14  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/15  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/16  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/17  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/18  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/19  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/20  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/21  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/22  auto   on         5.0     IP Phone 7911       2     15.4 
+Fa1/0/23  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/24  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/25  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/26  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/27  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/28  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/29  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/30  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/31  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/32  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/33  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/34  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/35  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/36  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/37  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/38  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/39  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/40  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/41  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/42  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/43  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/44  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/45  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/46  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/47  auto   on         15.4    Ieee PD             4     15.4 
+Fa1/0/48  auto   off        0.0     n/a                 n/a   15.4 
+B-3750-77712#sh mac address
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+ All    0100.0ccc.cccc    STATIC      CPU
+ All    0100.0ccc.cccd    STATIC      CPU
+ All    0180.c200.0000    STATIC      CPU
+ All    0180.c200.0001    STATIC      CPU
+ All    0180.c200.0002    STATIC      CPU
+ All    0180.c200.0003    STATIC      CPU
+ All    0180.c200.0004    STATIC      CPU
+ All    0180.c200.0005    STATIC      CPU
+ All    0180.c200.0006    STATIC      CPU
+ All    0180.c200.0007    STATIC      CPU
+ All    0180.c200.0008    STATIC      CPU
+ All    0180.c200.0009    STATIC      CPU
+ All    0180.c200.000a    STATIC      CPU
+ All    0180.c200.000b    STATIC      CPU
+ All    0180.c200.000c    STATIC      CPU
+ All    0180.c200.000d    STATIC      CPU
+ All    0180.c200.000e    STATIC      CPU
+ All    0180.c200.000f    STATIC      CPU
+ All    0180.c200.0010    STATIC      CPU
+ All    ffff.ffff.ffff    STATIC      CPU
+  50    0017.0e29.989b    DYNAMIC     Gi1/0/1
+  50    0021.9b6f.7828    DYNAMIC     Gi1/0/1
+  50    0021.b785.0d87    DYNAMIC     Gi1/0/1
+  50    0204.96ae.b95c    DYNAMIC     Gi1/0/1
+  50    14b3.1f21.9548    DYNAMIC     Fa1/0/22
+  50    3417.eb98.e18a    DYNAMIC     Gi1/0/1
+  50    3417.ebb6.ecab    DYNAMIC     Gi1/0/1
+  50    3417.ebb6.fa47    DYNAMIC     Gi1/0/1
+  50    3417.ebb7.11a9    DYNAMIC     Gi1/0/1
+  50    3417.ebb7.964e    DYNAMIC     Fa1/0/19
+  50    3417.ebb8.79e2    DYNAMIC     Gi1/0/1
+  50    3417.ebb8.abd6    DYNAMIC     Gi1/0/1
+  50    3822.e2d4.3281    DYNAMIC     Gi1/0/1
+  50    484d.7eea.fd64    DYNAMIC     Gi1/0/1
+  50    484d.7ef4.2f23    DYNAMIC     Gi1/0/1
+  50    6400.6a04.d937    DYNAMIC     Gi1/0/1
+  50    6400.6a04.d964    DYNAMIC     Gi1/0/1
+  50    6400.6a04.d9c2    DYNAMIC     Gi1/0/1
+  50    6400.6a04.d9c9    DYNAMIC     Gi1/0/1
+  50    6400.6a04.d9d5    DYNAMIC     Gi1/0/1
+  50    6400.6a04.d9e9    DYNAMIC     Gi1/0/1
+  50    6400.6a04.ddb7    DYNAMIC     Gi1/0/1
+  50    6400.6a04.de6c    DYNAMIC     Gi1/0/1
+  50    6400.6a04.df49    DYNAMIC     Gi1/0/1
+  50    6400.6a06.fd5e    DYNAMIC     Gi1/0/1
+  50    6400.6a07.8b6f    DYNAMIC     Gi1/0/1
+  50    6400.6a07.8f81    DYNAMIC     Gi1/0/1
+  50    6400.6a07.9221    DYNAMIC     Gi1/0/1
+  50    6400.6a08.20aa    DYNAMIC     Gi1/0/1
+  50    6400.6a08.2137    DYNAMIC     Gi1/0/1
+  50    6400.6a08.2139    DYNAMIC     Gi1/0/1
+  50    7472.b07b.ff46    DYNAMIC     Gi1/0/1
+  50    78e3.b59b.4f8b    DYNAMIC     Gi1/0/1
+  50    8843.e137.6ad2    DYNAMIC     Gi1/0/1
+  50    d0c2.8242.2a8e    DYNAMIC     Fa1/0/22
+  50    d89e.f30c.6e01    DYNAMIC     Gi1/0/1
+  50    d89e.f31f.1fdf    DYNAMIC     Gi1/0/1
+  50    f48e.388f.aa10    DYNAMIC     Gi1/0/1
+  50    f8b1.569d.9d3f    DYNAMIC     Gi1/0/1
+ 172    0016.c77c.a8fa    DYNAMIC     Gi1/0/1
+ 172    0017.0e29.989b    DYNAMIC     Gi1/0/1
+ 172    0204.96ae.b95c    DYNAMIC     Gi1/0/1
+ 172    d0c2.8242.2a8e    DYNAMIC     Fa1/0/22
+   1    0017.0e29.989b    DYNAMIC     Gi1/0/1
+   1    00e0.2b00.0001    DYNAMIC     Gi1/0/1
+   3    0017.0e29.989b    DYNAMIC     Gi1/0/1
+   3    0068.eb53.db3c    DYNAMIC     Gi1/0/1
+   3    0204.96ae.b95c    DYNAMIC     Gi1/0/1
+   5    0009.1861.0f97    DYNAMIC     Gi1/0/1
+   5    0009.1861.0f98    DYNAMIC     Gi1/0/1
+   5    0009.1861.0f99    DYNAMIC     Gi1/0/1
+   5    0009.1861.0f9a    DYNAMIC     Gi1/0/1
+   5    0009.1861.149b    DYNAMIC     Fa1/0/47
+   5    0009.1861.14a8    DYNAMIC     Gi1/0/1
+   5    0017.0e29.989b    DYNAMIC     Gi1/0/1
+   5    001a.070c.d189    DYNAMIC     Gi1/0/1
+   5    001a.070c.d1a6    DYNAMIC     Gi1/0/1
+   5    001a.070c.d1a8    DYNAMIC     Gi1/0/1
+   5    0204.96ae.b95c    DYNAMIC     Gi1/0/1
+   5    4419.b643.c9ee    DYNAMIC     Gi1/0/1
+   5    4419.b643.ca05    DYNAMIC     Gi1/0/1
+   5    4419.b643.ca18    DYNAMIC     Gi1/0/1
+   5    4419.b643.ca3d    DYNAMIC     Gi1/0/1
+   5    4419.b647.9970    DYNAMIC     Gi1/0/1
+   5    4419.b647.9976    DYNAMIC     Gi1/0/1
+   5    4419.b71f.69e7    DYNAMIC     Gi1/0/1
+   5    4419.b71f.6a4f    DYNAMIC     Gi1/0/1
+   5    4419.b71f.6a69    DYNAMIC     Gi1/0/1
+   5    4419.b71f.6a76    DYNAMIC     Gi1/0/1
+   5    b82c.a010.478c    DYNAMIC     Gi1/0/1
+   5    e430.220e.aa07    DYNAMIC     Gi1/0/1
+   5    e430.220e.aa09    DYNAMIC     Gi1/0/1
+   5    e430.220e.aa0a    DYNAMIC     Gi1/0/1
+   5    e430.220e.aa16    DYNAMIC     Gi1/0/1
+   6    0017.0e29.989b    DYNAMIC     Gi1/0/1
+   8    0017.0e29.989b    DYNAMIC     Gi1/0/1
+   9    0017.0e29.989b    DYNAMIC     Gi1/0/1
+  10    0017.0e29.989b    DYNAMIC     Gi1/0/1
+  20    0017.0e29.989b    DYNAMIC     Gi1/0/1
+  22    0017.0e29.989b    DYNAMIC     Gi1/0/1
+  30    0017.0e29.989b    DYNAMIC     Gi1/0/1
+ 777    0006.f6ec.d6a1    DYNAMIC     Gi1/0/1
+ 777    0006.f6ec.da36    DYNAMIC     Gi1/0/1
+ 777    000e.8385.1e3f    DYNAMIC     Gi1/0/1
+ 777    0017.0e29.989b    DYNAMIC     Gi1/0/1
+ 777    0017.0e29.98c1    DYNAMIC     Gi1/0/1
+ 777    0204.96ae.b95c    DYNAMIC     Gi1/0/1
+ 777    4c4e.3503.3976    DYNAMIC     Gi1/0/1
+ 777    4c4e.3503.39bf    DYNAMIC     Gi1/0/1
+ 777    4c4e.3563.9538    DYNAMIC     Gi1/0/1
+ 777    8843.e137.6880    DYNAMIC     Gi1/0/1
+ 777    8843.e137.6a5e    DYNAMIC     Gi1/0/1
+ 777    8843.e137.6ea1    DYNAMIC     Gi1/0/1
+ 777    8843.e137.6f92    DYNAMIC     Gi1/0/1
+ 777    8843.e137.6ff1    DYNAMIC     Gi1/0/1
+ 777    8843.e178.1c08    DYNAMIC     Gi1/0/1
+ 777    8843.e178.203c    DYNAMIC     Gi1/0/1
+ 777    8843.e178.2094    DYNAMIC     Gi1/0/1
+ 777    8843.e178.2306    DYNAMIC     Gi1/0/1
+ 777    8843.e178.238a    DYNAMIC     Gi1/0/1
+ 777    8843.e178.23b3    DYNAMIC     Gi1/0/1
+ 777    8843.e178.241b    DYNAMIC     Gi1/0/1
+ 777    88f0.31e3.cf7a    DYNAMIC     Gi1/0/1
+ 777    88f0.31e3.cfa6    DYNAMIC     Gi1/0/1
+ 777    88f0.31e3.cfb4    DYNAMIC     Gi1/0/1
+ 777    88f0.31e3.d03a    DYNAMIC     Gi1/0/1
+ 777    88f0.31e3.d040    DYNAMIC     Gi1/0/1
+ 777    88f0.31e3.d05b    DYNAMIC     Gi1/0/1
+ 777    88f0.31e3.d1ee    DYNAMIC     Gi1/0/1
+ 777    88f0.31fe.d5d8    DYNAMIC     Gi1/0/1
+ 777    88f0.31fe.d65b    DYNAMIC     Gi1/0/1
+ 777    b0fa.eb56.4f2c    DYNAMIC     Gi1/0/1
+ 777    b0fa.eb56.4fd5    DYNAMIC     Gi1/0/1
+ 777    f40f.1bbf.c5b8    DYNAMIC     Gi1/0/1
+ 778    0017.0e29.989b    DYNAMIC     Gi1/0/1
+ 778    4c4e.3503.393c    DYNAMIC     Gi1/0/1
+Total Mac Addresses for this criterion: 136
+B-3750-77712#sh ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.9.0.1                0   0204.96ae.b95c  ARPA   Vlan777
+Internet  10.9.0.22               -   0017.0e1a.7841  ARPA   Vlan777
+Internet  10.9.0.21              37   0017.0e29.98c1  ARPA   Vlan777
+Internet  10.9.0.254            127   000e.8385.1e3f  ARPA   Vlan777
+B-3750-77712#sh module
+                  ^
+% Invalid input detected at '^' marker.
+
+B-3750-77712#sh etherchannel summary
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 0
+Number of aggregators:           0
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+
+B-3750-77712#sh int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down     
+Vl777                          up             up       
+Fa1/0/1                        down           down     Printer
+Fa1/0/2                        down           down     Printer
+Fa1/0/3                        down           down     Printer
+Fa1/0/4                        down           down     Printer
+Fa1/0/5                        up             up       
+Fa1/0/6                        down           down     
+Fa1/0/7                        down           down     
+Fa1/0/8                        down           down     
+Fa1/0/9                        down           down     
+Fa1/0/10                       down           down     
+Fa1/0/11                       down           down     
+Fa1/0/12                       down           down     
+Fa1/0/13                       up             up       
+Fa1/0/14                       down           down     
+Fa1/0/15                       down           down     
+Fa1/0/16                       up             up       
+Fa1/0/17                       up             up       
+Fa1/0/18                       down           down     
+Fa1/0/19                       up             up       
+Fa1/0/20                       down           down     
+Fa1/0/21                       down           down     
+Fa1/0/22                       up             up       
+Fa1/0/23                       down           down     
+Fa1/0/24                       down           down     
+Fa1/0/25                       down           down     
+Fa1/0/26                       up             up       
+Fa1/0/27                       up             up       
+Fa1/0/28                       down           down     
+Fa1/0/29                       down           down     
+Fa1/0/30                       down           down     
+Fa1/0/31                       down           down     
+Fa1/0/32                       up             up       
+Fa1/0/33                       down           down     
+Fa1/0/34                       down           down     
+Fa1/0/35                       down           down     
+Fa1/0/36                       down           down     
+Fa1/0/37                       up             up       
+Fa1/0/38                       down           down     
+Fa1/0/39                       down           down     
+Fa1/0/40                       down           down     
+Fa1/0/41                       down           down     
+Fa1/0/42                       up             up       
+Fa1/0/43                       down           down     
+Fa1/0/44                       down           down     
+Fa1/0/45                       down           down     
+Fa1/0/46                       down           down     
+Fa1/0/47                       up             up       Security Camera
+Fa1/0/48                       down           down     
+Gi1/0/1                        up             up       LAN
+Gi1/0/2                        down           down     
+Gi1/0/3                        down           down     
+Gi1/0/4                        down           down     
+B-3750-77712#sh ip pim neighbor
+PIM Neighbor Table
+Mode: B - Bidir Capable, DR - Designated Router, N - Default DR Priority,
+      P - Proxy Capable, S - State Refresh Capable
+Neighbor          Interface                Uptime/Expires    Ver   DR
+Address                                                            Prio/Mode
+B-3750-77712#sh ip mroute
+IP Multicast Forwarding is not enabled.
+IP Multicast Routing Table
+Flags: D - Dense, S - Sparse, B - Bidir Group, s - SSM Group, C - Connected,
+       L - Local, P - Pruned, R - RP-bit set, F - Register flag,
+       T - SPT-bit set, J - Join SPT, M - MSDP created entry,
+       X - Proxy Join Timer Running, A - Candidate for MSDP Advertisement,
+       U - URD, I - Received Source Specific Host Report, 
+       Z - Multicast Tunnel, z - MDT-data group sender, 
+       Y - Joined MDT-data group, y - Sending to MDT-data group
+       V - RD & Vector, v - Vector
+Outgoing interface flags: H - Hardware switched, A - Assert winner
+ Timers: Uptime/Expires
+ Interface state: Interface, Next-Hop or VCD, State/Mode
+
+B-3750-77712#sh int trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Gi1/0/1     on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gi1/0/1     1-4094
+
+Port        Vlans allowed and active in management domain
+Gi1/0/1     1,3,5-6,8-10,20,22,30,50,172,777-778
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gi1/0/1     1,3,5-6,8-10,20,22,30,50,172,777-778
+B-3750-77712#sh spanning-tree
+
+VLAN0001
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24577
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0003
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24579
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32771  (priority 32768 sys-id-ext 3)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0005
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24581
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32773  (priority 32768 sys-id-ext 5)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+Fa1/0/47            Desg FWD 19        128.51   P2p Edge 
+
+
+
+VLAN0006
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24582
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32774  (priority 32768 sys-id-ext 6)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0008
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32768
+             Address     0004.27aa.b004
+             Cost        16
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32776  (priority 32768 sys-id-ext 8)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0009
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24585
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32777  (priority 32768 sys-id-ext 9)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0010
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24586
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32778  (priority 32768 sys-id-ext 10)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0020
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24596
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32788  (priority 32768 sys-id-ext 20)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0022
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32768
+             Address     0004.27aa.b008
+             Cost        16
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32790  (priority 32768 sys-id-ext 22)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0030
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32768
+             Address     0004.27aa.b009
+             Cost        16
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32798  (priority 32768 sys-id-ext 30)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0050
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24626
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32818  (priority 32768 sys-id-ext 50)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+Fa1/0/5             Desg FWD 19        128.7    P2p Edge 
+Fa1/0/13            Desg FWD 19        128.15   P2p Edge 
+Fa1/0/16            Desg FWD 19        128.18   P2p Edge 
+Fa1/0/17            Desg FWD 19        128.19   P2p Edge 
+Fa1/0/19            Desg FWD 19        128.21   P2p Edge 
+Fa1/0/22            Desg FWD 19        128.24   P2p Edge 
+Fa1/0/26            Desg FWD 19        128.30   P2p Edge 
+Fa1/0/27            Desg FWD 19        128.31   P2p Edge 
+Fa1/0/32            Desg FWD 19        128.36   P2p Edge 
+Fa1/0/37            Desg FWD 19        128.41   P2p Edge 
+Fa1/0/42            Desg FWD 19        128.46   P2p Edge 
+
+
+
+VLAN0172
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24748
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32940  (priority 32768 sys-id-ext 172)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+Fa1/0/5             Desg FWD 19        128.7    P2p Edge 
+Fa1/0/13            Desg FWD 19        128.15   P2p Edge 
+Fa1/0/16            Desg FWD 19        128.18   P2p Edge 
+Fa1/0/17            Desg FWD 19        128.19   P2p Edge 
+Fa1/0/19            Desg FWD 19        128.21   P2p Edge 
+Fa1/0/22            Desg FWD 19        128.24   P2p Edge 
+Fa1/0/26            Desg FWD 19        128.30   P2p Edge 
+Fa1/0/27            Desg FWD 19        128.31   P2p Edge 
+Fa1/0/32            Desg FWD 19        128.36   P2p Edge 
+Fa1/0/37            Desg FWD 19        128.41   P2p Edge 
+Fa1/0/42            Desg FWD 19        128.46   P2p Edge 
+
+
+
+VLAN0777
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    25353
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    33545  (priority 32768 sys-id-ext 777)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0778
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    25354
+             Address     000e.8385.1e00
+             Cost        8
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    33546  (priority 32768 sys-id-ext 778)
+             Address     0017.0e1a.7800
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+B-3750-77712#sh ip dhcp binding
+Bindings from all pools not associated with VRF:
+IP address          Client-ID/              Lease expiration        Type
+                    Hardware address/
+                    User name
+B-3750-77712#sh ntp associations
+
+      address         ref clock     st  when  poll reach  delay  offset    disp
+*~10.200.0.1       10.200.10.33      4   834  1024  377     1.0   -0.08     0.1
+ * master (synced), # master (unsynced), + selected, - candidate, ~ configured
+B-3750-77712#sh clock
+17:41:44.695 CDT Thu Oct 22 2020
+B-3750-77712#wr mem
+Building configuration...
+[OK]
+B-3750-77712#exit
+
+[Connection to 10.9.0.22 closed by foreign host]
+B-3750-77721#exit 

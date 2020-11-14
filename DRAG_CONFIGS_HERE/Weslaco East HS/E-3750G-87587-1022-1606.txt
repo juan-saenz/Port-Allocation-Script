@@ -1,0 +1,1903 @@
+﻿UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED
+E-3750G-87587>en
+password: 
+E-3750G-87587#ter len 0
+E-3750G-87587#sh ver
+Cisco IOS Software, C3750 Software (C3750-IPBASEK9-M), Version 12.2(55)SE9, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Mon 03-Mar-14 22:44 by prod_rel_team
+Image text-base: 0x01000000, data-base: 0x02D00000
+
+ROM: Bootstrap program is C3750 boot loader
+BOOTLDR: C3750 Boot Loader (C3750-HBOOT-M) Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)
+
+E-3750G-87587 uptime is 12 weeks, 4 days, 5 hours, 58 minutes
+System returned to ROM by power-on
+System restarted at 10:08:57 CDT Sun Jul 26 2020
+System image file is "flash:/c3750-ipbasek9-mz.122-55.SE9/c3750-ipbasek9-mz.122-55.SE9.bin"
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+cisco WS-C3750G-24PS (PowerPC405) processor (revision H0) with 131072K bytes of memory.
+Processor board ID FOC1406Y0RE
+Last reset from power-on
+2 Virtual Ethernet interfaces
+28 Gigabit Ethernet interfaces
+The password-recovery mechanism is enabled.
+
+512K bytes of flash-simulated non-volatile configuration memory.
+Base ethernet MAC Address       : 30:37:A6:B2:6A:00
+Motherboard assembly number     : 73-10217-08
+Power supply part number        : 341-0108-04
+Motherboard serial number       : FOC14053JER
+Power supply serial number      : DCA1405A1MC
+Model revision number           : H0
+Motherboard revision number     : C0
+Model number                    : WS-C3750G-24PS-S
+System serial number            : FOC1406Y0RE
+Top Assembly Part Number        : 800-26855-02
+Top Assembly Revision Number    : E0
+Version ID                      : V06
+CLEI Code Number                : COMXD00ARA
+Hardware Board Revision Number  : 0x09
+
+
+Switch Ports Model              SW Version            SW Image                 
+------ ----- -----              ----------            ----------               
+*    1 28    WS-C3750G-24PS     12.2(55)SE9           C3750-IPBASEK9-M         
+
+
+Configuration register is 0xF
+
+E-3750G-87587#sh inventory
+NAME: "1", DESCR: "WS-C3750G-24PS"
+PID: WS-C3750G-24PS-S  , VID: V06  , SN: FOC1406Y0RE
+
+NAME: "GigabitEthernet1/0/25", DESCR: "1000BaseSX SFP"
+PID: Unspecified       , VID:      , SN: AGA1347191W     
+
+
+E-3750G-87587#sh switch
+Switch/Stack Mac Address : 3037.a6b2.6a00
+                                           H/W   Current
+Switch#  Role   Mac Address     Priority Version  State 
+----------------------------------------------------------
+*1       Master 3037.a6b2.6a00     1      0       Ready               
+
+
+
+E-3750G-87587#sh run
+Building configuration...
+
+Current configuration : 13000 bytes
+!
+! Last configuration change at 14:26:24 CDT Fri Oct 9 2020 by jjgarza
+! NVRAM config last updated at 14:26:25 CDT Fri Oct 9 2020 by jjgarza
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname E-3750G-87587
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$kfvE$hgf6rT9c6eQqR7u4atUuq.
+!
+!
+!
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ enable
+aaa authentication enable default group tacacs+ enable
+aaa authentication dot1x default group radius
+aaa authorization network default group radius 
+aaa accounting dot1x default start-stop group radius
+!
+!
+aaa server radius dynamic-author
+ client 10.200.10.221 server-key 7 09697A3A26313635343F2C0B19010C0C060730353337
+ client 10.200.10.222 server-key 7 15373F3F3B1E0A0317001D032122323C32737A6A7660
+ auth-type any
+!
+aaa session-id common
+clock timezone CST -6
+clock summer-time CDT recurring
+switch 1 provision ws-c3750g-24ps
+system mtu routing 1500
+no ip domain-lookup
+ip domain-name wisd.us
+ip name-server 10.200.10.33
+!
+!
+ip device tracking
+!
+mls qos map policed-dscp  24 26 46 to 0
+mls qos map cos-dscp 0 8 16 24 32 46 48 56
+mls qos srr-queue input bandwidth 90 10
+mls qos srr-queue input threshold 1 8 16
+mls qos srr-queue input threshold 2 34 66
+mls qos srr-queue input buffers 67 33 
+mls qos srr-queue input cos-map queue 1 threshold 2 1
+mls qos srr-queue input cos-map queue 1 threshold 3 0
+mls qos srr-queue input cos-map queue 2 threshold 1 2
+mls qos srr-queue input cos-map queue 2 threshold 2 4 6 7
+mls qos srr-queue input cos-map queue 2 threshold 3 3 5
+mls qos srr-queue input dscp-map queue 1 threshold 2 9 10 11 12 13 14 15
+mls qos srr-queue input dscp-map queue 1 threshold 3 0 1 2 3 4 5 6 7
+mls qos srr-queue input dscp-map queue 1 threshold 3 32
+mls qos srr-queue input dscp-map queue 2 threshold 1 16 17 18 19 20 21 22 23
+mls qos srr-queue input dscp-map queue 2 threshold 2 33 34 35 36 37 38 39 48
+mls qos srr-queue input dscp-map queue 2 threshold 2 49 50 51 52 53 54 55 56
+mls qos srr-queue input dscp-map queue 2 threshold 2 57 58 59 60 61 62 63
+mls qos srr-queue input dscp-map queue 2 threshold 3 24 25 26 27 28 29 30 31
+mls qos srr-queue input dscp-map queue 2 threshold 3 40 41 42 43 44 45 46 47
+mls qos srr-queue output cos-map queue 1 threshold 3 5
+mls qos srr-queue output cos-map queue 2 threshold 3 3 6 7
+mls qos srr-queue output cos-map queue 3 threshold 3 2 4
+mls qos srr-queue output cos-map queue 4 threshold 2 1
+mls qos srr-queue output cos-map queue 4 threshold 3 0
+mls qos srr-queue output dscp-map queue 1 threshold 3 40 41 42 43 44 45 46 47
+mls qos srr-queue output dscp-map queue 2 threshold 3 24 25 26 27 28 29 30 31
+mls qos srr-queue output dscp-map queue 2 threshold 3 48 49 50 51 52 53 54 55
+mls qos srr-queue output dscp-map queue 2 threshold 3 56 57 58 59 60 61 62 63
+mls qos srr-queue output dscp-map queue 3 threshold 3 16 17 18 19 20 21 22 23
+mls qos srr-queue output dscp-map queue 3 threshold 3 32 33 34 35 36 37 38 39
+mls qos srr-queue output dscp-map queue 4 threshold 1 8
+mls qos srr-queue output dscp-map queue 4 threshold 2 9 10 11 12 13 14 15
+mls qos srr-queue output dscp-map queue 4 threshold 3 0 1 2 3 4 5 6 7
+mls qos queue-set output 1 threshold 1 138 138 92 138
+mls qos queue-set output 1 threshold 2 138 138 92 400
+mls qos queue-set output 1 threshold 3 36 77 100 318
+mls qos queue-set output 1 threshold 4 20 50 67 400
+mls qos queue-set output 2 threshold 1 149 149 100 149
+mls qos queue-set output 2 threshold 2 118 118 100 235
+mls qos queue-set output 2 threshold 3 41 68 100 272
+mls qos queue-set output 2 threshold 4 42 72 100 242
+mls qos queue-set output 1 buffers 10 10 26 54
+mls qos queue-set output 2 buffers 16 6 17 61
+mls qos
+!
+crypto pki trustpoint TP-self-signed-237611264
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-237611264
+ revocation-check none
+ rsakeypair TP-self-signed-237611264
+!
+crypto pki trustpoint HTTPS_SS_CERT_KEYPAIR
+ enrollment selfsigned
+ serial-number
+ revocation-check none
+ rsakeypair HTTPS_SS_CERT_KEYPAIR
+!
+!
+crypto pki certificate chain TP-self-signed-237611264
+crypto pki certificate chain HTTPS_SS_CERT_KEYPAIR
+ certificate self-signed 01
+  30820299 30820202 A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  57311E30 1C060355 04031315 452D3337 3530472D 38373538 372E7769 73642E75 
+  73313530 0F060355 04051308 41364232 36413030 30220609 2A864886 F70D0109 
+  02161545 2D333735 30472D38 37353837 2E776973 642E7573 301E170D 31383131 
+  32363136 35333136 5A170D32 30303130 31303030 3030305A 3057311E 301C0603 
+  55040313 15452D33 37353047 2D383735 38372E77 6973642E 75733135 300F0603 
+  55040513 08413642 32364130 30302206 092A8648 86F70D01 09021615 452D3337 
+  3530472D 38373538 372E7769 73642E75 7330819F 300D0609 2A864886 F70D0101 
+  01050003 818D0030 81890281 8100A23D F80BA126 051F19C6 32B274EB F7ED8126 
+  79A2F7EA CC1ECEC9 F47A8FEA 0A934787 53EE1506 8E4906D2 F771850E 2738F7C9 
+  ADBD100B B080E8DD 884EC92E 86AA2D91 34D87300 C8809A57 71DB28BC 5D4478DA 
+  9EE648B8 BB57FF1D 05ED6F3A 9052C402 DC577E7B FA80DA23 A712E87C 39FD1723 
+  B0FE191D B220930D B04AC809 15E50203 010001A3 75307330 0F060355 1D130101 
+  FF040530 030101FF 30200603 551D1104 19301782 15452D33 37353047 2D383735 
+  38372E77 6973642E 7573301F 0603551D 23041830 16801402 C4F1FB3B 1A963098 
+  8CFE6A0D C9CDF039 BCC02F30 1D060355 1D0E0416 041402C4 F1FB3B1A 9630988C 
+  FE6A0DC9 CDF039BC C02F300D 06092A86 4886F70D 01010405 00038181 000363F9 
+  122E8EE3 646FB44F 4B1B3A36 40FCF1A9 941F6A73 0D72F638 C0E390A7 61F5BD77 
+  4CD12C0A D4E3F93E CF466FC5 1C535317 519985E1 DAECCBB6 CFC9827D A4E42C44 
+  B8611D45 2A8DB050 81411DD9 C1AEF46B A3E77C39 4D6B0C97 0DEE1626 7224F685 
+  F172BF2B 88DF1505 52ACAAED 3DC0D32E 6FB41F94 D88EEADB 492CB919 9A
+  quit
+dot1x system-auth-control
+dot1x critical eapol
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+lldp run
+!
+!
+class-map match-all AutoQoS-VoIP-RTP-Trust
+ match ip dscp ef 
+class-map match-all AutoQoS-VoIP-Control-Trust
+ match ip dscp cs3  af31 
+!
+!
+policy-map AutoQoS-Police-CiscoPhone
+ class AutoQoS-VoIP-RTP-Trust
+  set dscp ef
+  police 320000 8000 exceed-action policed-dscp-transmit
+ class AutoQoS-VoIP-Control-Trust
+  set dscp cs3
+  police 32000 8000 exceed-action policed-dscp-transmit
+!
+!
+!
+interface GigabitEthernet1/0/1
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/2
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/3
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/4
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/5
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/7
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/8
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/9
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ queue-set 2
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface GigabitEthernet1/0/10
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/12
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/13
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/14
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/15
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/16
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/17
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/18
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/19
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/20
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/21
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/22
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/23
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/24
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/25
+ description Uplink to IDFG
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet1/0/26
+ shutdown
+!
+interface GigabitEthernet1/0/27
+ shutdown
+!
+interface GigabitEthernet1/0/28
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan777
+ description LAN Routers_Switches
+ ip address 10.6.0.52 255.255.254.0
+ no ip redirects
+ no ip unreachables
+!
+ip default-gateway 10.6.0.1
+ip classless
+no ip http server
+ip http secure-server
+!
+ip radius source-interface Vlan777 
+ip sla enable reaction-alerts
+snmp-server group V3Group v3 auth read V3Read write V3Write 
+snmp-server view V3Read iso included
+snmp-server view V3Write iso included
+snmp-server community defconSeven RW
+snmp-server community wisdCommStr RO
+snmp-server location IDF:G
+snmp-server contact Help Desk x6956
+snmp-server enable traps license
+tacacs-server host 10.200.10.18
+tacacs-server directed-request
+tacacs-server key 7 030C08070A5F361C5C051D
+radius-server attribute 32 include-in-access-req format %h
+radius-server attribute nas-port format c
+radius-server attribute list cisco-av-pair
+!
+radius-server dead-criteria time 10 tries 3
+radius-server host 10.200.10.221 auth-port 1812 acct-port 1813 key 7 123C31242D3F2D2315180C090110062C34332033736D
+radius-server host 10.200.10.222 auth-port 1812 acct-port 1813 key 7 052E323C1E786F2E26363F333929201518010B011016
+radius-server timeout 15
+radius-server deadtime 5
+radius-server vsa send accounting
+radius-server vsa send authentication
+!
+banner motd ^CUNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED^C
+!
+line con 0
+ logging synchronous
+line vty 0 4
+ logging synchronous
+ length 0
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+ntp clock-period 36028967
+ntp server 10.200.0.1
+end
+
+E-3750G-87587#sh vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi1/0/26, Gi1/0/27, Gi1/0/28
+3    Printers                         active    
+5    Security                         active    Gi1/0/21, Gi1/0/22, Gi1/0/23, Gi1/0/24
+6    UPS                              active    
+8    Projectors                       active    
+9    Video                            active    
+10   Servers                          active    
+20   Management                       active    
+22   printer                          active    
+30   misc                             active    
+50   PC_Data                          active    Gi1/0/1, Gi1/0/2, Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/6, Gi1/0/7
+                                                Gi1/0/8, Gi1/0/9, Gi1/0/10, Gi1/0/11, Gi1/0/12, Gi1/0/13, Gi1/0/14
+                                                Gi1/0/15, Gi1/0/16, Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/20
+172  Voice                            active    Gi1/0/1, Gi1/0/2, Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/6, Gi1/0/7
+                                                Gi1/0/8, Gi1/0/9, Gi1/0/10, Gi1/0/11, Gi1/0/12, Gi1/0/13, Gi1/0/14
+                                                Gi1/0/15, Gi1/0/16, Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/20
+777  LAN                              active    
+778  wireless_1200                    active    
+1002 fddi-default                     act/unsup 
+1003 trcrf-default                    act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trbrf-default                    act/unsup 
+E-3750G-87587#sh vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 2
+VTP Domain Name                 : EastHigh
+VTP Pruning Mode                : Enabled
+VTP Traps Generation            : Disabled
+Device ID                       : 3037.a6b2.6a00
+Configuration last modified by 10.6.3.1 at 5-22-19 13:30:45
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Client
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 18
+Configuration Revision            : 40
+MD5 digest                        : 0x43 0x15 0xD5 0x6A 0x22 0xE2 0xA3 0xB7 
+                                    0x3B 0xD7 0x69 0xA8 0x5D 0xF5 0x78 0xC6 
+E-3750G-87587#sh vtp pass
+The VTP password is not configured.
+E-3750G-87587#sh ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES NVRAM  administratively down down    
+Vlan777                10.6.0.52       YES NVRAM  up                    up      
+GigabitEthernet1/0/1   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/2   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/3   unassigned      YES unset  up                    up      
+GigabitEthernet1/0/4   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/5   unassigned      YES unset  up                    up      
+GigabitEthernet1/0/6   unassigned      YES unset  up                    up      
+GigabitEthernet1/0/7   unassigned      YES unset  up                    up      
+GigabitEthernet1/0/8   unassigned      YES unset  up                    up      
+GigabitEthernet1/0/9   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/10  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/11  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/12  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/13  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/14  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/15  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/16  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/17  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/18  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/19  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/20  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/21  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/22  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/23  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/24  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/25  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/26  unassigned      YES unset  administratively down down    
+GigabitEthernet1/0/27  unassigned      YES unset  administratively down down    
+GigabitEthernet1/0/28  unassigned      YES unset  administratively down down    
+E-3750G-87587#sh ip route
+Default gateway is 10.6.0.1
+
+Host               Gateway           Last Use    Total Uses  Interface
+ICMP redirect cache is empty
+E-3750G-87587#sh cdp neigh
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+SEP2C36F859541A  Gig 1/0/6         157             H P M  IP Phone  Port 1
+SEP8875567B7071  Gig 1/0/5         132             H P M  IP Phone  Port 1
+SEPC8F9F968B6D0  Gig 1/0/12        165             H P M  IP Phone  Port 1
+SEP8875567B7089  Gig 1/0/16        142             H P M  IP Phone  Port 1
+02:04:96:A1:BB:C7
+                 Gig 1/0/25        160               S    Stack     Slot:  1, Port: 50
+SEP8875567B7018  Gig 1/0/7         133             H P M  IP Phone  Port 1
+SEP2C36F8595336  Gig 1/0/17        164             H P M  IP Phone  Port 1
+SEPC8F9F968B911  Gig 1/0/14        170             H P M  IP Phone  Port 1
+SEP2C36F8595319  Gig 1/0/15        171             H P M  IP Phone  Port 1
+SEP24B657B19637  Gig 1/0/8         161             H P M  IP Phone  Port 1
+E-3750G-87587#sh cdp neigh detail
+-------------------------
+Device ID: SEP2C36F859541A
+Entry address(es): 
+  IP address: 172.16.16.175
+Platform: Cisco IP Phone 7931,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/6,  Port ID (outgoing port): Port 1
+Holdtime : 157 sec
+Second Port Status: Up
+
+Version :
+SCCP31.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 7.000 Watts
+Power request id: 21530, Power management id: 3
+Power request levels are:7000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP8875567B7071
+Entry address(es): 
+  IP address: 172.16.16.21
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/5,  Port ID (outgoing port): Port 1
+Holdtime : 132 sec
+Second Port Status: Up
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 12983, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEPC8F9F968B6D0
+Entry address(es): 
+  IP address: 172.16.16.28
+Platform: Cisco IP Phone 7931,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/12,  Port ID (outgoing port): Port 1
+Holdtime : 165 sec
+Second Port Status: Down
+
+Version :
+SCCP31.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 7.000 Watts
+Power request id: 46800, Power management id: 3
+Power request levels are:7000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP8875567B7089
+Entry address(es): 
+  IP address: 172.16.16.88
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/16,  Port ID (outgoing port): Port 1
+Holdtime : 142 sec
+Second Port Status: Up
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 30622, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: 02:04:96:A1:BB:C7
+Entry address(es): 
+  IP address: 10.6.0.51
+Platform: Stack,  Capabilities: Switch 
+Interface: GigabitEthernet1/0/25,  Port ID (outgoing port): Slot:  1, Port: 50
+Holdtime : 159 sec
+
+Version :
+ExtremeXOS version 22.5.1.7 22.5.1.7-patch1-2 by release-manager
+     on Fri Oct 19 07:18:07 EDT 2018
+
+
+advertisement version: 2
+Duplex: full
+Management address(es): 
+
+-------------------------
+Device ID: SEP8875567B7018
+Entry address(es): 
+  IP address: 172.16.16.164
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/7,  Port ID (outgoing port): Port 1
+Holdtime : 133 sec
+Second Port Status: Up
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 14652, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP2C36F8595336
+Entry address(es): 
+  IP address: 172.16.16.178
+Platform: Cisco IP Phone 7931,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/17,  Port ID (outgoing port): Port 1
+Holdtime : 164 sec
+Second Port Status: Up
+
+Version :
+SCCP31.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 7.000 Watts
+Power request id: 21302, Power management id: 3
+Power request levels are:7000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEPC8F9F968B911
+Entry address(es): 
+  IP address: 172.16.16.179
+Platform: Cisco IP Phone 7931,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/14,  Port ID (outgoing port): Port 1
+Holdtime : 170 sec
+Second Port Status: Up
+
+Version :
+SCCP31.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 7.000 Watts
+Power request id: 47377, Power management id: 3
+Power request levels are:7000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP2C36F8595319
+Entry address(es): 
+  IP address: 172.16.16.176
+Platform: Cisco IP Phone 7931,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/15,  Port ID (outgoing port): Port 1
+Holdtime : 171 sec
+Second Port Status: Up
+
+Version :
+SCCP31.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 7.000 Watts
+Power request id: 21273, Power management id: 3
+Power request levels are:7000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP24B657B19637
+Entry address(es): 
+  IP address: 172.16.16.161
+Platform: Cisco IP Phone 7931,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet1/0/8,  Port ID (outgoing port): Port 1
+Holdtime : 161 sec
+Second Port Status: Up
+
+Version :
+SCCP31.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 7.000 Watts
+Power request id: 38455, Power management id: 3
+Power request levels are:7000 0 0 0 0 
+Management address(es): 
+
+E-3750G-87587#sh int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down     
+Vl777                          up             up       LAN Routers_Switches
+Gi1/0/1                        down           down     PC_Data & VoIP
+Gi1/0/2                        down           down     PC_Data & VoIP
+Gi1/0/3                        up             up       PC_Data & VoIP
+Gi1/0/4                        down           down     PC_Data & VoIP
+Gi1/0/5                        up             up       PC_Data & VoIP
+Gi1/0/6                        up             up       PC_Data & VoIP
+Gi1/0/7                        up             up       PC_Data & VoIP
+Gi1/0/8                        up             up       PC_Data & VoIP
+Gi1/0/9                        down           down     PC_Data & VoIP
+Gi1/0/10                       up             up       PC_Data & VoIP
+Gi1/0/11                       down           down     PC_Data & VoIP
+Gi1/0/12                       up             up       PC_Data & VoIP
+Gi1/0/13                       up             up       PC_Data & VoIP
+Gi1/0/14                       up             up       PC_Data & VoIP
+Gi1/0/15                       up             up       PC_Data & VoIP
+Gi1/0/16                       up             up       PC_Data & VoIP
+Gi1/0/17                       up             up       PC_Data & VoIP
+Gi1/0/18                       down           down     PC_Data & VoIP
+Gi1/0/19                       down           down     PC_Data & VoIP
+Gi1/0/20                       up             up       PC_Data & VoIP
+Gi1/0/21                       up             up       Security Camera
+Gi1/0/22                       up             up       Security Camera
+Gi1/0/23                       up             up       Security Camera
+Gi1/0/24                       up             up       Security Camera
+Gi1/0/25                       up             up       Uplink to IDFG
+Gi1/0/26                       admin down     down     
+Gi1/0/27                       admin down     down     
+Gi1/0/28                       admin down     down     
+E-3750G-87587#sh ip eigrp neigh
+
+E-3750G-87587#sh ip protocols
+*** IP Routing is NSF aware ***
+
+E-3750G-87587#sh int status
+
+Port      Name               Status       Vlan       Duplex  Speed Type
+Gi1/0/1   PC_Data & VoIP     notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/2   PC_Data & VoIP     notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/3   PC_Data & VoIP     connected    50         a-full   a-10 10/100/1000BaseTX
+Gi1/0/4   PC_Data & VoIP     notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/5   PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/6   PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/7   PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/8   PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/9   PC_Data & VoIP     notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/10  PC_Data & VoIP     connected    50         a-full   a-10 10/100/1000BaseTX
+Gi1/0/11  PC_Data & VoIP     notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/12  PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/13  PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/14  PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/15  PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/16  PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/17  PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/18  PC_Data & VoIP     notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/19  PC_Data & VoIP     notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/20  PC_Data & VoIP     connected    50         a-full a-1000 10/100/1000BaseTX
+Gi1/0/21  Security Camera    connected    5          a-full  a-100 10/100/1000BaseTX
+Gi1/0/22  Security Camera    connected    5          a-full  a-100 10/100/1000BaseTX
+Gi1/0/23  Security Camera    connected    5          a-full  a-100 10/100/1000BaseTX
+Gi1/0/24  Security Camera    connected    5          a-full  a-100 10/100/1000BaseTX
+Gi1/0/25  Uplink to IDFG     connected    trunk      a-full a-1000 1000BaseSX SFP
+Gi1/0/26                     disabled     1            auto   auto Not Present
+Gi1/0/27                     disabled     1            auto   auto Not Present
+Gi1/0/28                     disabled     1            auto   auto Not Present
+E-3750G-87587#sh power inline
+
+Module   Available     Used     Remaining
+          (Watts)     (Watts)    (Watts) 
+------   ---------   --------   ---------
+1           370.0      104.8       265.2
+Interface Admin  Oper       Power   Device              Class Max
+                            (Watts)                            
+--------- ------ ---------- ------- ------------------- ----- ----
+Gi1/0/1   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/2   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/3   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/4   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/5   auto   on         6.0     IP Phone 6941       2     15.4 
+Gi1/0/6   auto   on         7.0     IP Phone 7931       3     15.4 
+Gi1/0/7   auto   on         6.0     IP Phone 6941       2     15.4 
+Gi1/0/8   auto   on         7.0     IP Phone 7931       3     15.4 
+Gi1/0/9   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/10  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/11  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/12  auto   on         7.0     IP Phone 7931       3     15.4 
+Gi1/0/13  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/14  auto   on         7.0     IP Phone 7931       3     15.4 
+Gi1/0/15  auto   on         7.0     IP Phone 7931       3     15.4 
+Gi1/0/16  auto   on         6.0     IP Phone 6941       2     15.4 
+Gi1/0/17  auto   on         7.0     IP Phone 7931       3     15.4 
+Gi1/0/18  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/19  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/20  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/21  auto   on         7.0     Ieee PD             2     15.4 
+Gi1/0/22  auto   on         7.0     Ieee PD             2     15.4 
+Gi1/0/23  auto   on         15.4    Ieee PD             3     15.4 
+Gi1/0/24  auto   on         15.4    Ieee PD             3     15.4 
+E-3750G-87587#sh mac address
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+ All    0100.0ccc.cccc    STATIC      CPU
+ All    0100.0ccc.cccd    STATIC      CPU
+ All    0180.c200.0000    STATIC      CPU
+ All    0180.c200.0001    STATIC      CPU
+ All    0180.c200.0002    STATIC      CPU
+ All    0180.c200.0003    STATIC      CPU
+ All    0180.c200.0004    STATIC      CPU
+ All    0180.c200.0005    STATIC      CPU
+ All    0180.c200.0006    STATIC      CPU
+ All    0180.c200.0007    STATIC      CPU
+ All    0180.c200.0008    STATIC      CPU
+ All    0180.c200.0009    STATIC      CPU
+ All    0180.c200.000a    STATIC      CPU
+ All    0180.c200.000b    STATIC      CPU
+ All    0180.c200.000c    STATIC      CPU
+ All    0180.c200.000d    STATIC      CPU
+ All    0180.c200.000e    STATIC      CPU
+ All    0180.c200.000f    STATIC      CPU
+ All    0180.c200.0010    STATIC      CPU
+ All    ffff.ffff.ffff    STATIC      CPU
+  50    0004.96a1.e7cc    DYNAMIC     Gi1/0/25
+  50    001f.2929.d453    DYNAMIC     Gi1/0/25
+  50    001f.6712.362b    DYNAMIC     Gi1/0/25
+  50    0021.9b78.8f54    DYNAMIC     Gi1/0/25
+  50    0021.b713.ffed    DYNAMIC     Gi1/0/25
+  50    0021.b716.5616    DYNAMIC     Gi1/0/25
+  50    0021.b716.56c1    DYNAMIC     Gi1/0/6
+  50    0021.b736.21bf    DYNAMIC     Gi1/0/25
+  50    0021.b73d.c176    DYNAMIC     Gi1/0/25
+  50    0021.b75d.42e1    DYNAMIC     Gi1/0/25
+  50    0021.b75d.bcd6    DYNAMIC     Gi1/0/25
+  50    0021.b763.5420    DYNAMIC     Gi1/0/25
+  50    0021.b763.aaa4    DYNAMIC     Gi1/0/25
+  50    0021.b763.ca06    DYNAMIC     Gi1/0/25
+  50    0021.b795.17fb    DYNAMIC     Gi1/0/25
+  50    0021.b795.3b63    DYNAMIC     Gi1/0/25
+  50    0021.b795.47a0    DYNAMIC     Gi1/0/13
+  50    0021.b795.7307    DYNAMIC     Gi1/0/25
+  50    0021.b795.97a1    DYNAMIC     Gi1/0/25
+  50    0021.b795.b386    DYNAMIC     Gi1/0/25
+  50    0021.b7ae.acf2    DYNAMIC     Gi1/0/25
+  50    0021.b7ed.366b    DYNAMIC     Gi1/0/25
+  50    0025.64f4.d4b9    DYNAMIC     Gi1/0/25
+  50    0025.64f4.d9d9    DYNAMIC     Gi1/0/25
+  50    0025.64f5.0c30    DYNAMIC     Gi1/0/25
+  50    0025.64f5.0c82    DYNAMIC     Gi1/0/25
+  50    0025.64f5.0f61    DYNAMIC     Gi1/0/25
+  50    0025.64f5.0f98    DYNAMIC     Gi1/0/25
+  50    0025.64f5.0fdc    DYNAMIC     Gi1/0/25
+  50    0025.64f5.0ff1    DYNAMIC     Gi1/0/25
+  50    0025.64f5.1025    DYNAMIC     Gi1/0/25
+  50    0025.64f5.1091    DYNAMIC     Gi1/0/25
+  50    0025.64f5.109c    DYNAMIC     Gi1/0/25
+  50    0025.64f5.23fc    DYNAMIC     Gi1/0/25
+  50    0080.91b5.b6d7    DYNAMIC     Gi1/0/25
+  50    0080.91b5.b909    DYNAMIC     Gi1/0/25
+  50    0080.91b5.b97c    DYNAMIC     Gi1/0/25
+  50    0080.91d0.592e    DYNAMIC     Gi1/0/25
+  50    00d8.611b.4395    DYNAMIC     Gi1/0/25
+  50    00d8.611b.43a8    DYNAMIC     Gi1/0/25
+  50    00d8.611b.43d0    DYNAMIC     Gi1/0/25
+  50    00d8.611d.373b    DYNAMIC     Gi1/0/25
+  50    00d8.611d.373f    DYNAMIC     Gi1/0/25
+  50    00d8.611d.375b    DYNAMIC     Gi1/0/25
+  50    00d8.611d.375c    DYNAMIC     Gi1/0/25
+  50    00d8.611d.375e    DYNAMIC     Gi1/0/25
+  50    00d8.611d.375f    DYNAMIC     Gi1/0/25
+  50    00d8.611d.3761    DYNAMIC     Gi1/0/25
+  50    00d8.611f.0da7    DYNAMIC     Gi1/0/25
+  50    00d8.611f.0db8    DYNAMIC     Gi1/0/25
+  50    00d8.611f.0ded    DYNAMIC     Gi1/0/25
+  50    00d8.611f.0df1    DYNAMIC     Gi1/0/25
+  50    00d8.611f.0df5    DYNAMIC     Gi1/0/25
+  50    00d8.611f.0f06    DYNAMIC     Gi1/0/25
+  50    00d8.611f.0f11    DYNAMIC     Gi1/0/25
+  50    00d8.611f.0ff4    DYNAMIC     Gi1/0/25
+  50    00d8.611f.1076    DYNAMIC     Gi1/0/25
+  50    0800.37ea.ba5a    DYNAMIC     Gi1/0/25
+  50    14fe.b5ec.0ee2    DYNAMIC     Gi1/0/25
+  50    1803.7337.dc53    DYNAMIC     Gi1/0/25
+  50    1803.7337.dd99    DYNAMIC     Gi1/0/25
+  50    1803.7337.def0    DYNAMIC     Gi1/0/25
+  50    1803.733c.9426    DYNAMIC     Gi1/0/25
+  50    1803.733c.a4ba    DYNAMIC     Gi1/0/25
+  50    1803.73d6.046f    DYNAMIC     Gi1/0/25
+  50    1803.73d6.50de    DYNAMIC     Gi1/0/25
+  50    1803.73d6.6155    DYNAMIC     Gi1/0/25
+  50    1803.73d6.624f    DYNAMIC     Gi1/0/25
+  50    1803.73d6.62ed    DYNAMIC     Gi1/0/25
+  50    1803.73db.5949    DYNAMIC     Gi1/0/25
+  50    1803.73db.60db    DYNAMIC     Gi1/0/25
+  50    1866.da03.ea98    DYNAMIC     Gi1/0/25
+  50    1866.da03.f6d2    DYNAMIC     Gi1/0/25
+  50    1866.da03.f930    DYNAMIC     Gi1/0/25
+  50    1866.da03.f93b    DYNAMIC     Gi1/0/25
+  50    1866.da03.faa9    DYNAMIC     Gi1/0/25
+  50    1866.da03.fb12    DYNAMIC     Gi1/0/25
+  50    1866.da03.fb2f    DYNAMIC     Gi1/0/25
+  50    1866.da03.fbad    DYNAMIC     Gi1/0/25
+  50    1866.da03.fbae    DYNAMIC     Gi1/0/25
+  50    1866.da03.fbed    DYNAMIC     Gi1/0/25
+  50    1866.da03.fc0b    DYNAMIC     Gi1/0/25
+  50    1866.da14.9f56    DYNAMIC     Gi1/0/25
+  50    1c7d.2206.54e6    DYNAMIC     Gi1/0/25
+  50    1c7d.2206.5543    DYNAMIC     Gi1/0/25
+  50    24b6.57b1.9637    DYNAMIC     Gi1/0/8
+  50    2c36.f859.5319    DYNAMIC     Gi1/0/15
+  50    2c36.f859.5336    DYNAMIC     Gi1/0/17
+  50    2c36.f859.541a    DYNAMIC     Gi1/0/6
+  50    3005.5c64.3d9b    DYNAMIC     Gi1/0/25
+  50    309c.23fb.e317    DYNAMIC     Gi1/0/25
+  50    309c.23fb.e320    DYNAMIC     Gi1/0/25
+  50    309c.23fb.e324    DYNAMIC     Gi1/0/25
+  50    309c.23fb.e334    DYNAMIC     Gi1/0/25
+  50    3417.eb88.f240    DYNAMIC     Gi1/0/25
+  50    3417.eb88.f307    DYNAMIC     Gi1/0/25
+  50    3417.eb98.0354    DYNAMIC     Gi1/0/25
+  50    3417.eb98.055d    DYNAMIC     Gi1/0/25
+  50    3417.eb98.057c    DYNAMIC     Gi1/0/25
+  50    3417.eb98.05b2    DYNAMIC     Gi1/0/25
+  50    3417.eb98.06b7    DYNAMIC     Gi1/0/25
+  50    3417.eb98.06d0    DYNAMIC     Gi1/0/25
+  50    3417.eb98.0840    DYNAMIC     Gi1/0/25
+  50    3417.eb98.09ed    DYNAMIC     Gi1/0/25
+  50    3417.eb98.0a0b    DYNAMIC     Gi1/0/25
+  50    3417.eb98.53c3    DYNAMIC     Gi1/0/25
+  50    3417.eb98.53e2    DYNAMIC     Gi1/0/25
+  50    3417.eb98.5418    DYNAMIC     Gi1/0/25
+  50    3417.eb98.5426    DYNAMIC     Gi1/0/25
+  50    3417.eb98.548e    DYNAMIC     Gi1/0/25
+  50    3417.eb98.a3b6    DYNAMIC     Gi1/0/25
+  50    3417.eb98.da75    DYNAMIC     Gi1/0/25
+  50    3417.eb98.dbe1    DYNAMIC     Gi1/0/25
+  50    3417.eb98.dc31    DYNAMIC     Gi1/0/25
+  50    3417.eb98.dd4e    DYNAMIC     Gi1/0/25
+  50    3417.eb98.dd66    DYNAMIC     Gi1/0/25
+  50    3417.eb98.dda0    DYNAMIC     Gi1/0/25
+  50    3417.eb98.ddb6    DYNAMIC     Gi1/0/25
+  50    3417.eb98.de0e    DYNAMIC     Gi1/0/25
+  50    3417.eb98.de62    DYNAMIC     Gi1/0/25
+  50    3417.eb98.de66    DYNAMIC     Gi1/0/25
+  50    3417.eb98.dea6    DYNAMIC     Gi1/0/25
+  50    3417.eb98.df90    DYNAMIC     Gi1/0/25
+  50    3417.eb98.dfff    DYNAMIC     Gi1/0/25
+  50    3417.eb98.e007    DYNAMIC     Gi1/0/25
+  50    3417.eb98.e16f    DYNAMIC     Gi1/0/25
+  50    3417.eb98.e18d    DYNAMIC     Gi1/0/25
+  50    3417.eb98.e1b8    DYNAMIC     Gi1/0/25
+  50    3417.eb98.e212    DYNAMIC     Gi1/0/25
+  50    3417.eb98.e235    DYNAMIC     Gi1/0/25
+  50    3417.eb98.e63f    DYNAMIC     Gi1/0/25
+  50    3417.eb98.f869    DYNAMIC     Gi1/0/25
+  50    3417.eb98.fa7b    DYNAMIC     Gi1/0/25
+  50    3417.eb98.fa86    DYNAMIC     Gi1/0/25
+  50    3417.eb98.fadc    DYNAMIC     Gi1/0/25
+  50    3417.eb98.fade    DYNAMIC     Gi1/0/25
+  50    3417.eb98.fda6    DYNAMIC     Gi1/0/25
+  50    3417.eb98.ff81    DYNAMIC     Gi1/0/25
+  50    3417.eb98.ffd9    DYNAMIC     Gi1/0/25
+  50    3417.eb9d.66ba    DYNAMIC     Gi1/0/25
+  50    38c9.8615.edc4    DYNAMIC     Gi1/0/25
+  50    38c9.8620.bcca    DYNAMIC     Gi1/0/25
+  50    3c2a.f492.9fdb    DYNAMIC     Gi1/0/25
+  50    3c2a.f4ae.f031    DYNAMIC     Gi1/0/25
+  50    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+  50    4419.b649.241b    DYNAMIC     Gi1/0/25
+  50    4437.e685.d4e6    DYNAMIC     Gi1/0/25
+  50    4437.e685.d627    DYNAMIC     Gi1/0/25
+  50    4437.e685.d71f    DYNAMIC     Gi1/0/25
+  50    4437.e685.d7a2    DYNAMIC     Gi1/0/25
+  50    4437.e685.d86e    DYNAMIC     Gi1/0/25
+  50    4437.e685.d8b3    DYNAMIC     Gi1/0/25
+  50    4437.e689.6b59    DYNAMIC     Gi1/0/25
+  50    484d.7eef.4f7d    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.f7fc    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.f850    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.f955    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fa3e    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fa79    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fa8c    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.faa7    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fae3    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fafd    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fb57    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fb68    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fb6a    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fb7e    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fba4    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fc14    DYNAMIC     Gi1/0/25
+  50    484d.7ef3.fc2a    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.14e0    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.1696    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.2f35    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.2f6e    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.2f77    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.2fa9    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.3006    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.3012    DYNAMIC     Gi1/0/25
+  50    484d.7ef4.3018    DYNAMIC     Gi1/0/25
+  50    5c49.7d3b.458e    DYNAMIC     Gi1/0/25
+  50    5c49.7df9.5333    DYNAMIC     Gi1/0/25
+  50    6c2b.59d6.713e    DYNAMIC     Gi1/0/8
+  50    6c62.6d68.c735    DYNAMIC     Gi1/0/25
+  50    70b5.e88c.c029    DYNAMIC     Gi1/0/25
+  50    788c.7758.a447    DYNAMIC     Gi1/0/25
+  50    788c.7758.a453    DYNAMIC     Gi1/0/25
+  50    842b.2bba.bce2    DYNAMIC     Gi1/0/14
+  50    842b.2bba.bd1f    DYNAMIC     Gi1/0/25
+  50    842b.2bba.be52    DYNAMIC     Gi1/0/25
+  50    842b.2bba.bef6    DYNAMIC     Gi1/0/25
+  50    842b.2bba.c37a    DYNAMIC     Gi1/0/25
+  50    842b.2bba.cef8    DYNAMIC     Gi1/0/25
+  50    842b.2bba.d161    DYNAMIC     Gi1/0/25
+  50    842b.2bba.d173    DYNAMIC     Gi1/0/25
+  50    84a9.3e76.b58e    DYNAMIC     Gi1/0/25
+  50    84a9.3e76.b5ab    DYNAMIC     Gi1/0/25
+  50    8875.567b.7018    DYNAMIC     Gi1/0/7
+  50    8875.567b.7071    DYNAMIC     Gi1/0/5
+  50    8875.567b.7089    DYNAMIC     Gi1/0/16
+  50    8cdc.d49e.f1f3    DYNAMIC     Gi1/0/25
+  50    9457.a516.7445    DYNAMIC     Gi1/0/25
+  50    9c93.4e94.743b    DYNAMIC     Gi1/0/25
+  50    9c93.4e98.a636    DYNAMIC     Gi1/0/25
+  50    9cae.d3aa.5251    DYNAMIC     Gi1/0/25
+  50    ac16.2d3a.3b77    DYNAMIC     Gi1/0/25
+  50    ac16.2d3a.ea52    DYNAMIC     Gi1/0/25
+  50    b083.fe63.c9ec    DYNAMIC     Gi1/0/25
+  50    b083.fe79.7821    DYNAMIC     Gi1/0/25
+  50    b083.fe79.7823    DYNAMIC     Gi1/0/25
+  50    b083.fe79.786e    DYNAMIC     Gi1/0/6
+  50    b083.fe79.8191    DYNAMIC     Gi1/0/25
+  50    b083.fe7a.17ad    DYNAMIC     Gi1/0/25
+  50    b083.fe7a.1823    DYNAMIC     Gi1/0/25
+  50    b083.fe7a.1853    DYNAMIC     Gi1/0/25
+  50    b083.fe7a.185c    DYNAMIC     Gi1/0/25
+  50    b083.fea0.8ba2    DYNAMIC     Gi1/0/25
+  50    b083.fea1.f2f8    DYNAMIC     Gi1/0/25
+  50    b083.fea2.2bef    DYNAMIC     Gi1/0/25
+  50    b8ac.6f40.afc4    DYNAMIC     Gi1/0/25
+  50    b8ac.6f40.b401    DYNAMIC     Gi1/0/25
+  50    b8ac.6f40.e3b7    DYNAMIC     Gi1/0/25
+  50    b8ca.3abc.0195    DYNAMIC     Gi1/0/15
+  50    bc30.5b9f.c47e    DYNAMIC     Gi1/0/25
+  50    bc30.5b9f.c4e6    DYNAMIC     Gi1/0/25
+  50    bc30.5ba1.7380    DYNAMIC     Gi1/0/25
+  50    bc30.5ba1.e970    DYNAMIC     Gi1/0/25
+  50    bc30.5ba3.fb43    DYNAMIC     Gi1/0/25
+  50    bc30.5ba6.f7af    DYNAMIC     Gi1/0/25
+  50    bc30.5bb8.d3b2    DYNAMIC     Gi1/0/25
+  50    bc30.5bb8.d437    DYNAMIC     Gi1/0/25
+  50    bc30.5bb8.d4ea    DYNAMIC     Gi1/0/25
+  50    c8f9.f968.b6d0    DYNAMIC     Gi1/0/12
+  50    c8f9.f968.b911    DYNAMIC     Gi1/0/14
+  50    cc52.af41.d037    DYNAMIC     Gi1/0/16
+  50    cc52.af42.6fdb    DYNAMIC     Gi1/0/25
+  50    cc52.af42.6fde    DYNAMIC     Gi1/0/25
+  50    d4be.d99c.abae    DYNAMIC     Gi1/0/25
+  50    d4be.d99e.7c8a    DYNAMIC     Gi1/0/25
+  50    d89e.f331.a3e9    DYNAMIC     Gi1/0/25
+  50    e454.e860.3dc6    DYNAMIC     Gi1/0/25
+  50    e454.e860.3f4e    DYNAMIC     Gi1/0/25
+  50    e454.e860.41cc    DYNAMIC     Gi1/0/25
+  50    e454.e860.41d5    DYNAMIC     Gi1/0/25
+  50    e454.e860.41ea    DYNAMIC     Gi1/0/25
+  50    e454.e860.427b    DYNAMIC     Gi1/0/25
+  50    e454.e860.4387    DYNAMIC     Gi1/0/25
+  50    e454.e860.9221    DYNAMIC     Gi1/0/25
+  50    e454.e860.93e7    DYNAMIC     Gi1/0/25
+  50    e454.e893.2129    DYNAMIC     Gi1/0/25
+  50    e454.e894.c0bc    DYNAMIC     Gi1/0/25
+  50    ecd6.8a11.6799    DYNAMIC     Gi1/0/25
+  50    f48e.3881.8bd1    DYNAMIC     Gi1/0/25
+  50    f48e.3881.8eec    DYNAMIC     Gi1/0/25
+  50    f48e.3881.ca31    DYNAMIC     Gi1/0/25
+  50    f48e.3881.cc0b    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f3cd    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f414    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f416    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f41e    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f425    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f4ca    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f4cc    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f66a    DYNAMIC     Gi1/0/25
+  50    f48e.3884.f6bb    DYNAMIC     Gi1/0/25
+  50    f48e.3885.2727    DYNAMIC     Gi1/0/25
+  50    f48e.3885.2812    DYNAMIC     Gi1/0/25
+  50    f48e.3888.6a9a    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7c4a    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7c54    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7cbb    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7cdf    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7cf3    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7d12    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7d25    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7d76    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7e0b    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7e14    DYNAMIC     Gi1/0/25
+  50    f48e.3888.7fa8    DYNAMIC     Gi1/0/25
+  50    f48e.3888.8012    DYNAMIC     Gi1/0/25
+  50    f48e.3888.8080    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.7197    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.a3ce    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.a903    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.abe9    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.ac1a    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.ac65    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.ae9a    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.b23c    DYNAMIC     Gi1/0/25
+  50    f8b1.569c.b291    DYNAMIC     Gi1/0/25
+  50    f8b1.569d.96c1    DYNAMIC     Gi1/0/25
+  50    f8b1.569d.9c9b    DYNAMIC     Gi1/0/25
+  50    f8b1.569d.9e67    DYNAMIC     Gi1/0/25
+  50    f8b1.569d.9f29    DYNAMIC     Gi1/0/25
+  50    f8b1.569d.9f6e    DYNAMIC     Gi1/0/25
+  50    f8b1.569d.cb7a    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.207e    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.21c8    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.359b    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.3cb2    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.52f8    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.531d    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.5325    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.5333    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.54e9    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.54f4    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.58f1    DYNAMIC     Gi1/0/25
+  50    f8b1.569e.5924    DYNAMIC     Gi1/0/25
+  50    f8b1.56b6.2340    DYNAMIC     Gi1/0/25
+  50    f8b1.56df.f61b    DYNAMIC     Gi1/0/25
+ 172    0004.96a1.e7cc    DYNAMIC     Gi1/0/25
+ 172    0016.c77c.a7c6    DYNAMIC     Gi1/0/25
+ 172    24b6.57b1.9637    DYNAMIC     Gi1/0/8
+ 172    2c36.f859.5319    DYNAMIC     Gi1/0/15
+ 172    2c36.f859.5336    DYNAMIC     Gi1/0/17
+ 172    2c36.f859.541a    DYNAMIC     Gi1/0/6
+ 172    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+ 172    8875.567b.7018    DYNAMIC     Gi1/0/7
+ 172    8875.567b.7071    DYNAMIC     Gi1/0/5
+ 172    8875.567b.7089    DYNAMIC     Gi1/0/16
+ 172    c8f9.f968.b6d0    DYNAMIC     Gi1/0/12
+ 172    c8f9.f968.b911    DYNAMIC     Gi1/0/14
+   1    00e0.2b00.0001    DYNAMIC     Gi1/0/25
+   1    0204.96a1.bbc7    DYNAMIC     Gi1/0/25
+   3    0004.96a1.e7cc    DYNAMIC     Gi1/0/25
+   3    309c.23fb.e32d    DYNAMIC     Gi1/0/25
+   3    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+   5    0004.96a1.e7cc    DYNAMIC     Gi1/0/25
+   5    0009.1860.810b    DYNAMIC     Gi1/0/25
+   5    0009.1861.0f87    DYNAMIC     Gi1/0/25
+   5    0009.1861.0f89    DYNAMIC     Gi1/0/25
+   5    0009.1861.0f8a    DYNAMIC     Gi1/0/25
+   5    0009.1861.0f8c    DYNAMIC     Gi1/0/25
+   5    0009.1861.14a9    DYNAMIC     Gi1/0/25
+   5    001a.0704.05f7    DYNAMIC     Gi1/0/25
+   5    001a.0706.9a3b    DYNAMIC     Gi1/0/25
+   5    001a.0706.9ac7    DYNAMIC     Gi1/0/25
+   5    001a.070c.d177    DYNAMIC     Gi1/0/25
+   5    001a.070c.d196    DYNAMIC     Gi1/0/25
+   5    001a.070c.d19a    DYNAMIC     Gi1/0/25
+   5    001a.070c.d19e    DYNAMIC     Gi1/0/25
+   5    001a.070c.d1a5    DYNAMIC     Gi1/0/25
+   5    001a.070c.d1af    DYNAMIC     Gi1/0/24
+   5    001a.070c.d1c2    DYNAMIC     Gi1/0/25
+   5    001a.070c.d1d0    DYNAMIC     Gi1/0/25
+   5    001a.070c.d1d3    DYNAMIC     Gi1/0/25
+   5    001a.070c.d1d5    DYNAMIC     Gi1/0/25
+   5    001a.070c.d1d6    DYNAMIC     Gi1/0/25
+   5    001a.0716.fe0b    DYNAMIC     Gi1/0/25
+   5    001a.0719.5eba    DYNAMIC     Gi1/0/25
+   5    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+   5    4419.b642.d24d    DYNAMIC     Gi1/0/25
+   5    4419.b642.d251    DYNAMIC     Gi1/0/25
+   5    4419.b642.d253    DYNAMIC     Gi1/0/25
+   5    4419.b642.d260    DYNAMIC     Gi1/0/25
+   5    4419.b642.d277    DYNAMIC     Gi1/0/25
+   5    4419.b643.c9e2    DYNAMIC     Gi1/0/25
+   5    4419.b643.c9ec    DYNAMIC     Gi1/0/25
+   5    4419.b643.ca0c    DYNAMIC     Gi1/0/25
+   5    4419.b643.ca11    DYNAMIC     Gi1/0/25
+   5    4419.b643.ca30    DYNAMIC     Gi1/0/25
+   5    4419.b647.993a    DYNAMIC     Gi1/0/25
+   5    4419.b647.994d    DYNAMIC     Gi1/0/25
+   5    4419.b647.996e    DYNAMIC     Gi1/0/25
+   5    4419.b647.9990    DYNAMIC     Gi1/0/25
+   5    4419.b649.23e3    DYNAMIC     Gi1/0/25
+   5    4419.b649.23f9    DYNAMIC     Gi1/0/21
+   5    4419.b649.241a    DYNAMIC     Gi1/0/25
+   5    4419.b649.2431    DYNAMIC     Gi1/0/25
+   5    4419.b649.2444    DYNAMIC     Gi1/0/25
+   5    4419.b64d.7245    DYNAMIC     Gi1/0/22
+   5    4419.b64d.724a    DYNAMIC     Gi1/0/25
+   5    4419.b64d.724e    DYNAMIC     Gi1/0/25
+   5    4419.b64d.725c    DYNAMIC     Gi1/0/25
+   5    4419.b64d.7270    DYNAMIC     Gi1/0/25
+   5    4419.b64d.7271    DYNAMIC     Gi1/0/25
+   5    4419.b64d.7281    DYNAMIC     Gi1/0/25
+   5    4419.b64d.7286    DYNAMIC     Gi1/0/25
+   5    4419.b64d.7288    DYNAMIC     Gi1/0/25
+   5    4419.b64d.7295    DYNAMIC     Gi1/0/25
+   5    4419.b64d.7298    DYNAMIC     Gi1/0/25
+   5    4419.b64d.729f    DYNAMIC     Gi1/0/25
+   5    4419.b71f.696c    DYNAMIC     Gi1/0/25
+   5    4419.b71f.696e    DYNAMIC     Gi1/0/23
+   5    4419.b71f.69a0    DYNAMIC     Gi1/0/25
+   5    4419.b71f.69b4    DYNAMIC     Gi1/0/25
+   5    c42f.9007.c839    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7f0    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7f1    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7f2    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7f3    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7f4    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7f6    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7fa    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7fe    DYNAMIC     Gi1/0/25
+   5    e430.220e.a7ff    DYNAMIC     Gi1/0/25
+   5    e430.220e.a800    DYNAMIC     Gi1/0/25
+   5    e430.220e.a803    DYNAMIC     Gi1/0/25
+   5    e430.220e.a804    DYNAMIC     Gi1/0/25
+   5    e430.220e.a955    DYNAMIC     Gi1/0/25
+   5    e430.220e.a95a    DYNAMIC     Gi1/0/25
+   5    e430.220e.aa90    DYNAMIC     Gi1/0/25
+   5    e430.220e.aa9f    DYNAMIC     Gi1/0/25
+   6    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+   8    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+   9    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+  10    0004.96a1.e7cc    DYNAMIC     Gi1/0/25
+  10    001b.2121.ca7d    DYNAMIC     Gi1/0/25
+  10    001e.c9e3.748c    DYNAMIC     Gi1/0/25
+  10    001e.c9e3.7490    DYNAMIC     Gi1/0/25
+  10    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+  10    4cd9.8f4e.3b71    DYNAMIC     Gi1/0/25
+  10    90b1.1c34.f812    DYNAMIC     Gi1/0/25
+  20    0004.96a1.e7cc    DYNAMIC     Gi1/0/25
+  20    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+  30    0004.96a1.e7cc    DYNAMIC     Gi1/0/25
+  30    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+ 777    0004.96a1.e7cc    DYNAMIC     Gi1/0/25
+ 777    0021.b709.eaac    DYNAMIC     Gi1/0/25
+ 777    0025.64f6.9221    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1b70    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1b7e    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1b9a    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1b9e    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1ba0    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1ba6    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1baa    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bac    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bb0    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bb8    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bbc    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bc4    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bc8    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bca    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bd2    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bd4    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bda    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1be6    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1be8    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bec    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bf0    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bf4    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bf6    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bf8    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bfa    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1bfc    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c00    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c02    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c04    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c06    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c0a    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c14    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c18    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c2a    DYNAMIC     Gi1/0/25
+ 777    003a.7dda.1c4c    DYNAMIC     Gi1/0/25
+ 777    0204.969a.7aae    DYNAMIC     Gi1/0/25
+ 777    0204.969a.7ab0    DYNAMIC     Gi1/0/25
+ 777    0204.969a.7ab1    DYNAMIC     Gi1/0/25
+ 777    0204.969a.7ab4    DYNAMIC     Gi1/0/25
+ 777    0204.969a.7ab6    DYNAMIC     Gi1/0/25
+ 777    0204.969e.7d81    DYNAMIC     Gi1/0/25
+ 777    0204.96a1.bbc7    DYNAMIC     Gi1/0/25
+ 777    0204.96ae.b88c    DYNAMIC     Gi1/0/25
+ 777    3cdf.1e8c.c600    DYNAMIC     Gi1/0/25
+ 777    8843.e137.5d45    DYNAMIC     Gi1/0/25
+ 777    8843.e137.5f35    DYNAMIC     Gi1/0/25
+ 777    8843.e137.64f6    DYNAMIC     Gi1/0/25
+ 777    8843.e137.6a16    DYNAMIC     Gi1/0/25
+ 777    8843.e137.6a85    DYNAMIC     Gi1/0/25
+ 777    8843.e137.6a89    DYNAMIC     Gi1/0/25
+ 777    8843.e137.6d8e    DYNAMIC     Gi1/0/25
+ 777    8843.e178.1dfe    DYNAMIC     Gi1/0/25
+ 777    8843.e178.1ecc    DYNAMIC     Gi1/0/25
+ 777    8843.e178.1f03    DYNAMIC     Gi1/0/25
+ 777    8843.e178.2098    DYNAMIC     Gi1/0/25
+ 777    8843.e178.22b5    DYNAMIC     Gi1/0/25
+ 777    8843.e178.234d    DYNAMIC     Gi1/0/25
+ 777    8843.e178.2394    DYNAMIC     Gi1/0/25
+ 777    bc30.5ba3.fb45    DYNAMIC     Gi1/0/25
+ 777    cc16.7edc.02cc    DYNAMIC     Gi1/0/25
+ 777    cc16.7edc.02e0    DYNAMIC     Gi1/0/25
+ 777    cc16.7edc.02e4    DYNAMIC     Gi1/0/25
+ 777    cc16.7edc.02ee    DYNAMIC     Gi1/0/25
+ 777    cc16.7edd.26d2    DYNAMIC     Gi1/0/25
+ 777    cc16.7edd.26f2    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.5e12    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.63ea    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6e8a    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6ea6    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f6c    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f7a    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f7e    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f80    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f8a    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f8c    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f90    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f92    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f94    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f98    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f9a    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6f9c    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fa4    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fa6    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6faa    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fac    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fb8    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fba    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fca    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fce    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fd4    DYNAMIC     Gi1/0/25
+ 777    cc16.7ef0.6fe0    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a676    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a74a    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a74e    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a752    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a754    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a756    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a75a    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a75c    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a75e    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a760    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a766    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a76e    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a770    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a774    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a776    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a778    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a780    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a782    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a786    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a78a    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a78e    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a790    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a792    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a794    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a798    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a79a    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a7a0    DYNAMIC     Gi1/0/25
+ 777    cc16.7efa.a7ba    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.986a    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9a5c    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b3a    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b48    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b50    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b52    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b58    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b62    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b68    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b6a    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b6e    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b70    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b74    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b88    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b8a    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b8c    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b90    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b96    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b98    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b9a    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b9c    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9b9e    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9ba2    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9ba6    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9ba8    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9baa    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bae    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bb0    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bb2    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bb4    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bb6    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bb8    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bbe    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bc0    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bc8    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bd4    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bd6    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bda    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bdc    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bde    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9be0    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9be8    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bec    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bf0    DYNAMIC     Gi1/0/25
+ 777    e00e.da99.9bf2    DYNAMIC     Gi1/0/25
+Total Mac Addresses for this criterion: 603
+E-3750G-87587#sh ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.6.0.1                0   0004.96a1.e7cc  ARPA   Vlan777
+Internet  10.6.0.52               -   3037.a6b2.6a41  ARPA   Vlan777
+E-3750G-87587#sh module
+                   ^
+% Invalid input detected at '^' marker.
+
+E-3750G-87587#sh etherchannel summary
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 0
+Number of aggregators:           0
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+
+E-3750G-87587#sh int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down     
+Vl777                          up             up       LAN Routers_Switches
+Gi1/0/1                        down           down     PC_Data & VoIP
+Gi1/0/2                        down           down     PC_Data & VoIP
+Gi1/0/3                        up             up       PC_Data & VoIP
+Gi1/0/4                        down           down     PC_Data & VoIP
+Gi1/0/5                        up             up       PC_Data & VoIP
+Gi1/0/6                        up             up       PC_Data & VoIP
+Gi1/0/7                        up             up       PC_Data & VoIP
+Gi1/0/8                        up             up       PC_Data & VoIP
+Gi1/0/9                        down           down     PC_Data & VoIP
+Gi1/0/10                       up             up       PC_Data & VoIP
+Gi1/0/11                       down           down     PC_Data & VoIP
+Gi1/0/12                       up             up       PC_Data & VoIP
+Gi1/0/13                       up             up       PC_Data & VoIP
+Gi1/0/14                       up             up       PC_Data & VoIP
+Gi1/0/15                       up             up       PC_Data & VoIP
+Gi1/0/16                       up             up       PC_Data & VoIP
+Gi1/0/17                       up             up       PC_Data & VoIP
+Gi1/0/18                       down           down     PC_Data & VoIP
+Gi1/0/19                       down           down     PC_Data & VoIP
+Gi1/0/20                       up             up       PC_Data & VoIP
+Gi1/0/21                       up             up       Security Camera
+Gi1/0/22                       up             up       Security Camera
+Gi1/0/23                       up             up       Security Camera
+Gi1/0/24                       up             up       Security Camera
+Gi1/0/25                       up             up       Uplink to IDFG
+Gi1/0/26                       admin down     down     
+Gi1/0/27                       admin down     down     
+Gi1/0/28                       admin down     down     
+E-3750G-87587#sh ip pim neighbor
+PIM Neighbor Table
+Mode: B - Bidir Capable, DR - Designated Router, N - Default DR Priority,
+      P - Proxy Capable, S - State Refresh Capable
+Neighbor          Interface                Uptime/Expires    Ver   DR
+Address                                                            Prio/Mode
+E-3750G-87587#sh ip mroute
+IP Multicast Forwarding is not enabled.
+IP Multicast Routing Table
+Flags: D - Dense, S - Sparse, B - Bidir Group, s - SSM Group, C - Connected,
+       L - Local, P - Pruned, R - RP-bit set, F - Register flag,
+       T - SPT-bit set, J - Join SPT, M - MSDP created entry,
+       X - Proxy Join Timer Running, A - Candidate for MSDP Advertisement,
+       U - URD, I - Received Source Specific Host Report, 
+       Z - Multicast Tunnel, z - MDT-data group sender, 
+       Y - Joined MDT-data group, y - Sending to MDT-data group
+       V - RD & Vector, v - Vector
+Outgoing interface flags: H - Hardware switched, A - Assert winner
+ Timers: Uptime/Expires
+ Interface state: Interface, Next-Hop or VCD, State/Mode
+
+E-3750G-87587#sh int trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Gi1/0/25    on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gi1/0/25    1-4094
+
+Port        Vlans allowed and active in management domain
+Gi1/0/25    1,3,5-6,8-10,20,22,30,50,172,777-778
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gi1/0/25    1,3,5-6,8-10,20,22,30,50,172,777-778
+E-3750G-87587#sh spanning-tree
+
+VLAN0001
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24577
+             Address     3cdf.1e8c.c600
+             Cost        20004
+             Port        25 (GigabitEthernet1/0/25)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Root FWD 4         128.25   P2p 
+
+
+
+VLAN0003
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32771
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32771  (priority 32768 sys-id-ext 3)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0005
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32773
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32773  (priority 32768 sys-id-ext 5)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/21            Desg FWD 19        128.21   P2p Edge 
+Gi1/0/22            Desg FWD 19        128.22   P2p Edge 
+Gi1/0/23            Desg FWD 19        128.23   P2p Edge 
+Gi1/0/24            Desg FWD 19        128.24   P2p Edge 
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0006
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32774
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32774  (priority 32768 sys-id-ext 6)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0008
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32776
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32776  (priority 32768 sys-id-ext 8)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0009
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32777
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32777  (priority 32768 sys-id-ext 9)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0010
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32778
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32778  (priority 32768 sys-id-ext 10)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0020
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32788
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32788  (priority 32768 sys-id-ext 20)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0022
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32790
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32790  (priority 32768 sys-id-ext 22)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0030
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32798
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32798  (priority 32768 sys-id-ext 30)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0050
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32818
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32818  (priority 32768 sys-id-ext 50)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/3             Desg FWD 100       128.3    P2p Edge 
+Gi1/0/5             Desg FWD 19        128.5    P2p Edge 
+Gi1/0/6             Desg FWD 19        128.6    P2p Edge 
+Gi1/0/7             Desg FWD 19        128.7    P2p Edge 
+Gi1/0/8             Desg FWD 19        128.8    P2p Edge 
+Gi1/0/10            Desg FWD 100       128.10   P2p Edge 
+Gi1/0/12            Desg FWD 19        128.12   P2p Edge 
+Gi1/0/13            Desg FWD 19        128.13   P2p Edge 
+Gi1/0/14            Desg FWD 19        128.14   P2p Edge 
+Gi1/0/15            Desg FWD 19        128.15   P2p Edge 
+Gi1/0/16            Desg FWD 19        128.16   P2p Edge 
+Gi1/0/17            Desg FWD 19        128.17   P2p Edge 
+Gi1/0/20            Desg FWD 4         128.20   P2p Edge 
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0172
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32940
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32940  (priority 32768 sys-id-ext 172)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/3             Desg FWD 100       128.3    P2p Edge 
+Gi1/0/5             Desg FWD 19        128.5    P2p Edge 
+Gi1/0/6             Desg FWD 19        128.6    P2p Edge 
+Gi1/0/7             Desg FWD 19        128.7    P2p Edge 
+Gi1/0/8             Desg FWD 19        128.8    P2p Edge 
+Gi1/0/10            Desg FWD 100       128.10   P2p Edge 
+Gi1/0/12            Desg FWD 19        128.12   P2p Edge 
+Gi1/0/13            Desg FWD 19        128.13   P2p Edge 
+Gi1/0/14            Desg FWD 19        128.14   P2p Edge 
+Gi1/0/15            Desg FWD 19        128.15   P2p Edge 
+Gi1/0/16            Desg FWD 19        128.16   P2p Edge 
+Gi1/0/17            Desg FWD 19        128.17   P2p Edge 
+Gi1/0/20            Desg FWD 4         128.20   P2p Edge 
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0777
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    33545
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    33545  (priority 32768 sys-id-ext 777)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+
+VLAN0778
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    33546
+             Address     3037.a6b2.6a00
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    33546  (priority 32768 sys-id-ext 778)
+             Address     3037.a6b2.6a00
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/25            Desg FWD 4         128.25   P2p 
+
+
+E-3750G-87587#sh ip dhcp binding
+Bindings from all pools not associated with VRF:
+IP address          Client-ID/              Lease expiration        Type
+                    Hardware address/
+                    User name
+E-3750G-87587#sh ntp associations
+
+      address         ref clock     st  when  poll reach  delay  offset    disp
+*~10.200.0.1       10.200.10.33      4    29    64  377     1.2   -0.24     0.5
+ * master (synced), # master (unsynced), + selected, - candidate, ~ configured
+E-3750G-87587#sh clock
+16:07:49.021 CDT Thu Oct 22 2020
+E-3750G-87587#wr mem
+Building configuration...
+[OK]
+E-3750G-87587#exit

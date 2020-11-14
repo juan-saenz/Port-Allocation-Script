@@ -1,0 +1,4263 @@
+﻿UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED
+Memorial-4507R-88018>en
+password: 
+Memorial-4507R-88018#ter len 0
+Memorial-4507R-88018#sh ver
+Cisco IOS Software, Catalyst 4500 L3 Switch  Software (cat4500e-ENTSERVICESK9-M), Version 15.2(2)E2, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2015 by Cisco Systems, Inc.
+Compiled Wed 25-Mar-15 07:04 by prod_rel_team
+
+ROM: 12.2(44r)SG5
+Memorial-4507R-88018 uptime is 51 weeks, 23 hours, 13 minutes
+Uptime for this control processor is 51 weeks, 22 hours, 15 minutes
+System returned to ROM by power-on
+System restarted at 17:24:11 CDT Wed Oct 30 2019
+System image file is "bootflash:cat4500e-entservicesk9-mz.152-2.E2.bin"
+Darkside Revision 4, Jawa Revision 18, Tatooine Revision 141, Forerunner Revision 1.83
+
+Last reload reason: power-on
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+cisco WS-C4507R-E (MPC8548) processor (revision 6) with 1048576K bytes of memory.
+Processor board ID FOX1406GNMC
+MPC8548 CPU at 1.33GHz, Supervisor 6-E
+Last reset from PowerUp
+16 Virtual Ethernet interfaces
+208 Gigabit Ethernet interfaces
+8 Ten Gigabit Ethernet interfaces
+511K bytes of non-volatile configuration memory.
+
+Configuration register is 0x2102
+
+Memorial-4507R-88018#sh inventory
+NAME: "Switch System", DESCR: "Cisco Systems, Inc. WS-C4507R-E 7 slot switch "
+PID: WS-C4507R-E       , VID: V01  , SN: FOX1406GNMC
+
+NAME: "Clock Module", DESCR: "Clock Module"
+PID: WS-X4K-CLOCK-E    , VID: V01  , SN: JAE14140H98
+
+NAME: "Mux Buffer 1 ", DESCR: "Mux Buffers for Redundancy Logic"
+PID: WS-X4590-E        , VID: V01  , SN: JAE14130AW9
+
+NAME: "Mux Buffer 2 ", DESCR: "Mux Buffers for Redundancy Logic"
+PID: WS-X4590-E        , VID: V01  , SN: JAE14130AYA
+
+NAME: "Mux Buffer 5 ", DESCR: "Mux Buffers for Redundancy Logic"
+PID: WS-X4590-E        , VID: V01  , SN: JAE14100I51
+
+NAME: "Mux Buffer 6 ", DESCR: "Mux Buffers for Redundancy Logic"
+PID: WS-X4590-E        , VID: V01  , SN: JAE1413082Y
+
+NAME: "Mux Buffer 7 ", DESCR: "Mux Buffers for Redundancy Logic"
+PID: WS-X4590-E        , VID: V01  , SN: JAE14140304
+
+NAME: "Linecard(slot 1)", DESCR: "10/100/1000BaseT (RJ45) with 48 10/100/1000 baseT ports"
+PID: WS-X4548-GB-RJ45  , VID:      , SN: JAE08041MAC
+
+NAME: "Linecard(slot 2)", DESCR: "10GE (X2), 1000BaseX (SFP) with 6 10GE X2 ports"
+PID: WS-X4606-X2-E     , VID: V03  , SN: JAE1410055M
+
+NAME: "TenGigabitEthernet2/1", DESCR: "10Gbase-LX4"
+PID: X2-10GB-LX4       , VID: V04  , SN: HCT14051213
+
+NAME: "TenGigabitEthernet2/2", DESCR: "10Gbase-LX4"
+PID: X2-10GB-LX4       , VID: V04  , SN: HCT14060013
+
+NAME: "Converter 2/4", DESCR: "Converter Module"
+PID: CVR-X2-SFP        , VID: V02  , SN: FDO141215NM
+
+NAME: "GigabitEthernet2/13", DESCR: "1000BaseSX"
+PID: GLC-SX-MM         , VID: V02  , SN: ZZ130313285
+
+NAME: "GigabitEthernet2/14", DESCR: "1000BaseSX"
+PID: GLC-SX-MM         , VID: V02  , SN: ZZ130313289
+
+NAME: "Converter 2/5", DESCR: "Converter Module"
+PID: CVR-X2-SFP        , VID: V02  , SN: FDO1412151P
+
+NAME: "Converter 2/6", DESCR: "Converter Module"
+PID: CVR-X2-SFP        , VID: V02  , SN: FDO14100BLZ
+
+NAME: "Supervisor(slot 3)", DESCR: "Supervisor 6-E 10GE (X2), 1000BaseX (SFP) with 2 10GE X2 ports"
+PID: WS-X45-SUP6-E     , VID: V07  , SN: JAE14140FXK
+
+NAME: "TenGigabitEthernet3/1", DESCR: "10Gbase-SR"
+PID: X2-10GB-SR        , VID: V02  , SN: EA140430165
+
+NAME: "TenGigabitEthernet3/2", DESCR: "10Gbase-LR"
+PID: X2-10GB-LR        , VID: V05  , SN: FNS17030JG3
+
+NAME: "Linecard(slot 5)", DESCR: "10/100/1000BaseT (RJ45) with 48 10/100/1000 baseT ports"
+PID: WS-X4548-GB-RJ45  , VID: V06  , SN: JAE140804KR
+
+NAME: "Linecard(slot 6)", DESCR: "10/100/1000BaseT (RJ45) with 48 10/100/1000 baseT ports"
+PID: WS-X4548-GB-RJ45  , VID: V03  , SN: JAE1004UNQP
+
+NAME: "Linecard(slot 7)", DESCR: "10/100/1000BaseT (RJ45)V with 48 10/100/1000 baseT voice power ports (Cisco/IEEE)"
+PID: WS-X4548-RJ45V+   , VID: V03  , SN: JAE17090201
+
+NAME: "FanTray 1", DESCR: "FanTray"
+PID: WS-X4597-E        , VID: V02  , SN: FOX1406G6AH
+
+NAME: "Power Supply 1", DESCR: "Power Supply ( AC 4200W )"
+PID: PWR-C45-4200ACV   , VID: V04  , SN: AZS14110ALK
+
+NAME: "Power Supply 2", DESCR: "Power Supply ( AC 4200W )"
+PID: PWR-C45-4200ACV   , VID: V04  , SN: AZS14110ALC
+
+
+Memorial-4507R-88018#sh switch
+                         ^
+% Invalid input detected at '^' marker.
+
+Memorial-4507R-88018#sh run
+Building configuration...
+
+Current configuration : 42155 bytes
+!
+! Last configuration change at 09:07:46 CDT Thu Oct 1 2020 by jjgarza
+! NVRAM config last updated at 14:34:28 CST Tue Jan 28 2020 by jcbeltran
+!
+version 15.2
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+service compress-config
+no service dhcp
+!
+hostname Memorial-4507R-88018
+!
+boot-start-marker
+boot system flash bootflash:cat4500e-entservicesk9-mz.152-2.E2.bin
+boot-end-marker
+!
+!
+vrf definition mgmtVrf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+enable secret 5 $1$5KP6$cWsRuyFd6uYrxSs3jx5se/
+!
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ enable
+aaa authentication enable default group tacacs+ enable
+aaa authentication dot1x default group radius
+aaa authorization network default group radius 
+aaa accounting dot1x default start-stop group radius
+!
+!
+!
+!
+!
+aaa server radius dynamic-author
+ client 10.200.10.221 server-key 7 15373F3F3B1E0A0317001D032122323C32737A6A7660
+ client 10.200.10.222 server-key 7 1432263833300B0C1B1B1B14103623293024756B7D67
+ auth-type any
+!
+aaa session-id common
+clock timezone CST -6 0
+clock summer-time CDT recurring
+hw-module module 2 port-group 2 select gigabitethernet
+!
+!
+!
+!
+!
+udld aggressive
+
+!
+ip multicast-routing 
+ip domain-name wisd.us
+ip name-server 10.200.10.33
+ip dhcp excluded-address 10.111.0.1 10.111.0.255
+ip dhcp excluded-address 172.16.27.1
+ip dhcp excluded-address 172.16.27.2
+!
+ip dhcp pool Voice
+ network 172.16.27.0 255.255.255.0
+ default-router 172.16.27.1 
+ domain-name wisd.us
+ option 150 ip 172.16.10.10 172.16.10.11 
+ lease 60
+!
+ip dhcp pool **LWAPP-Mgmt**
+ network 10.111.0.0 255.255.254.0
+ default-router 10.111.0.1 
+ option 43 hex f104.0ac8.102d
+ lease 5
+!
+!
+cluster run
+!
+!
+!
+dot1x system-auth-control
+dot1x critical eapol
+errdisable recovery cause link-flap
+errdisable recovery interval 60
+power redundancy-mode combined
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree extend system-id
+spanning-tree vlan 1,3,5-6,8-10,20,50,55,172,777 priority 24576
+!
+redundancy
+ mode rpr
+ main-cpu
+  auto-sync standard
+!
+vlan internal allocation policy ascending
+lldp run
+!
+ip ssh version 2
+!
+class-map match-all AutoQos-VoIP-Control-Dscp26
+ match dscp af31 
+class-map match-all AutoQos-VoIP-Control-Dscp24
+ match dscp cs3 
+class-map match-all AutoQos-VoIP-Bearer-Cos
+ match cos  5 
+class-map match-all AutoQos-VoIP-Control-QosGroup24
+ match qos-group 24
+class-map match-all AutoQos-VoIP-Control-QosGroup26
+ match qos-group 26
+class-map match-any http-hacks
+class-map match-all AutoQos-VoIP-Bearer-QosGroup
+ match qos-group 46
+class-map match-all AutoQos-VoIP-Bearer-Dscp
+ match dscp ef 
+class-map match-all AutoQos-VoIP-Control-Cos
+ match cos  3 
+!
+policy-map AutoQos-VoIP-Input-Dscp-Policy
+ class AutoQos-VoIP-Bearer-Dscp
+  set qos-group 46
+ class AutoQos-VoIP-Control-Dscp26
+  set qos-group 26
+ class AutoQos-VoIP-Control-Dscp24
+  set qos-group 24
+policy-map autoqos-voip-policy
+ class class-default
+    dbl
+policy-map AutoQos-VoIP-Output-Policy
+ class AutoQos-VoIP-Bearer-QosGroup
+  set dscp ef
+  set cos 5
+  priority
+  police cir percent 33
+ class AutoQos-VoIP-Control-QosGroup26
+  set dscp af31
+  set cos 3
+  bandwidth remaining percent 5 
+ class AutoQos-VoIP-Control-QosGroup24
+  set dscp cs3
+  set cos 3
+  bandwidth remaining percent 5 
+ class class-default
+    dbl
+policy-map AutoQos-VoIP-Input-Cos-Policy
+ class AutoQos-VoIP-Bearer-Cos
+  set qos-group 46
+ class AutoQos-VoIP-Control-Cos
+  set qos-group 24
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet1
+ vrf forwarding mgmtVrf
+ no ip address
+ speed auto
+ duplex auto
+!
+interface GigabitEthernet1/1
+ description Printer
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/2
+ description Printer
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/3
+ description Printer
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/4
+ description Printer
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/5
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/6
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/7
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/8
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/9
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/10
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/11
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/12
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/13
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/14
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/15
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/16
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/17
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/18
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/19
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/20
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/21
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/22
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/23
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/24
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/25
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/26
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/27
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/28
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/29
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/30
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/31
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/32
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/33
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/34
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/35
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/36
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/37
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/38
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/39
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/40
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/41
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/42
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/43
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/44
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/45
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/46
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/47
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/48
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface TenGigabitEthernet2/1
+ description IDF:A
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface TenGigabitEthernet2/2
+ description IDF:B
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface TenGigabitEthernet2/3
+ shutdown
+!
+interface TenGigabitEthernet2/4
+ shutdown
+!
+interface TenGigabitEthernet2/5
+ shutdown
+!
+interface TenGigabitEthernet2/6
+ shutdown
+!
+interface GigabitEthernet2/7
+ shutdown
+!
+interface GigabitEthernet2/8
+ shutdown
+!
+interface GigabitEthernet2/9
+ shutdown
+!
+interface GigabitEthernet2/10
+ shutdown
+!
+interface GigabitEthernet2/11
+ shutdown
+!
+interface GigabitEthernet2/12
+ shutdown
+!
+interface GigabitEthernet2/13
+ description IDF:C
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet2/14
+ description IDF:D
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet2/15
+ shutdown
+!
+interface GigabitEthernet2/16
+ shutdown
+!
+interface GigabitEthernet2/17
+ shutdown
+!
+interface GigabitEthernet2/18
+ shutdown
+!
+interface TenGigabitEthernet3/1
+ description NOC_6513E;Ten12/3;EMAN;23-24
+ switchport mode trunk
+!
+interface TenGigabitEthernet3/2
+ description NOC_6513W;Ten12/3;WMAN;23-24
+ no switchport
+ ip address 10.249.0.90 255.255.255.252
+ ip access-group Restriction_OUT out
+ ip directed-broadcast 105
+ ip pim sparse-mode
+!
+interface GigabitEthernet3/3
+ shutdown
+!
+interface GigabitEthernet3/4
+ shutdown
+!
+interface GigabitEthernet3/5
+ shutdown
+!
+interface GigabitEthernet3/6
+ shutdown
+!
+interface GigabitEthernet5/1
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/2
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/3
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/4
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/5
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/6
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/7
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/8
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/9
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/10
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/11
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/12
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/13
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/14
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/15
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/16
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/17
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/18
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/19
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/20
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/21
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/22
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/23
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/24
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/25
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/26
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/27
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/28
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/29
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/30
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/31
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/32
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/33
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/34
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/35
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/36
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/37
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/38
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/39
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/40
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/41
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/42
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/43
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/44
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/45
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/46
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/47
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet5/48
+ description Server
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/1
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/2
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/3
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/4
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/5
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/6
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/7
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/8
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/9
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/10
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/11
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/12
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/13
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/14
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/15
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/16
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/17
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/18
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/19
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/20
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/21
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/22
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/23
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/24
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/25
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/26
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/27
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/28
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/29
+ description SERVER VLAN
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/30
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/31
+ description SERVER VLAN
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/32
+ description SERVER VLAN
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/33
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/34
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/35
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/36
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/37
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/38
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/39
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/40
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/41
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/42
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/43
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/44
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/45
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/46
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet6/47
+ description VG202
+ switchport access vlan 172
+ switchport mode access
+!
+interface GigabitEthernet6/48
+ description UPS VLAN
+ switchport access vlan 6
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/1
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/2
+ description PC_Data 
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/3
+ description PC_Data 
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/4
+ description PC_Data 
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/5
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ auto qos voip cisco-phone 
+ qos trust device cisco-phone
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQos-VoIP-Input-Cos-Policy
+ service-policy output AutoQos-VoIP-Output-Policy
+!
+interface GigabitEthernet7/6
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ auto qos voip cisco-phone 
+ qos trust device cisco-phone
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQos-VoIP-Input-Cos-Policy
+ service-policy output AutoQos-VoIP-Output-Policy
+!
+interface GigabitEthernet7/7
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ auto qos voip cisco-phone 
+ qos trust device cisco-phone
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQos-VoIP-Input-Cos-Policy
+ service-policy output AutoQos-VoIP-Output-Policy
+!
+interface GigabitEthernet7/8
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ auto qos voip cisco-phone 
+ qos trust device cisco-phone
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQos-VoIP-Input-Cos-Policy
+ service-policy output AutoQos-VoIP-Output-Policy
+!
+interface GigabitEthernet7/9
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ auto qos voip cisco-phone 
+ qos trust device cisco-phone
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQos-VoIP-Input-Cos-Policy
+ service-policy output AutoQos-VoIP-Output-Policy
+!
+interface GigabitEthernet7/10
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ auto qos voip cisco-phone 
+ qos trust device cisco-phone
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQos-VoIP-Input-Cos-Policy
+ service-policy output AutoQos-VoIP-Output-Policy
+!
+interface GigabitEthernet7/11
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/12
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/13
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/14
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/15
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/16
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/17
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/18
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/19
+ description Access Control
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/20
+ description Access SIP Station
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/21
+ description Access Control
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/22
+ description Access Master Station
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/23
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/24
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/25
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/26
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/27
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ auto qos voip cisco-phone 
+ qos trust device cisco-phone
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQos-VoIP-Input-Cos-Policy
+ service-policy output AutoQos-VoIP-Output-Policy
+!
+interface GigabitEthernet7/28
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/29
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/30
+ description Security
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/31
+ description Security
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/32
+ description Security
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/33
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/34
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/35
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/36
+ description **CAFE**
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet7/37
+ description TimeClock
+ switchport access vlan 30
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet7/38
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/39
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/40
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/41
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/42
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/43
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/44
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/45
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/46
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/47
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet7/48
+ description *LWAPP*
+ switchport access vlan 777
+ switchport mode access
+ spanning-tree portfast
+!
+interface Vlan1
+ no ip address
+ ip pim sparse-mode
+ shutdown
+!
+interface Vlan3
+ description Printers
+ no ip address
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan5
+ description Security Camera
+ no ip address
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan6
+ description UPS
+ no ip address
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan8
+ description Projectors
+ no ip address
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan9
+ description Video
+ no ip address
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+ ip pim sparse-mode
+!
+interface Vlan10
+ description Servers
+ no ip address
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan20
+ description Management
+ no ip address
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan22
+ description printer
+ no ip address
+ ip helper-address 10.111.10.15
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan30
+ description miscellaneous
+ no ip address
+ ip helper-address 10.111.10.15
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan50
+ description Students
+ no ip address
+ ip helper-address 10.111.10.15
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+ ip directed-broadcast 105
+ ip pim sparse-mode
+!
+interface Vlan120
+ no ip address
+ shutdown
+!
+interface Vlan172
+ description Voice
+ no ip address
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ no ip redirects
+ no ip unreachables
+!
+interface Vlan777
+ description LAN
+ ip address 10.111.0.254 255.255.254.0
+ ip helper-address 10.200.10.221
+ ip helper-address 10.200.10.222
+ ip helper-address 10.200.10.223
+ no ip redirects
+ no ip unreachables
+ ip pim sparse-mode
+!
+interface Vlan778
+ no ip address
+ shutdown
+!
+interface Vlan779
+ no ip address
+ shutdown
+!
+!
+router eigrp 1
+ network 10.111.0.0 0.0.1.255
+ network 10.111.3.0 0.0.0.255
+ network 10.111.5.0 0.0.0.255
+ network 10.111.6.0 0.0.0.255
+ network 10.111.9.0 0.0.0.255
+ network 10.111.10.0 0.0.0.255
+ network 10.111.20.0 0.0.0.255
+ network 10.111.30.0 0.0.1.255
+ network 10.111.32.0 0.0.7.255
+ network 10.111.50.0 0.0.1.255
+ network 10.111.60.0 0.0.1.255
+ network 10.111.80.0 0.0.15.255
+ network 10.249.0.0 0.0.0.255
+ network 10.250.0.0 0.0.0.255
+ network 172.16.27.0 0.0.0.255
+ no eigrp log-neighbor-changes
+!
+no ip http server
+no ip http secure-server
+ip forward-protocol nd
+ip forward-protocol udp discard
+ip pim rp-address 2.1.1.1
+!
+ip route 0.0.0.0 0.0.0.0 10.111.0.1
+ip tacacs source-interface Vlan777
+!
+!
+ip radius source-interface Vlan777 
+ip sla enable reaction-alerts
+access-list 105 permit udp host 10.200.10.150 any eq discard
+access-list 105 permit udp host 10.200.10.105 any eq discard
+!
+!
+snmp-server group V3Group v3 auth read V3Read write V3Write 
+snmp-server view V3Read iso included
+snmp-server view V3Write iso included
+snmp-server community wisdCommStr RO
+snmp-server community defconSeven RW
+snmp-server location MDF
+snmp-server contact Help Desk x6956
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps config
+snmp-server enable traps vlan-membership
+tacacs-server host 10.200.10.18 timeout 5
+tacacs-server directed-request
+tacacs-server key 7 000C400A080B1C561D2D48
+radius-server attribute 32 include-in-access-req format %h
+radius-server attribute nas-port format c
+radius-server attribute list cisco-av-pair
+!
+radius-server dead-criteria time 10 tries 3
+radius-server host 10.200.10.228 auth-port 1812 acct-port 1813 key 7 002127353B6F2A213012646F3B3C2128212E2F360F1F
+radius-server host 10.200.10.229 auth-port 1812 acct-port 1813 key 7 123C31242D3F2D2315180C090110062C34332033736D
+radius-server host 10.200.10.221 auth-port 1812 acct-port 1813 key 7 03216F38393B006B713A312425372F33370F08160D07
+radius-server host 10.200.10.222 auth-port 1812 acct-port 1813 key 7 03216F38393B006B713A312425372F33370F08160D07
+radius-server host 10.200.10.223 auth-port 1812 acct-port 1813 key 7 123C31242D3F2D2315180C090110062C34332033736D
+radius-server timeout 20
+radius-server deadtime 5
+!
+!
+!
+banner motd ^CUNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED^C
+!
+line con 0
+ exec-timeout 4 59
+ stopbits 1
+line vty 0 4
+ exec-timeout 4 59
+ logging synchronous
+ length 0
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+ntp server 10.200.0.1
+!
+end
+
+Memorial-4507R-88018#sh vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Te2/3, Te2/4, Te2/5, Te2/6, Gi2/7, Gi2/8, Gi2/9, Gi2/10, Gi2/11
+                                                Gi2/12, Gi2/15, Gi2/16, Gi2/17, Gi2/18, Gi3/3, Gi3/4, Gi3/5, Gi3/6
+3    Printers                         active    Gi1/1, Gi1/2, Gi1/3, Gi1/4, Gi5/1, Gi5/2, Gi5/3, Gi5/4, Gi6/1
+                                                Gi6/2, Gi6/3, Gi6/4, Gi7/1
+5    Security                         active    Gi7/30, Gi7/31, Gi7/32, Gi7/33, Gi7/34, Gi7/35
+6    UPS                              active    Gi6/48
+8    Projectors                       active    
+9    Video                            active    
+10   Servers                          active    Gi5/48, Gi6/29, Gi6/31, Gi6/32
+20   Management                       active    Gi7/19, Gi7/20, Gi7/21, Gi7/22
+30   misc                             active    Gi7/37
+50   PC_Data                          active    Gi1/5, Gi1/6, Gi1/7, Gi1/8, Gi1/9, Gi1/10, Gi1/11, Gi1/12, Gi1/13
+                                                Gi1/14, Gi1/15, Gi1/16, Gi1/17, Gi1/18, Gi1/19, Gi1/20, Gi1/21
+                                                Gi1/22, Gi1/23, Gi1/24, Gi1/25, Gi1/26, Gi1/27, Gi1/28, Gi1/29
+                                                Gi1/30, Gi1/31, Gi1/32, Gi1/33, Gi1/34, Gi1/35, Gi1/36, Gi1/37
+                                                Gi1/38, Gi1/39, Gi1/40, Gi1/41, Gi1/42, Gi1/43, Gi1/44, Gi1/45
+                                                Gi1/46, Gi1/47, Gi1/48, Gi5/5, Gi5/6, Gi5/7, Gi5/8, Gi5/9, Gi5/10
+                                                Gi5/11, Gi5/12, Gi5/13, Gi5/14, Gi5/15, Gi5/16, Gi5/17, Gi5/18
+                                                Gi5/19, Gi5/20, Gi5/21, Gi5/22, Gi5/23, Gi5/24, Gi5/25, Gi5/26
+                                                Gi5/27, Gi5/28, Gi5/29, Gi5/30, Gi5/31, Gi5/32, Gi5/33, Gi5/34
+                                                Gi5/35, Gi5/36, Gi5/37, Gi5/38, Gi5/39, Gi5/40, Gi5/41, Gi5/42
+                                                Gi5/43, Gi5/44, Gi5/45, Gi5/46, Gi5/47, Gi6/5, Gi6/6, Gi6/7, Gi6/8
+                                                Gi6/9, Gi6/10, Gi6/11, Gi6/12, Gi6/13, Gi6/14, Gi6/15, Gi6/16
+                                                Gi6/17, Gi6/18, Gi6/19, Gi6/20, Gi6/21, Gi6/22, Gi6/23, Gi6/24
+                                                Gi6/25, Gi6/26, Gi6/27, Gi6/28, Gi6/30, Gi6/33, Gi6/34, Gi6/35
+                                                Gi6/36, Gi6/37, Gi6/38, Gi6/39, Gi6/40, Gi6/41, Gi6/42, Gi6/43
+                                                Gi6/44, Gi6/45, Gi6/46, Gi7/2, Gi7/3, Gi7/4, Gi7/5, Gi7/6, Gi7/7
+                                                Gi7/8, Gi7/9, Gi7/10, Gi7/11, Gi7/12, Gi7/13, Gi7/14, Gi7/15
+                                                Gi7/16, Gi7/17, Gi7/18, Gi7/23, Gi7/24, Gi7/25, Gi7/26, Gi7/27
+                                                Gi7/28, Gi7/29
+172  Voice                            active    Gi6/47, Gi7/5, Gi7/6, Gi7/7, Gi7/8, Gi7/9, Gi7/10, Gi7/27
+777  LAN                              active    Gi7/38, Gi7/39, Gi7/40, Gi7/41, Gi7/42, Gi7/43, Gi7/44, Gi7/45
+                                                Gi7/46, Gi7/47, Gi7/48
+1002 fddi-default                     act/unsup 
+1003 trcrf-default                    act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trbrf-default                    act/unsup 
+Memorial-4507R-88018#sh vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 2
+VTP Domain Name                 : Memorial
+VTP Pruning Mode                : Enabled
+VTP Traps Generation            : Disabled
+Device ID                       : 68ef.bdbf.de40
+Configuration last modified by 10.111.3.1 at 5-22-19 13:30:45
+Local updater ID is 10.111.0.254 on interface Vl777 (lowest numbered VLAN interface found)
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 16
+Configuration Revision            : 36
+MD5 digest                        : 0x95 0x99 0x36 0x25 0x15 0x9F 0x00 0x36 
+                                    0xD7 0x99 0x71 0x30 0xBE 0x55 0x79 0x63 
+Memorial-4507R-88018#sh vtp pass
+The VTP password is not configured.
+Memorial-4507R-88018#sh ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+FastEthernet1          unassigned      YES unset  down                  down    
+GigabitEthernet1/1     unassigned      YES unset  up                    up      
+GigabitEthernet1/2     unassigned      YES unset  down                  down    
+GigabitEthernet1/3     unassigned      YES unset  down                  down    
+GigabitEthernet1/4     unassigned      YES unset  down                  down    
+GigabitEthernet1/5     unassigned      YES unset  down                  down    
+GigabitEthernet1/6     unassigned      YES unset  down                  down    
+GigabitEthernet1/7     unassigned      YES unset  down                  down    
+GigabitEthernet1/8     unassigned      YES unset  down                  down    
+GigabitEthernet1/9     unassigned      YES unset  down                  down    
+GigabitEthernet1/10    unassigned      YES unset  down                  down    
+GigabitEthernet1/11    unassigned      YES unset  down                  down    
+GigabitEthernet1/12    unassigned      YES unset  down                  down    
+GigabitEthernet1/13    unassigned      YES unset  down                  down    
+GigabitEthernet1/14    unassigned      YES unset  down                  down    
+GigabitEthernet1/15    unassigned      YES unset  down                  down    
+GigabitEthernet1/16    unassigned      YES unset  down                  down    
+GigabitEthernet1/17    unassigned      YES unset  down                  down    
+GigabitEthernet1/18    unassigned      YES unset  down                  down    
+GigabitEthernet1/19    unassigned      YES unset  down                  down    
+GigabitEthernet1/20    unassigned      YES unset  down                  down    
+GigabitEthernet1/21    unassigned      YES unset  down                  down    
+GigabitEthernet1/22    unassigned      YES unset  down                  down    
+GigabitEthernet1/23    unassigned      YES unset  down                  down    
+GigabitEthernet1/24    unassigned      YES unset  down                  down    
+GigabitEthernet1/25    unassigned      YES unset  down                  down    
+GigabitEthernet1/26    unassigned      YES unset  down                  down    
+GigabitEthernet1/27    unassigned      YES unset  down                  down    
+GigabitEthernet1/28    unassigned      YES unset  down                  down    
+GigabitEthernet1/29    unassigned      YES unset  down                  down    
+GigabitEthernet1/30    unassigned      YES unset  down                  down    
+GigabitEthernet1/31    unassigned      YES unset  down                  down    
+GigabitEthernet1/32    unassigned      YES unset  down                  down    
+GigabitEthernet1/33    unassigned      YES unset  down                  down    
+GigabitEthernet1/34    unassigned      YES unset  down                  down    
+GigabitEthernet1/35    unassigned      YES unset  down                  down    
+GigabitEthernet1/36    unassigned      YES unset  down                  down    
+GigabitEthernet1/37    unassigned      YES unset  down                  down    
+GigabitEthernet1/38    unassigned      YES unset  down                  down    
+GigabitEthernet1/39    unassigned      YES unset  down                  down    
+GigabitEthernet1/40    unassigned      YES unset  down                  down    
+GigabitEthernet1/41    unassigned      YES unset  down                  down    
+GigabitEthernet1/42    unassigned      YES unset  down                  down    
+GigabitEthernet1/43    unassigned      YES unset  down                  down    
+GigabitEthernet1/44    unassigned      YES unset  down                  down    
+GigabitEthernet1/45    unassigned      YES unset  down                  down    
+GigabitEthernet1/46    unassigned      YES unset  down                  down    
+GigabitEthernet1/47    unassigned      YES unset  down                  down    
+GigabitEthernet1/48    unassigned      YES unset  down                  down    
+TenGigabitEthernet2/1  unassigned      YES unset  up                    up      
+TenGigabitEthernet2/2  unassigned      YES unset  up                    up      
+TenGigabitEthernet2/3  unassigned      YES unset  administratively down down    
+TenGigabitEthernet2/4  unassigned      YES unset  administratively down down    
+TenGigabitEthernet2/5  unassigned      YES unset  administratively down down    
+TenGigabitEthernet2/6  unassigned      YES unset  administratively down down    
+GigabitEthernet2/7     unassigned      YES unset  administratively down down    
+GigabitEthernet2/8     unassigned      YES unset  administratively down down    
+GigabitEthernet2/9     unassigned      YES unset  administratively down down    
+GigabitEthernet2/10    unassigned      YES unset  administratively down down    
+GigabitEthernet2/11    unassigned      YES unset  administratively down down    
+GigabitEthernet2/12    unassigned      YES unset  administratively down down    
+GigabitEthernet2/13    unassigned      YES unset  up                    up      
+GigabitEthernet2/14    unassigned      YES unset  up                    up      
+GigabitEthernet2/15    unassigned      YES unset  administratively down down    
+GigabitEthernet2/16    unassigned      YES unset  administratively down down    
+GigabitEthernet2/17    unassigned      YES unset  administratively down down    
+GigabitEthernet2/18    unassigned      YES unset  administratively down down    
+TenGigabitEthernet3/1  unassigned      YES unset  up                    up      
+TenGigabitEthernet3/2  10.249.0.90     YES NVRAM  down                  down    
+GigabitEthernet3/3     unassigned      YES unset  administratively down down    
+GigabitEthernet3/4     unassigned      YES unset  administratively down down    
+GigabitEthernet3/5     unassigned      YES unset  administratively down down    
+GigabitEthernet3/6     unassigned      YES unset  administratively down down    
+GigabitEthernet5/1     unassigned      YES unset  down                  down    
+GigabitEthernet5/2     unassigned      YES unset  up                    up      
+GigabitEthernet5/3     unassigned      YES unset  up                    up      
+GigabitEthernet5/4     unassigned      YES unset  down                  down    
+GigabitEthernet5/5     unassigned      YES unset  down                  down    
+GigabitEthernet5/6     unassigned      YES unset  down                  down    
+GigabitEthernet5/7     unassigned      YES unset  down                  down    
+GigabitEthernet5/8     unassigned      YES unset  down                  down    
+GigabitEthernet5/9     unassigned      YES unset  down                  down    
+GigabitEthernet5/10    unassigned      YES unset  down                  down    
+GigabitEthernet5/11    unassigned      YES unset  down                  down    
+GigabitEthernet5/12    unassigned      YES unset  down                  down    
+GigabitEthernet5/13    unassigned      YES unset  down                  down    
+GigabitEthernet5/14    unassigned      YES unset  down                  down    
+GigabitEthernet5/15    unassigned      YES unset  down                  down    
+GigabitEthernet5/16    unassigned      YES unset  down                  down    
+GigabitEthernet5/17    unassigned      YES unset  down                  down    
+GigabitEthernet5/18    unassigned      YES unset  down                  down    
+GigabitEthernet5/19    unassigned      YES unset  down                  down    
+GigabitEthernet5/20    unassigned      YES unset  down                  down    
+GigabitEthernet5/21    unassigned      YES unset  down                  down    
+GigabitEthernet5/22    unassigned      YES unset  down                  down    
+GigabitEthernet5/23    unassigned      YES unset  down                  down    
+GigabitEthernet5/24    unassigned      YES unset  down                  down    
+GigabitEthernet5/25    unassigned      YES unset  down                  down    
+GigabitEthernet5/26    unassigned      YES unset  down                  down    
+GigabitEthernet5/27    unassigned      YES unset  down                  down    
+GigabitEthernet5/28    unassigned      YES unset  down                  down    
+GigabitEthernet5/29    unassigned      YES unset  down                  down    
+GigabitEthernet5/30    unassigned      YES unset  down                  down    
+GigabitEthernet5/31    unassigned      YES unset  down                  down    
+GigabitEthernet5/32    unassigned      YES unset  down                  down    
+GigabitEthernet5/33    unassigned      YES unset  down                  down    
+GigabitEthernet5/34    unassigned      YES unset  down                  down    
+GigabitEthernet5/35    unassigned      YES unset  down                  down    
+GigabitEthernet5/36    unassigned      YES unset  down                  down    
+GigabitEthernet5/37    unassigned      YES unset  down                  down    
+GigabitEthernet5/38    unassigned      YES unset  down                  down    
+GigabitEthernet5/39    unassigned      YES unset  down                  down    
+GigabitEthernet5/40    unassigned      YES unset  down                  down    
+GigabitEthernet5/41    unassigned      YES unset  down                  down    
+GigabitEthernet5/42    unassigned      YES unset  down                  down    
+GigabitEthernet5/43    unassigned      YES unset  down                  down    
+GigabitEthernet5/44    unassigned      YES unset  down                  down    
+GigabitEthernet5/45    unassigned      YES unset  down                  down    
+GigabitEthernet5/46    unassigned      YES unset  down                  down    
+GigabitEthernet5/47    unassigned      YES unset  down                  down    
+GigabitEthernet5/48    unassigned      YES unset  up                    up      
+GigabitEthernet6/1     unassigned      YES unset  down                  down    
+GigabitEthernet6/2     unassigned      YES unset  down                  down    
+GigabitEthernet6/3     unassigned      YES unset  down                  down    
+GigabitEthernet6/4     unassigned      YES unset  down                  down    
+GigabitEthernet6/5     unassigned      YES unset  down                  down    
+GigabitEthernet6/6     unassigned      YES unset  down                  down    
+GigabitEthernet6/7     unassigned      YES unset  down                  down    
+GigabitEthernet6/8     unassigned      YES unset  down                  down    
+GigabitEthernet6/9     unassigned      YES unset  down                  down    
+GigabitEthernet6/10    unassigned      YES unset  up                    up      
+GigabitEthernet6/11    unassigned      YES unset  down                  down    
+GigabitEthernet6/12    unassigned      YES unset  down                  down    
+GigabitEthernet6/13    unassigned      YES unset  down                  down    
+GigabitEthernet6/14    unassigned      YES unset  down                  down    
+GigabitEthernet6/15    unassigned      YES unset  down                  down    
+GigabitEthernet6/16    unassigned      YES unset  down                  down    
+GigabitEthernet6/17    unassigned      YES unset  down                  down    
+GigabitEthernet6/18    unassigned      YES unset  down                  down    
+GigabitEthernet6/19    unassigned      YES unset  down                  down    
+GigabitEthernet6/20    unassigned      YES unset  down                  down    
+GigabitEthernet6/21    unassigned      YES unset  down                  down    
+GigabitEthernet6/22    unassigned      YES unset  down                  down    
+GigabitEthernet6/23    unassigned      YES unset  down                  down    
+GigabitEthernet6/24    unassigned      YES unset  down                  down    
+GigabitEthernet6/25    unassigned      YES unset  down                  down    
+GigabitEthernet6/26    unassigned      YES unset  down                  down    
+GigabitEthernet6/27    unassigned      YES unset  down                  down    
+GigabitEthernet6/28    unassigned      YES unset  down                  down    
+GigabitEthernet6/29    unassigned      YES unset  up                    up      
+GigabitEthernet6/30    unassigned      YES unset  down                  down    
+GigabitEthernet6/31    unassigned      YES unset  down                  down    
+GigabitEthernet6/32    unassigned      YES unset  down                  down    
+GigabitEthernet6/33    unassigned      YES unset  down                  down    
+GigabitEthernet6/34    unassigned      YES unset  down                  down    
+GigabitEthernet6/35    unassigned      YES unset  down                  down    
+GigabitEthernet6/36    unassigned      YES unset  down                  down    
+GigabitEthernet6/37    unassigned      YES unset  down                  down    
+GigabitEthernet6/38    unassigned      YES unset  down                  down    
+GigabitEthernet6/39    unassigned      YES unset  down                  down    
+GigabitEthernet6/40    unassigned      YES unset  down                  down    
+GigabitEthernet6/41    unassigned      YES unset  down                  down    
+GigabitEthernet6/42    unassigned      YES unset  down                  down    
+GigabitEthernet6/43    unassigned      YES unset  down                  down    
+GigabitEthernet6/44    unassigned      YES unset  down                  down    
+GigabitEthernet6/45    unassigned      YES unset  down                  down    
+GigabitEthernet6/46    unassigned      YES unset  down                  down    
+GigabitEthernet6/47    unassigned      YES unset  up                    up      
+GigabitEthernet6/48    unassigned      YES unset  down                  down    
+GigabitEthernet7/1     unassigned      YES unset  up                    up      
+GigabitEthernet7/2     unassigned      YES unset  down                  down    
+GigabitEthernet7/3     unassigned      YES unset  down                  down    
+GigabitEthernet7/4     unassigned      YES unset  down                  down    
+GigabitEthernet7/5     unassigned      YES unset  up                    up      
+GigabitEthernet7/6     unassigned      YES unset  up                    up      
+GigabitEthernet7/7     unassigned      YES unset  down                  down    
+GigabitEthernet7/8     unassigned      YES unset  up                    up      
+GigabitEthernet7/9     unassigned      YES unset  up                    up      
+GigabitEthernet7/10    unassigned      YES unset  up                    up      
+GigabitEthernet7/11    unassigned      YES unset  down                  down    
+GigabitEthernet7/12    unassigned      YES unset  down                  down    
+GigabitEthernet7/13    unassigned      YES unset  down                  down    
+GigabitEthernet7/14    unassigned      YES unset  down                  down    
+GigabitEthernet7/15    unassigned      YES unset  down                  down    
+GigabitEthernet7/16    unassigned      YES unset  down                  down    
+GigabitEthernet7/17    unassigned      YES unset  down                  down    
+GigabitEthernet7/18    unassigned      YES unset  down                  down    
+GigabitEthernet7/19    unassigned      YES unset  up                    up      
+GigabitEthernet7/20    unassigned      YES unset  up                    up      
+GigabitEthernet7/21    unassigned      YES unset  up                    up      
+GigabitEthernet7/22    unassigned      YES unset  up                    up      
+GigabitEthernet7/23    unassigned      YES unset  down                  down    
+GigabitEthernet7/24    unassigned      YES unset  up                    up      
+GigabitEthernet7/25    unassigned      YES unset  up                    up      
+GigabitEthernet7/26    unassigned      YES unset  down                  down    
+GigabitEthernet7/27    unassigned      YES unset  up                    up      
+GigabitEthernet7/28    unassigned      YES unset  down                  down    
+GigabitEthernet7/29    unassigned      YES unset  down                  down    
+GigabitEthernet7/30    unassigned      YES unset  up                    up      
+GigabitEthernet7/31    unassigned      YES unset  down                  down    
+GigabitEthernet7/32    unassigned      YES unset  down                  down    
+GigabitEthernet7/33    unassigned      YES unset  up                    up      
+GigabitEthernet7/34    unassigned      YES unset  up                    up      
+GigabitEthernet7/35    unassigned      YES unset  down                  down    
+GigabitEthernet7/36    unassigned      YES unset  up                    up      
+GigabitEthernet7/37    unassigned      YES unset  up                    up      
+GigabitEthernet7/38    unassigned      YES unset  up                    up      
+GigabitEthernet7/39    unassigned      YES unset  down                  down    
+GigabitEthernet7/40    unassigned      YES unset  up                    up      
+GigabitEthernet7/41    unassigned      YES unset  down                  down    
+GigabitEthernet7/42    unassigned      YES unset  up                    up      
+GigabitEthernet7/43    unassigned      YES unset  down                  down    
+GigabitEthernet7/44    unassigned      YES unset  up                    up      
+GigabitEthernet7/45    unassigned      YES unset  down                  down    
+GigabitEthernet7/46    unassigned      YES unset  up                    up      
+GigabitEthernet7/47    unassigned      YES unset  down                  down    
+GigabitEthernet7/48    unassigned      YES unset  up                    up      
+Tunnel0                10.111.0.254    YES unset  up                    up      
+Vlan1                  unassigned      YES unset  administratively down down    
+Vlan3                  unassigned      YES unset  up                    up      
+Vlan5                  unassigned      YES unset  up                    up      
+Vlan6                  unassigned      YES unset  up                    up      
+Vlan8                  unassigned      YES unset  up                    up      
+Vlan9                  unassigned      YES unset  up                    up      
+Vlan10                 unassigned      YES unset  up                    up      
+Vlan20                 unassigned      YES unset  up                    up      
+Vlan22                 unassigned      YES unset  down                  down    
+Vlan30                 unassigned      YES unset  up                    up      
+Vlan50                 unassigned      YES unset  up                    up      
+Vlan120                unassigned      YES unset  administratively down down    
+Vlan172                unassigned      YES unset  up                    up      
+Vlan777                10.111.0.254    YES NVRAM  up                    up      
+Vlan778                unassigned      YES unset  administratively down down    
+Vlan779                unassigned      YES unset  administratively down down    
+Memorial-4507R-88018#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 10.111.0.1 to network 0.0.0.0
+
+S*    0.0.0.0/0 [1/0] via 10.111.0.1
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.111.0.0/23 is directly connected, Vlan777
+L        10.111.0.254/32 is directly connected, Vlan777
+Memorial-4507R-88018#sh cdp neigh
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+MEMORIAL-Lib-lab-1-6146
+                 Gig 7/48          174              R T   AIR-AP280 Gig 0
+B-4507R-77779.wisd.us
+                 Ten 2/2           124              S I   WS-C4507R Ten 1/1
+A-4507R-77780.wisd.us
+                 Ten 2/1           149              S I   WS-C4507R Ten 1/1
+SEPD0C2824386F6  Gig 7/8           124             H P M  IP Phone  Port 1
+Memorial-VG202   Gig 6/47          167               R    VG202     Fas 0/0
+SEPA418758AB281  Gig 7/9           175             H P M  IP Phone  Port 1
+02:04:96:98:D2:E8
+                 Gig 2/13          124               S    Stack     Slot:  1, Port: 49
+SEP8875567B56D7  Gig 7/10          161             H P M  IP Phone  Port 1
+SEP8875567B56F4  Gig 7/27          179             H P M  IP Phone  Port 1
+SEP0021D8BAB321  Gig 7/5           161             H P M  IP Phone  Port 1
+02:04:96:9A:53:17
+                 Gig 2/14          178               S    Stack     Slot:  1, Port: 49
+MEMORIAL-Cafe-2-13C0
+                 Gig 7/40          173              R T   AIR-AP280 Gig 0
+MEMORIAL-Cafe-1-5C26
+                 Gig 7/38          141              R T   AIR-AP280 Gig 0
+GXV3370_00:0B:82:F2:01:3C
+                 Gig 7/22          100               S    GXV3370   eth0
+MEMORIAL-Library-2-5C1C
+                 Gig 7/42          152              R T   AIR-AP280 Gig 0
+MEMORIAL-Library-1-5C0A
+                 Gig 7/44          132              R T   AIR-AP280 Gig 0
+MEMORIAL-Lib-lab-2-2C14
+                 Gig 7/46          142              R T   AIR-AP280 Gig 0
+E-3750-88013.wisd.us
+                 Gig 7/36          122              S I   WS-C3750G Gig 1/0/24
+
+Total cdp entries displayed : 18
+Memorial-4507R-88018#sh cdp neigh detail
+-------------------------
+Device ID: MEMORIAL-Lib-lab-1-6146
+Entry address(es): 
+  IP address: 10.111.1.34
+Platform: cisco AIR-AP2802I-B-K9,  Capabilities: Router Trans-Bridge 
+Interface: GigabitEthernet7/48,  Port ID (outgoing port): GigabitEthernet0
+Holdtime : 174 sec
+
+Version :
+Cisco AP Software, ap3g3-k9w8 Version: 8.2.166.0
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2014-2015 by Cisco Systems, Inc.
+
+advertisement version: 2
+Duplex: full
+Power drawn: 26.100 Watts
+Power request id: 32170, Power management id: 3
+Power request levels are:26100 0 0 0 0 
+
+-------------------------
+Device ID: B-4507R-77779.wisd.us
+Entry address(es): 
+  IP address: 10.111.0.21
+Platform: cisco WS-C4507R,  Capabilities: Switch IGMP 
+Interface: TenGigabitEthernet2/2,  Port ID (outgoing port): TenGigabitEthernet1/1
+Holdtime : 124 sec
+
+Version :
+Cisco IOS Software, Catalyst 4500 L3 Switch Software (cat4500-IPBASEK9-M), Version 15.0(2)SG8, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Mon 02-Dec-13 17:00 by prod_rel_team
+
+advertisement version: 2
+VTP Management Domain: 'Memorial'
+Native VLAN: 1
+Duplex: full
+Management address(es): 
+  IP address: 10.111.0.21
+Unidirectional Mode: off
+
+-------------------------
+Device ID: A-4507R-77780.wisd.us
+Entry address(es): 
+  IP address: 10.111.0.11
+Platform: cisco WS-C4507R,  Capabilities: Switch IGMP 
+Interface: TenGigabitEthernet2/1,  Port ID (outgoing port): TenGigabitEthernet1/1
+Holdtime : 149 sec
+
+Version :
+Cisco IOS Software, Catalyst 4500 L3 Switch Software (cat4500-IPBASEK9-M), Version 15.0(2)SG8, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Mon 02-Dec-13 17:00 by prod_rel_team
+
+advertisement version: 2
+VTP Management Domain: 'Memorial'
+Native VLAN: 1
+Duplex: full
+Management address(es): 
+  IP address: 10.111.0.11
+Unidirectional Mode: off
+
+-------------------------
+Device ID: SEPD0C2824386F6
+Entry address(es): 
+  IP address: 172.16.27.5
+Platform: Cisco IP Phone 7911,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet7/8,  Port ID (outgoing port): Port 1
+Holdtime : 124 sec
+Second Port Status: Up
+
+Version :
+SCCP11.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 5.000 Watts
+Power request id: 34550, Power management id: 3
+Power request levels are:5000 0 0 0 0 
+
+-------------------------
+Device ID: Memorial-VG202
+Entry address(es): 
+  IP address: 172.16.27.2
+Platform: Cisco VG202,  Capabilities: Router 
+Interface: GigabitEthernet6/47,  Port ID (outgoing port): FastEthernet0/0
+Holdtime : 167 sec
+
+Version :
+Cisco IOS Software, VG20X Software (VG20X-IPVOICE-M), Version 12.4(22)T4, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2009 by Cisco Systems, Inc.
+Compiled Tue 15-Dec-09 05:05 by prod_rel_team
+
+advertisement version: 2
+Duplex: full
+
+-------------------------
+Device ID: SEPA418758AB281
+Entry address(es): 
+  IP address: 172.16.27.4
+Platform: Cisco IP Phone 7931,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet7/9,  Port ID (outgoing port): Port 1
+Holdtime : 175 sec
+Second Port Status: Up
+
+Version :
+SCCP31.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 7.000 Watts
+Power request id: 45697, Power management id: 3
+Power request levels are:7000 0 0 0 0 
+
+-------------------------
+Device ID: 02:04:96:98:D2:E8
+Entry address(es): 
+  IP address: 192.0.2.100
+  IP address: 10.111.0.31
+Platform: Stack,  Capabilities: Switch 
+Interface: GigabitEthernet2/13,  Port ID (outgoing port): Slot:  1, Port: 49
+Holdtime : 124 sec
+
+Version :
+ExtremeXOS version 30.2.1.8 by release-manager
+     on Tue Apr 30 19:53:38 EDT 2019
+
+
+advertisement version: 2
+Duplex: full
+Management address(es): 
+  IP address: 192.0.2.100
+Unidirectional Mode: off
+
+-------------------------
+Device ID: SEP8875567B56D7
+Entry address(es): 
+  IP address: 172.16.27.10
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet7/10,  Port ID (outgoing port): Port 1
+Holdtime : 161 sec
+Second Port Status: Up
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 28019, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+
+-------------------------
+Device ID: SEP8875567B56F4
+Entry address(es): 
+  IP address: 172.16.27.11
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet7/27,  Port ID (outgoing port): Port 1
+Holdtime : 179 sec
+Second Port Status: Up
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 18097, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+
+-------------------------
+Device ID: SEP0021D8BAB321
+Entry address(es): 
+  IP address: 172.16.27.6
+Platform: Cisco IP Phone 7911,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: GigabitEthernet7/5,  Port ID (outgoing port): Port 1
+Holdtime : 161 sec
+Second Port Status: Down
+
+Version :
+SCCP11.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 5.000 Watts
+Power request id: 45857, Power management id: 3
+Power request levels are:5000 0 0 0 0 
+
+-------------------------
+Device ID: 02:04:96:9A:53:17
+Entry address(es): 
+  IP address: 10.111.0.41
+Platform: Stack,  Capabilities: Switch 
+Interface: GigabitEthernet2/14,  Port ID (outgoing port): Slot:  1, Port: 49
+Holdtime : 178 sec
+
+Version :
+ExtremeXOS version 22.6.1.4 22.6.1.4-patch1-8 by release-manager
+     on Tue Apr 16 14:34:30 EDT 2019
+
+
+advertisement version: 2
+Duplex: full
+Unidirectional Mode: off
+
+-------------------------
+Device ID: MEMORIAL-Cafe-2-13C0
+Entry address(es): 
+  IP address: 10.111.1.38
+Platform: cisco AIR-AP2802I-B-K9,  Capabilities: Router Trans-Bridge 
+Interface: GigabitEthernet7/40,  Port ID (outgoing port): GigabitEthernet0
+Holdtime : 173 sec
+
+Version :
+Cisco AP Software, ap3g3-k9w8 Version: 8.2.166.0
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2014-2015 by Cisco Systems, Inc.
+
+advertisement version: 2
+Duplex: full
+Power drawn: 26.100 Watts
+Power request id: 61150, Power management id: 3
+Power request levels are:26100 0 0 0 0 
+
+-------------------------
+Device ID: MEMORIAL-Cafe-1-5C26
+Entry address(es): 
+  IP address: 10.111.1.21
+Platform: cisco AIR-AP2802I-B-K9,  Capabilities: Router Trans-Bridge 
+Interface: GigabitEthernet7/38,  Port ID (outgoing port): GigabitEthernet0
+Holdtime : 140 sec
+
+Version :
+Cisco AP Software, ap3g3-k9w8 Version: 8.2.166.0
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2014-2015 by Cisco Systems, Inc.
+
+advertisement version: 2
+Duplex: full
+Power drawn: 26.100 Watts
+Power request id: 45680, Power management id: 3
+Power request levels are:26100 0 0 0 0 
+
+-------------------------
+Device ID: GXV3370_00:0B:82:F2:01:3C
+Entry address(es): 
+  IP address: 10.111.20.13
+Platform: GXV3370,  Capabilities: Switch 
+Interface: GigabitEthernet7/22,  Port ID (outgoing port): eth0
+Holdtime : 100 sec
+
+Version :
+GXV3370 1.0.1.33
+
+advertisement version: 2
+
+-------------------------
+Device ID: MEMORIAL-Library-2-5C1C
+Entry address(es): 
+  IP address: 10.111.1.33
+Platform: cisco AIR-AP2802I-B-K9,  Capabilities: Router Trans-Bridge 
+Interface: GigabitEthernet7/42,  Port ID (outgoing port): GigabitEthernet0
+Holdtime : 152 sec
+
+Version :
+Cisco AP Software, ap3g3-k9w8 Version: 8.2.166.0
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2014-2015 by Cisco Systems, Inc.
+
+advertisement version: 2
+Duplex: full
+Power drawn: 26.100 Watts
+Power request id: 3772, Power management id: 3
+Power request levels are:26100 0 0 0 0 
+
+-------------------------
+Device ID: MEMORIAL-Library-1-5C0A
+Entry address(es): 
+  IP address: 10.111.1.39
+Platform: cisco AIR-AP2802I-B-K9,  Capabilities: Router Trans-Bridge 
+Interface: GigabitEthernet7/44,  Port ID (outgoing port): GigabitEthernet0
+Holdtime : 132 sec
+
+Version :
+Cisco AP Software, ap3g3-k9w8 Version: 8.2.166.0
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2014-2015 by Cisco Systems, Inc.
+
+advertisement version: 2
+Duplex: full
+Power drawn: 26.100 Watts
+Power request id: 28349, Power management id: 3
+Power request levels are:26100 0 0 0 0 
+
+-------------------------
+Device ID: MEMORIAL-Lib-lab-2-2C14
+Entry address(es): 
+  IP address: 10.111.1.40
+Platform: cisco AIR-AP2802I-B-K9,  Capabilities: Router Trans-Bridge 
+Interface: GigabitEthernet7/46,  Port ID (outgoing port): GigabitEthernet0
+Holdtime : 142 sec
+
+Version :
+Cisco AP Software, ap3g3-k9w8 Version: 8.2.166.0
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2014-2015 by Cisco Systems, Inc.
+
+advertisement version: 2
+Duplex: full
+Power drawn: 26.100 Watts
+Power request id: 8506, Power management id: 3
+Power request levels are:26100 0 0 0 0 
+
+-------------------------
+Device ID: E-3750-88013.wisd.us
+Entry address(es): 
+  IP address: 10.111.0.51
+Platform: cisco WS-C3750G-24PS,  Capabilities: Switch IGMP 
+Interface: GigabitEthernet7/36,  Port ID (outgoing port): GigabitEthernet1/0/24
+Holdtime : 122 sec
+
+Version :
+Cisco IOS Software, C3750 Software (C3750-IPBASE-M), Version 12.2(35)SE5, RELEASE SOFTWARE (fc1)
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Thu 19-Jul-07 19:15 by nachen
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010221FF0000000000003037A6606480FF0000
+VTP Management Domain: 'Memorial'
+Native VLAN: 1
+Duplex: full
+Management address(es): 
+  IP address: 10.111.0.51
+
+
+Total cdp entries displayed : 18
+Memorial-4507R-88018#sh int description
+Interface                      Status         Protocol Description
+Fa1                            down           down     
+Gi1/1                          up             up       Printer
+Gi1/2                          down           down     Printer
+Gi1/3                          down           down     Printer
+Gi1/4                          down           down     Printer
+Gi1/5                          down           down     PC_Data
+Gi1/6                          down           down     PC_Data
+Gi1/7                          down           down     PC_Data
+Gi1/8                          down           down     PC_Data
+Gi1/9                          down           down     PC_Data
+Gi1/10                         down           down     PC_Data
+Gi1/11                         down           down     PC_Data
+Gi1/12                         down           down     PC_Data
+Gi1/13                         down           down     PC_Data
+Gi1/14                         down           down     PC_Data
+Gi1/15                         down           down     PC_Data
+Gi1/16                         down           down     PC_Data
+Gi1/17                         down           down     PC_Data
+Gi1/18                         down           down     PC_Data
+Gi1/19                         down           down     PC_Data
+Gi1/20                         down           down     PC_Data
+Gi1/21                         down           down     PC_Data
+Gi1/22                         down           down     PC_Data
+Gi1/23                         down           down     PC_Data
+Gi1/24                         down           down     PC_Data
+Gi1/25                         down           down     PC_Data
+Gi1/26                         down           down     PC_Data
+Gi1/27                         down           down     PC_Data
+Gi1/28                         down           down     PC_Data
+Gi1/29                         down           down     PC_Data
+Gi1/30                         down           down     PC_Data
+Gi1/31                         down           down     PC_Data
+Gi1/32                         down           down     PC_Data
+Gi1/33                         down           down     PC_Data
+Gi1/34                         down           down     PC_Data
+Gi1/35                         down           down     PC_Data
+Gi1/36                         down           down     PC_Data
+Gi1/37                         down           down     PC_Data
+Gi1/38                         down           down     PC_Data
+Gi1/39                         down           down     PC_Data
+Gi1/40                         down           down     PC_Data
+Gi1/41                         down           down     PC_Data
+Gi1/42                         down           down     PC_Data
+Gi1/43                         down           down     PC_Data
+Gi1/44                         down           down     PC_Data
+Gi1/45                         down           down     PC_Data
+Gi1/46                         down           down     PC_Data
+Gi1/47                         down           down     PC_Data
+Gi1/48                         down           down     PC_Data
+Te2/1                          up             up       IDF:A
+Te2/2                          up             up       IDF:B
+Te2/3                          admin down     down     
+Te2/4                          admin down     down     
+Te2/5                          admin down     down     
+Te2/6                          admin down     down     
+Gi2/7                          admin down     down     
+Gi2/8                          admin down     down     
+Gi2/9                          admin down     down     
+Gi2/10                         admin down     down     
+Gi2/11                         admin down     down     
+Gi2/12                         admin down     down     
+Gi2/13                         up             up       IDF:C
+Gi2/14                         up             up       IDF:D
+Gi2/15                         admin down     down     
+Gi2/16                         admin down     down     
+Gi2/17                         admin down     down     
+Gi2/18                         admin down     down     
+Te3/1                          up             up       NOC_6513E;Ten12/3;EMAN;23-24
+Te3/2                          down           down     NOC_6513W;Ten12/3;WMAN;23-24
+Gi3/3                          admin down     down     
+Gi3/4                          admin down     down     
+Gi3/5                          admin down     down     
+Gi3/6                          admin down     down     
+Gi5/1                          down           down     PRINTER VLAN
+Gi5/2                          up             up       PRINTER VLAN
+Gi5/3                          up             up       PRINTER VLAN
+Gi5/4                          down           down     PRINTER VLAN
+Gi5/5                          down           down     PC_Data
+Gi5/6                          down           down     PC_Data
+Gi5/7                          down           down     PC_Data
+Gi5/8                          down           down     PC_Data
+Gi5/9                          down           down     PC_Data
+Gi5/10                         down           down     PC_Data
+Gi5/11                         down           down     PC_Data
+Gi5/12                         down           down     PC_Data
+Gi5/13                         down           down     PC_Data
+Gi5/14                         down           down     PC_Data
+Gi5/15                         down           down     PC_Data
+Gi5/16                         down           down     PC_Data
+Gi5/17                         down           down     PC_Data
+Gi5/18                         down           down     PC_Data
+Gi5/19                         down           down     PC_Data
+Gi5/20                         down           down     PC_Data
+Gi5/21                         down           down     PC_Data
+Gi5/22                         down           down     PC_Data
+Gi5/23                         down           down     PC_Data
+Gi5/24                         down           down     PC_Data
+Gi5/25                         down           down     PC_Data
+Gi5/26                         down           down     PC_Data
+Gi5/27                         down           down     PC_Data
+Gi5/28                         down           down     PC_Data
+Gi5/29                         down           down     PC_Data
+Gi5/30                         down           down     PC_Data
+Gi5/31                         down           down     PC_Data
+Gi5/32                         down           down     PC_Data
+Gi5/33                         down           down     PC_Data
+Gi5/34                         down           down     PC_Data
+Gi5/35                         down           down     PC_Data
+Gi5/36                         down           down     PC_Data
+Gi5/37                         down           down     PC_Data
+Gi5/38                         down           down     PC_Data
+Gi5/39                         down           down     PC_Data
+Gi5/40                         down           down     PC_Data
+Gi5/41                         down           down     PC_Data
+Gi5/42                         down           down     PC_Data
+Gi5/43                         down           down     PC_Data
+Gi5/44                         down           down     PC_Data
+Gi5/45                         down           down     PC_Data
+Gi5/46                         down           down     PC_Data
+Gi5/47                         down           down     PC_Data
+Gi5/48                         up             up       Server
+Gi6/1                          down           down     PRINTER VLAN
+Gi6/2                          down           down     PRINTER VLAN
+Gi6/3                          down           down     PRINTER VLAN
+Gi6/4                          down           down     PRINTER VLAN
+Gi6/5                          down           down     PC_Data
+Gi6/6                          down           down     PC_Data
+Gi6/7                          down           down     PC_Data
+Gi6/8                          down           down     PC_Data
+Gi6/9                          down           down     PC_Data
+Gi6/10                         up             up       PC_Data
+Gi6/11                         down           down     PC_Data
+Gi6/12                         down           down     PC_Data
+Gi6/13                         down           down     PC_Data
+Gi6/14                         down           down     PC_Data
+Gi6/15                         down           down     PC_Data
+Gi6/16                         down           down     PC_Data
+Gi6/17                         down           down     PC_Data
+Gi6/18                         down           down     PC_Data
+Gi6/19                         down           down     PC_Data
+Gi6/20                         down           down     PC_Data
+Gi6/21                         down           down     PC_Data
+Gi6/22                         down           down     PC_Data
+Gi6/23                         down           down     PC_Data
+Gi6/24                         down           down     PC_Data
+Gi6/25                         down           down     PC_Data
+Gi6/26                         down           down     PC_Data
+Gi6/27                         down           down     PC_Data
+Gi6/28                         down           down     PC_Data
+Gi6/29                         up             up       SERVER VLAN
+Gi6/30                         down           down     PC_Data
+Gi6/31                         down           down     SERVER VLAN
+Gi6/32                         down           down     SERVER VLAN
+Gi6/33                         down           down     PC_Data
+Gi6/34                         down           down     PC_Data
+Gi6/35                         down           down     PC_Data
+Gi6/36                         down           down     PC_Data
+Gi6/37                         down           down     PC_Data
+Gi6/38                         down           down     PC_Data
+Gi6/39                         down           down     PC_Data
+Gi6/40                         down           down     PC_Data
+Gi6/41                         down           down     PC_Data
+Gi6/42                         down           down     PC_Data
+Gi6/43                         down           down     PC_Data
+Gi6/44                         down           down     PC_Data
+Gi6/45                         down           down     PC_Data
+Gi6/46                         down           down     PC_Data
+Gi6/47                         up             up       VG202
+Gi6/48                         down           down     UPS VLAN
+Gi7/1                          up             up       PRINTER VLAN
+Gi7/2                          down           down     PC_Data 
+Gi7/3                          down           down     PC_Data 
+Gi7/4                          down           down     PC_Data 
+Gi7/5                          up             up       PC_Data & VoIP
+Gi7/6                          up             up       PC_Data & VoIP
+Gi7/7                          down           down     PC_Data & VoIP
+Gi7/8                          up             up       PC_Data & VoIP
+Gi7/9                          up             up       PC_Data & VoIP
+Gi7/10                         up             up       PC_Data & VoIP
+Gi7/11                         down           down     PC_Data
+Gi7/12                         down           down     PC_Data
+Gi7/13                         down           down     PC_Data
+Gi7/14                         down           down     PC_Data
+Gi7/15                         down           down     PC_Data
+Gi7/16                         down           down     PC_Data
+Gi7/17                         down           down     PC_Data
+Gi7/18                         down           down     PC_Data
+Gi7/19                         up             up       Access Control
+Gi7/20                         up             up       Access SIP Station
+Gi7/21                         up             up       Access Control
+Gi7/22                         up             up       Access Master Station
+Gi7/23                         down           down     PC_Data
+Gi7/24                         up             up       PC_Data
+Gi7/25                         up             up       PC_Data
+Gi7/26                         down           down     PC_Data
+Gi7/27                         up             up       PC_Data & VoIP
+Gi7/28                         down           down     PC_Data
+Gi7/29                         down           down     PC_Data
+Gi7/30                         up             up       Security
+Gi7/31                         down           down     Security
+Gi7/32                         down           down     Security
+Gi7/33                         up             up       Security Camera
+Gi7/34                         up             up       Security Camera
+Gi7/35                         down           down     Security Camera
+Gi7/36                         up             up       **CAFE**
+Gi7/37                         up             up       TimeClock
+Gi7/38                         up             up       *LWAPP*
+Gi7/39                         down           down     *LWAPP*
+Gi7/40                         up             up       *LWAPP*
+Gi7/41                         down           down     *LWAPP*
+Gi7/42                         up             up       *LWAPP*
+Gi7/43                         down           down     *LWAPP*
+Gi7/44                         up             up       *LWAPP*
+Gi7/45                         down           down     *LWAPP*
+Gi7/46                         up             up       *LWAPP*
+Gi7/47                         down           down     *LWAPP*
+Gi7/48                         up             up       *LWAPP*
+Tu0                            up             up       Pim Register Tunnel (Encap) for RP 2.1.1.1
+Vl1                            admin down     down     
+Vl3                            up             up       Printers
+Vl5                            up             up       Security Camera
+Vl6                            up             up       UPS
+Vl8                            up             up       Projectors
+Vl9                            up             up       Video
+Vl10                           up             up       Servers
+Vl20                           up             up       Management
+Vl22                           down           down     printer
+Vl30                           up             up       miscellaneous
+Vl50                           up             up       Students
+Vl120                          admin down     down     
+Vl172                          up             up       Voice
+Vl777                          up             up       LAN
+Vl778                          admin down     down     
+Vl779                          admin down     down     
+Memorial-4507R-88018#sh ip eigrp neigh
+EIGRP-IPv4 Neighbors for AS(1)
+Memorial-4507R-88018#sh ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "eigrp 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Default networks flagged in outgoing updates
+  Default networks accepted from incoming updates
+  EIGRP-IPv4 Protocol for AS(1)
+    Metric weight K1=1, K2=0, K3=1, K4=0, K5=0
+    NSF-aware route hold timer is 240
+  EIGRP NSF disabled
+     NSF signal timer is 20s
+     NSF converge timer is 120s
+    Router-ID: 10.249.0.90
+    Topology : 0 (base) 
+      Active Timer: 3 min
+      Distance: internal 90 external 170
+      Maximum path: 4
+      Maximum hopcount 100
+      Maximum metric variance 1
+
+  Automatic Summarization: disabled
+  Maximum path: 4
+  Routing for Networks:
+    10.111.0.0/23
+    10.111.3.0/24
+    10.111.5.0/24
+    10.111.6.0/24
+    10.111.9.0/24
+    10.111.10.0/24
+    10.111.20.0/24
+    10.111.30.0/23
+    10.111.32.0/21
+    10.111.50.0/23
+    10.111.60.0/23
+    10.111.80.0/20
+    10.249.0.0/24
+    10.250.0.0/24
+    172.16.27.0/24
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: internal 90 external 170
+
+Memorial-4507R-88018#sh int status
+
+Port      Name               Status       Vlan       Duplex  Speed Type 
+Gi1/1     Printer            connected    3          a-full  a-100 10/100/1000-TX
+Gi1/2     Printer            notconnect   3            auto   auto 10/100/1000-TX
+Gi1/3     Printer            notconnect   3            auto   auto 10/100/1000-TX
+Gi1/4     Printer            notconnect   3            auto   auto 10/100/1000-TX
+Gi1/5     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/6     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/7     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/8     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/9     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/10    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/11    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/12    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/13    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/14    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/15    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/16    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/17    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/18    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/19    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/20    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/21    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/22    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/23    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/24    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/25    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/26    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/27    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/28    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/29    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/30    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/31    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/32    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/33    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/34    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/35    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/36    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/37    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/38    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/39    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/40    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/41    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/42    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/43    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/44    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/45    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/46    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/47    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi1/48    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Te2/1     IDF:A              connected    trunk        full    10G 10GBase-LX4
+Te2/2     IDF:B              connected    trunk        full    10G 10GBase-LX4
+Te2/3                        disabled     1            full    10G No X2
+Te2/4                        disabled     1            full    10G No X2
+Te2/5                        disabled     1            full    10G No X2
+Te2/6                        disabled     1            full    10G No X2
+Gi2/7                        disabled     1            full   1000 No Gbic
+Gi2/8                        disabled     1            full   1000 No Gbic
+Gi2/9                        disabled     1            full   1000 No Gbic
+Gi2/10                       disabled     1            full   1000 No Gbic
+Gi2/11                       disabled     1            full   1000 No Gbic
+Gi2/12                       disabled     1            full   1000 No Gbic
+Gi2/13    IDF:C              connected    trunk        full   1000 1000BaseSX
+Gi2/14    IDF:D              connected    trunk        full   1000 1000BaseSX
+Gi2/15                       disabled     1            full   1000 No Gbic
+Gi2/16                       disabled     1            full   1000 No Gbic
+Gi2/17                       disabled     1            full   1000 No Gbic
+Gi2/18                       disabled     1            full   1000 No Gbic
+Te3/1     NOC_6513E;Ten12/3; connected    trunk        full    10G 10GBase-SR
+Te3/2     NOC_6513W;Ten12/3; notconnect   routed       full    10G 10GBase-LR
+Gi3/3                        disabled     1            full   1000 No Gbic
+Gi3/4                        disabled     1            full   1000 No Gbic
+Gi3/5                        disabled     1            full   1000 No Gbic
+Gi3/6                        disabled     1            full   1000 No Gbic
+Gi5/1     PRINTER VLAN       notconnect   3            auto   auto 10/100/1000-TX
+Gi5/2     PRINTER VLAN       connected    3          a-full a-1000 10/100/1000-TX
+Gi5/3     PRINTER VLAN       connected    3          a-full  a-100 10/100/1000-TX
+Gi5/4     PRINTER VLAN       notconnect   3            auto   auto 10/100/1000-TX
+Gi5/5     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/6     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/7     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/8     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/9     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/10    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/11    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/12    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/13    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/14    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/15    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/16    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/17    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/18    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/19    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/20    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/21    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/22    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/23    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/24    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/25    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/26    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/27    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/28    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/29    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/30    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/31    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/32    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/33    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/34    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/35    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/36    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/37    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/38    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/39    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/40    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/41    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/42    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/43    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/44    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/45    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/46    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/47    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi5/48    Server             connected    10         a-full a-1000 10/100/1000-TX
+Gi6/1     PRINTER VLAN       notconnect   3            auto   auto 10/100/1000-TX
+Gi6/2     PRINTER VLAN       notconnect   3            auto   auto 10/100/1000-TX
+Gi6/3     PRINTER VLAN       notconnect   3            auto   auto 10/100/1000-TX
+Gi6/4     PRINTER VLAN       notconnect   3            auto   auto 10/100/1000-TX
+Gi6/5     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/6     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/7     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/8     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/9     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/10    PC_Data            connected    50         a-full   a-10 10/100/1000-TX
+Gi6/11    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/12    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/13    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/14    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/15    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/16    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/17    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/18    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/19    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/20    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/21    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/22    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/23    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/24    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/25    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/26    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/27    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/28    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/29    SERVER VLAN        connected    10         a-full a-1000 10/100/1000-TX
+Gi6/30    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/31    SERVER VLAN        notconnect   10           auto   auto 10/100/1000-TX
+Gi6/32    SERVER VLAN        notconnect   10           auto   auto 10/100/1000-TX
+Gi6/33    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/34    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/35    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/36    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/37    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/38    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/39    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/40    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/41    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/42    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/43    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/44    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/45    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/46    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi6/47    VG202              connected    172        a-full  a-100 10/100/1000-TX
+Gi6/48    UPS VLAN           notconnect   6            auto   auto 10/100/1000-TX
+Gi7/1     PRINTER VLAN       connected    3          a-full  a-100 10/100/1000-TX
+Gi7/2     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/3     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/4     PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/5     PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000-TX
+Gi7/6     PC_Data & VoIP     connected    50         a-full a-1000 10/100/1000-TX
+Gi7/7     PC_Data & VoIP     notconnect   50           auto   auto 10/100/1000-TX
+Gi7/8     PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000-TX
+Gi7/9     PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000-TX
+Gi7/10    PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000-TX
+Gi7/11    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/12    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/13    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/14    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/15    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/16    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/17    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/18    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/19    Access Control     connected    20         a-full  a-100 10/100/1000-TX
+Gi7/20    Access SIP Station connected    20         a-full  a-100 10/100/1000-TX
+Gi7/21    Access Control     connected    20         a-full  a-100 10/100/1000-TX
+Gi7/22    Access Master Stat connected    20         a-full a-1000 10/100/1000-TX
+Gi7/23    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/24    PC_Data            connected    50         a-full  a-100 10/100/1000-TX
+Gi7/25    PC_Data            connected    50         a-full  a-100 10/100/1000-TX
+Gi7/26    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/27    PC_Data & VoIP     connected    50         a-full  a-100 10/100/1000-TX
+Gi7/28    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/29    PC_Data            notconnect   50           auto   auto 10/100/1000-TX
+Gi7/30    Security           connected    5          a-full  a-100 10/100/1000-TX
+Gi7/31    Security           notconnect   5            auto   auto 10/100/1000-TX
+Gi7/32    Security           notconnect   5            auto   auto 10/100/1000-TX
+Gi7/33    Security Camera    connected    5          a-full  a-100 10/100/1000-TX
+Gi7/34    Security Camera    connected    5          a-full  a-100 10/100/1000-TX
+Gi7/35    Security Camera    notconnect   5            auto   auto 10/100/1000-TX
+Gi7/36    **CAFE**           connected    trunk      a-full a-1000 10/100/1000-TX
+Gi7/37    TimeClock          connected    30         a-full a-1000 10/100/1000-TX
+Gi7/38    *LWAPP*            connected    777        a-full a-1000 10/100/1000-TX
+Gi7/39    *LWAPP*            notconnect   777          auto   auto 10/100/1000-TX
+Gi7/40    *LWAPP*            connected    777        a-full a-1000 10/100/1000-TX
+Gi7/41    *LWAPP*            notconnect   777          auto   auto 10/100/1000-TX
+Gi7/42    *LWAPP*            connected    777        a-full a-1000 10/100/1000-TX
+Gi7/43    *LWAPP*            notconnect   777          auto   auto 10/100/1000-TX
+Gi7/44    *LWAPP*            connected    777        a-full a-1000 10/100/1000-TX
+Gi7/45    *LWAPP*            notconnect   777          auto   auto 10/100/1000-TX
+Gi7/46    *LWAPP*            connected    777        a-full a-1000 10/100/1000-TX
+Gi7/47    *LWAPP*            notconnect   777          auto   auto 10/100/1000-TX
+Gi7/48    *LWAPP*            connected    777        a-full a-1000 10/100/1000-TX
+Memorial-4507R-88018#sh power inline
+Available:3075(w)  Used:291(w)  Remaining:2784(w)
+
+Interface Admin  Oper            Power(Watts)     Device              Class
+                            From PS    To Device                    
+--------- ------ ---------- ---------- ---------- ------------------- -----
+
+Gi7/1     auto   off        0.0        0.0        n/a                 n/a  
+Gi7/2     auto   off        0.0        0.0        n/a                 n/a  
+Gi7/3     auto   off        0.0        0.0        n/a                 n/a  
+Gi7/4     auto   off        0.0        0.0        n/a                 n/a  
+Gi7/5     auto   on         5.3        5.0        IP Phone 7911       2    
+Gi7/6     auto   off        0.0        0.0        n/a                 n/a  
+Gi7/7     auto   off        0.0        0.0        n/a                 n/a  
+Gi7/8     auto   on         5.3        5.0        IP Phone 7911       n/a  
+Gi7/9     auto   on         7.4        7.0        IP Phone 7931       3    
+Gi7/10    auto   on         6.4        6.0        IP Phone 6941       2    
+Gi7/11    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/12    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/13    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/14    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/15    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/16    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/17    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/18    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/19    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/20    auto   on         16.4       15.4       Ieee PD             0    
+Gi7/21    auto   on         16.4       15.4       Ieee PD             0    
+Gi7/22    auto   on         13.8       13.0       GXV3370             4    
+Gi7/23    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/24    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/25    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/26    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/27    auto   on         6.4        6.0        IP Phone 6941       2    
+Gi7/28    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/29    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/30    auto   on         16.4       15.4       Ieee PD             3    
+Gi7/31    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/32    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/33    auto   on         7.4        7.0        Ieee PD             2    
+Gi7/34    auto   on         7.4        7.0        Ieee PD             2    
+Gi7/35    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/36    auto   off        0.0        0.0        WS-C3750G-24PS      n/a  
+Gi7/37    auto   on         16.4       15.4       Ieee PD             0    
+Gi7/38    auto   on         27.8       26.1       AIR-AP2802I-B-K9    4    
+Gi7/39    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/40    auto   on         27.8       26.1       AIR-AP2802I-B-K9    4    
+Gi7/41    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/42    auto   on         27.8       26.1       AIR-AP2802I-B-K9    4    
+Gi7/43    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/44    auto   on         27.8       26.1       AIR-AP2802I-B-K9    4    
+Gi7/45    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/46    auto   on         27.8       26.1       AIR-AP2802I-B-K9    4    
+Gi7/47    auto   off        0.0        0.0        n/a                 n/a  
+Gi7/48    auto   on         27.8       26.1       AIR-AP2802I-B-K9    4    
+--------- ------ ---------- ---------- ---------- ------------------- -----
+
+Totals:          18   on    291.7      274.2     
+
+Memorial-4507R-88018#sh mac address
+Unicast Entries
+ vlan     mac address     type        protocols               port
+---------+---------------+--------+---------------------+-------------------------
+   1      00e0.2b00.0001   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   1      3037.a660.6498   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+   3      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+   3      0011.0ac1.32c9   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   3      0021.b729.5448   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      0021.b72b.eca9   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      0021.b742.c3f2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   3      0021.b781.68e9   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   3      0021.b795.a728   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   3      0021.b795.db3e   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+   3      0021.b795.dba2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   3      0021.b795.dbed   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   3      0021.b795.dbee   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      0021.b7e2.5844   dynamic ip,ipx,assigned,other GigabitEthernet5/3         
+   3      0021.b7f1.0aeb   dynamic ip,ipx,assigned,other GigabitEthernet5/2         
+   3      0021.b7f1.7fa8   dynamic ip,ipx,assigned,other GigabitEthernet7/1         
+   3      0021.b7f1.7fcc   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   3      0080.8702.622a   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      0080.87ab.44a0   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   3      0080.87c2.21b8   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      0080.87c2.2d7f   dynamic ip,ipx,assigned,other GigabitEthernet1/1         
+   3      0080.87c2.6dac   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      0080.87c2.e5a7   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+   3      0080.87c2.e5fa   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+   3      0800.37ea.bc5e   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      3005.5ca2.9fae   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   3      3005.5ca2.a2c1   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+   3      3005.5cad.a786   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      3005.5cbd.5da8   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   3      3c2a.f459.da2c   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   3      3c2a.f4a2.c340   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+   3      4437.e6ac.6b2f   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   3      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+   3      80e8.2c0b.5ddb   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   3      80e8.2ca6.e7ad   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+   5      0009.1861.1497   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   5      0009.1861.1498   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   5      0009.1861.1499   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   5      0009.1861.149a   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+   5      0009.1861.149f   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   5      0009.1861.14a0   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      0009.1861.14a1   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      0009.1861.14a2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   5      001a.0703.938b   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+   5      001a.0703.93f4   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   5      001a.0706.925c   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      001a.070c.1257   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      0040.8ccb.f340   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   5      00d0.8916.5ce9   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   5      00d0.8916.5cfa   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   5      4419.b643.ca1b   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      4419.b647.994e   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+   5      4419.b647.994f   dynamic ip,ipx,assigned,other GigabitEthernet7/34        
+   5      4419.b647.9956   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   5      4419.b647.996b   dynamic ip,ipx,assigned,other GigabitEthernet7/33        
+   5      4419.b647.997c   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   5      4419.b647.9981   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+   5      4419.b647.9986   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+   5      4419.b647.9995   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   5      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+   5      accc.8e07.4efd   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      c42f.90cb.ac86   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      e430.220e.a987   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+   5      e430.220e.a989   dynamic ip,ipx,assigned,other GigabitEthernet7/30        
+   5      e430.220e.a98a   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+   5      e430.220e.a98b   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+   5      e430.220e.a98c   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+   6      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+   6      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+   8      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+   8      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+   9      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+   9      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+  10      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+  10      0022.1927.f2d8   dynamic ip,ipx,assigned,other GigabitEthernet6/29        
+  10      4cd9.8f4e.39e9   dynamic ip,ipx,assigned,other GigabitEthernet5/48        
+  10      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+  20      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+  20      000b.82f2.013c   dynamic ip,ipx,assigned,other GigabitEthernet7/22        
+  20      000f.e509.4b1c   dynamic ip,ipx,assigned,other GigabitEthernet7/19        
+  20      0015.dc00.8f64   dynamic ip,ipx,assigned,other GigabitEthernet7/21        
+  20      0050.0600.5f3a   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+  20      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+  20      dc09.1400.0c89   dynamic ip,ipx,assigned,other GigabitEthernet7/20        
+  30      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+  30      40ac.8d00.0b43   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  30      40ac.8d00.0b56   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+  30      40ac.8d00.1168   dynamic ip,ipx,assigned,other GigabitEthernet7/37        
+  30      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+  50      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+  50      0007.df01.9aea   dynamic ip,ipx,assigned,other GigabitEthernet7/25        
+  50      0007.df01.9cea   dynamic ip,ipx,assigned,other GigabitEthernet7/24        
+  50      0040.9d75.be5e   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+  50      00d0.8916.5d1c   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      00e0.4c68.0b46   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+  50      1803.73d6.07e1   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+  50      1803.73e8.1974   dynamic ip,ipx,assigned,other GigabitEthernet7/6         
+  50      3417.ebbe.4d41   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      6400.6a3a.bbe6   dynamic ip,ipx,assigned,other GigabitEthernet7/8         
+  50      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+  50      782b.cbb4.67ea   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+  50      8875.567b.5878   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+  50      9c93.4e9d.31b0   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      b083.fe4d.80dd   dynamic ip,ipx,assigned,other GigabitEthernet7/9         
+  50      b083.fe4e.2472   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      b083.fe4e.5fff   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      b083.fe63.5a48   dynamic ip,ipx,assigned,other GigabitEthernet7/27        
+  50      b083.fe63.665d   dynamic ip,ipx,assigned,other GigabitEthernet7/27        
+  50      b083.fe83.e2c5   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+  50      b4b5.2fc8.fca2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      b4b5.2fca.35b2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      b4b5.2fcc.6df2   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+  50      b8ca.3ab9.43da   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      b8ca.3aff.dd8c   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      d4be.d98d.92d4   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      d4be.d993.c983   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      d89e.f31e.4224   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+  50      f8b1.569d.a4cd   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+  50      f8b1.569d.a518   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+  50      f8b1.56df.e7f1   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+  50      f8bc.12a9.227a   dynamic ip,ipx,assigned,other GigabitEthernet7/10        
+  50      f8bc.12a9.2df1   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+ 172      001b.d584.cefa   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      001d.a2eb.00bb   dynamic ip,ipx,assigned,other GigabitEthernet6/47        
+ 172      0021.d8ba.af94   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 172      0021.d8ba.b321   dynamic ip,ipx,assigned,other GigabitEthernet7/5         
+ 172      5c50.15a9.6a08   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      5c50.15a9.6a76   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+ 172      8875.567b.3b4f   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      8875.567b.52f6   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 172      8875.567b.5535   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 172      8875.567b.56b1   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      8875.567b.56d6   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 172      8875.567b.56d7   dynamic ip,ipx,assigned,other GigabitEthernet7/10        
+ 172      8875.567b.56f4   dynamic ip,ipx,assigned,other GigabitEthernet7/27        
+ 172      8875.567b.5718   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      8875.567b.571d   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      8875.567b.5765   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      8875.567b.5781   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 172      8875.567b.57b5   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 172      8875.567b.5833   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 172      8875.567b.5841   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      a418.758a.b0ba   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      a418.758a.b11b   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      a418.758a.b197   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 172      a418.758a.b281   dynamic ip,ipx,assigned,other GigabitEthernet7/9         
+ 172      c464.1301.4d50   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+ 172      c464.1301.4e40   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+ 172      d0c2.8243.86f6   dynamic ip,ipx,assigned,other GigabitEthernet7/8         
+ 777      0004.96a1.e7a0   dynamic ip,ipx,assigned,other TenGigabitEthernet3/1      
+ 777      0016.9dbc.453f   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      0016.c7ca.663f   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      0017.0e1a.95c1   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      0017.0e1a.a043   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      00be.751a.60a8   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      00be.751a.60b4   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      00be.751a.60c4   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      00be.751a.60c8   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      00be.751a.60dc   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      00be.751a.60de   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      00be.751a.6108   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      00be.751a.6116   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      00be.751a.611a   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      00be.751a.6124   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      00be.751a.612e   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      00be.751a.613a   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      00be.751a.613c   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      00be.751a.613e   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      00be.751a.6146   dynamic ip,ipx,assigned,other GigabitEthernet7/48        
+ 777      00be.751a.614a   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      00be.751a.614e   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      00be.751a.6150   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      00be.751a.6158   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      00be.751a.6166   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      00be.751a.6170   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      00be.751a.6176   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      0204.9698.d2e8   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      0204.969a.5317   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      3037.a660.64c1   dynamic ip,ipx,assigned,other GigabitEthernet7/36        
+ 777      4c77.6d93.138c   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6d93.13a4   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6d93.13c0   dynamic ip,ipx,assigned,other GigabitEthernet7/40        
+ 777      4c77.6d93.13c2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6d93.13c8   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6d93.13d2   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6d93.13de   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6d93.13e4   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      4c77.6d93.13e6   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6d93.13e8   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      4c77.6d93.1400   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6d93.1462   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6d93.146a   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6de1.dcb6   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6de1.dcba   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6de1.dcbc   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6de1.dcbe   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6ded.7c94   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6ded.7cde   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6ded.7ce0   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6ded.7ce2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6ded.7ce6   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      4c77.6ded.7cec   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      4c77.6ded.7cfc   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      4c77.6ded.7cfe   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6ded.7d00   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6ded.7d02   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6dee.5b0c   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6dee.5ba8   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6dee.5bc2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      4c77.6dee.5bcc   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6dee.5bd6   dynamic ip,ipx,assigned,other GigabitEthernet2/14        
+ 777      4c77.6dee.5bde   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6dee.5c04   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6dee.5c08   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      4c77.6dee.5c0a   dynamic ip,ipx,assigned,other GigabitEthernet7/44        
+ 777      4c77.6dee.5c12   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6dee.5c1c   dynamic ip,ipx,assigned,other GigabitEthernet7/42        
+ 777      4c77.6dee.5c1e   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      4c77.6dee.5c20   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      4c77.6dee.5c22   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      4c77.6dee.5c26   dynamic ip,ipx,assigned,other GigabitEthernet7/38        
+ 777      68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+ 777      7070.8b0c.2b1e   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      7070.8b0c.2bd0   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      7070.8b0c.2bd2   dynamic ip,ipx,assigned,other TenGigabitEthernet2/1      
+ 777      7070.8b0c.2bf4   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      7070.8b0c.2c12   dynamic ip,ipx,assigned,other GigabitEthernet2/13        
+ 777      7070.8b0c.2c14   dynamic ip,ipx,assigned,other GigabitEthernet7/46        
+ 777      7070.8b0c.2c20   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+ 777      7070.8b0c.2c22   dynamic ip,ipx,assigned,other TenGigabitEthernet2/2      
+Te3/2     68ef.bdbf.de7f    static ip,ipx,assigned,other Switch                     
+
+Multicast Entries
+ vlan     mac address     type    ports
+---------+---------------+-------+--------------------------------------------
+   1      0100.0ccc.ccce   system Te2/1,Te2/2,Gi2/13,Gi2/14,Gi7/36,Te3/1
+   1      ffff.ffff.ffff   system Te2/1,Te2/2,Gi2/13,Gi2/14,Gi7/36,Te3/1
+   3      0100.5e00.013c     igmp Te2/2,Gi2/13,Te3/1
+   3      0100.5e7f.fffa     igmp Gi1/1,Te2/1,Te2/2,Gi2/13,Gi2/14,Gi5/2,Gi5/3
+                                  Gi7/1,Gi7/36,Te3/1
+   3      ffff.ffff.ffff   system Gi1/1,Te2/1,Te2/2,Gi2/13,Gi2/14,Gi5/2,Gi5/3
+                                  Gi7/1,Gi7/36,Te3/1,Switch
+   5      0100.5e7f.fffa     igmp Te2/1,Te2/2,Gi2/13,Gi2/14,Gi7/30,Gi7/33
+                                  Gi7/34,Gi7/36,Te3/1
+   5      ffff.ffff.ffff   system Te2/1,Te2/2,Gi2/13,Gi2/14,Gi7/30,Gi7/33
+                                  Gi7/34,Gi7/36,Te3/1,Switch
+   6      ffff.ffff.ffff   system Gi2/13,Gi2/14,Te3/1,Switch
+   8      ffff.ffff.ffff   system Gi2/13,Gi2/14,Te3/1,Switch
+   9      ffff.ffff.ffff   system Gi2/13,Gi2/14,Te3/1,Switch
+  10      0100.5e7f.fffa     igmp Gi5/48,Te3/1
+  10      0100.5e7f.fffe     igmp Gi5/48,Te3/1
+  10      ffff.ffff.ffff   system Gi2/13,Gi2/14,Gi5/48,Gi6/29,Te3/1,Switch
+  20      0100.5e7f.fffa     igmp Gi7/21,Te3/1
+  20      ffff.ffff.ffff   system Gi2/13,Gi2/14,Gi7/19,Gi7/20,Gi7/21,Gi7/22
+                                  Te3/1,Switch
+  30      ffff.ffff.ffff   system Te2/1,Gi2/13,Gi2/14,Gi7/37,Te3/1,Switch
+  50      0100.5e02.8586     igmp Gi7/24,Gi7/25,Te3/1,Switch
+  50      0100.5e7f.fffa     igmp Te2/1,Te2/2,Gi2/13,Gi2/14,Gi7/6,Gi7/9,Gi7/10
+                                  Gi7/27,Gi7/36,Te3/1,Switch
+  50      ffff.ffff.ffff   system Te2/1,Te2/2,Gi2/13,Gi2/14,Gi6/10,Gi7/5
+                                  Gi7/6,Gi7/8,Gi7/9,Gi7/10,Gi7/24,Gi7/25
+                                  Gi7/27,Gi7/36,Te3/1,Switch
+ 172      ffff.ffff.ffff   system Te2/1,Te2/2,Gi2/13,Gi2/14,Gi6/47,Gi7/5
+                                  Gi7/6,Gi7/8,Gi7/9,Gi7/10,Gi7/27,Gi7/36
+                                  Te3/1,Switch
+ 777      0100.5e48.c019     igmp Te2/1,Te2/2,Gi2/13,Gi2/14,Gi7/38,Gi7/40
+                                  Gi7/42,Gi7/44,Gi7/46,Gi7/48,Te3/1,Switch
+ 777      ffff.ffff.ffff   system Te2/1,Te2/2,Gi2/13,Gi2/14,Gi7/36,Gi7/38
+                                  Gi7/40,Gi7/42,Gi7/44,Gi7/46,Gi7/48,Te3/1
+                                  Switch
+Te3/2     ffff.ffff.ffff   system Switch
+
+Memorial-4507R-88018#sh ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.111.0.1              5   0004.96a1.e7a0  ARPA   Vlan777
+Internet  10.111.0.11           204   0016.9dbc.453f  ARPA   Vlan777
+Internet  10.111.0.21            45   0016.c7ca.663f  ARPA   Vlan777
+Internet  10.111.0.31             9   0204.9698.d2e8  ARPA   Vlan777
+Internet  10.111.0.32           189   0017.0e1a.a043  ARPA   Vlan777
+Internet  10.111.0.41             4   0204.969a.5317  ARPA   Vlan777
+Internet  10.111.0.42           198   0017.0e1a.95c1  ARPA   Vlan777
+Internet  10.111.0.51            95   3037.a660.64c1  ARPA   Vlan777
+Internet  10.111.0.254            -   68ef.bdbf.de7f  ARPA   Vlan777
+Internet  10.111.1.1            175   4c77.6ded.7ce0  ARPA   Vlan777
+Internet  10.111.1.2             62   4c77.6dee.5b0c  ARPA   Vlan777
+Internet  10.111.1.3            122   4c77.6d93.13d2  ARPA   Vlan777
+Internet  10.111.1.4            124   4c77.6de1.dcba  ARPA   Vlan777
+Internet  10.111.1.5            154   00be.751a.614e  ARPA   Vlan777
+Internet  10.111.1.6            253   4c77.6de1.dcb6  ARPA   Vlan777
+Internet  10.111.1.7            128   4c77.6d93.13c8  ARPA   Vlan777
+Internet  10.111.1.8            146   4c77.6de1.dcbc  ARPA   Vlan777
+Internet  10.111.1.9              4   00be.751a.6170  ARPA   Vlan777
+Internet  10.111.1.10           177   4c77.6d93.13c2  ARPA   Vlan777
+Internet  10.111.1.11            51   4c77.6ded.7ce2  ARPA   Vlan777
+Internet  10.111.1.12            38   00be.751a.60a8  ARPA   Vlan777
+Internet  10.111.1.13           175   00be.751a.60c8  ARPA   Vlan777
+Internet  10.111.1.14           112   00be.751a.60de  ARPA   Vlan777
+Internet  10.111.1.15           211   4c77.6dee.5c04  ARPA   Vlan777
+Internet  10.111.1.16           108   4c77.6dee.5c08  ARPA   Vlan777
+Internet  10.111.1.17           176   00be.751a.6150  ARPA   Vlan777
+Internet  10.111.1.18           204   4c77.6ded.7cfc  ARPA   Vlan777
+Internet  10.111.1.19           207   7070.8b0c.2bd2  ARPA   Vlan777
+Internet  10.111.1.20            75   4c77.6dee.5ba8  ARPA   Vlan777
+Internet  10.111.1.21           154   4c77.6dee.5c26  ARPA   Vlan777
+Internet  10.111.1.22           134   7070.8b0c.2bd0  ARPA   Vlan777
+Internet  10.111.1.23           221   4c77.6d93.13e4  ARPA   Vlan777
+Internet  10.111.1.24           198   4c77.6ded.7d02  ARPA   Vlan777
+Internet  10.111.1.25            32   4c77.6d93.13e6  ARPA   Vlan777
+Internet  10.111.1.26           226   00be.751a.614a  ARPA   Vlan777
+Internet  10.111.1.27            45   4c77.6dee.5bde  ARPA   Vlan777
+Internet  10.111.1.28           227   00be.751a.60b4  ARPA   Vlan777
+Internet  10.111.1.29            79   7070.8b0c.2c20  ARPA   Vlan777
+Internet  10.111.1.30           164   4c77.6d93.138c  ARPA   Vlan777
+Internet  10.111.1.31             0   7070.8b0c.2b1e  ARPA   Vlan777
+Internet  10.111.1.32           135   4c77.6dee.5bc2  ARPA   Vlan777
+Internet  10.111.1.33           186   4c77.6dee.5c1c  ARPA   Vlan777
+Internet  10.111.1.34            56   00be.751a.6146  ARPA   Vlan777
+Internet  10.111.1.35           103   00be.751a.6124  ARPA   Vlan777
+Internet  10.111.1.36           205   4c77.6d93.1400  ARPA   Vlan777
+Internet  10.111.1.37            27   4c77.6ded.7cde  ARPA   Vlan777
+Internet  10.111.1.38           201   4c77.6d93.13c0  ARPA   Vlan777
+Internet  10.111.1.39           190   4c77.6dee.5c0a  ARPA   Vlan777
+Internet  10.111.1.40           255   7070.8b0c.2c14  ARPA   Vlan777
+Internet  10.111.1.41           181   7070.8b0c.2bf4  ARPA   Vlan777
+Internet  10.111.1.42            62   00be.751a.6158  ARPA   Vlan777
+Internet  10.111.1.43           247   7070.8b0c.2c12  ARPA   Vlan777
+Internet  10.111.1.44           110   00be.751a.613a  ARPA   Vlan777
+Internet  10.111.1.45            14   4c77.6dee.5bd6  ARPA   Vlan777
+Internet  10.111.1.46           150   4c77.6d93.1462  ARPA   Vlan777
+Internet  10.111.1.47           164   00be.751a.60c4  ARPA   Vlan777
+Internet  10.111.1.48           185   4c77.6de1.dcbe  ARPA   Vlan777
+Internet  10.111.1.49           134   00be.751a.612e  ARPA   Vlan777
+Internet  10.111.1.50            30   4c77.6ded.7cfe  ARPA   Vlan777
+Internet  10.111.1.51            22   4c77.6d93.13a4  ARPA   Vlan777
+Internet  10.111.1.52             5   00be.751a.6108  ARPA   Vlan777
+Internet  10.111.1.53            10   00be.751a.611a  ARPA   Vlan777
+Internet  10.111.1.54            61   4c77.6dee.5c12  ARPA   Vlan777
+Internet  10.111.1.55           238   4c77.6dee.5c1e  ARPA   Vlan777
+Internet  10.111.1.56            70   4c77.6ded.7c94  ARPA   Vlan777
+Internet  10.111.1.57            14   00be.751a.613e  ARPA   Vlan777
+Internet  10.111.1.58           119   4c77.6dee.5bcc  ARPA   Vlan777
+Internet  10.111.1.59            77   4c77.6d93.146a  ARPA   Vlan777
+Internet  10.111.1.60           132   00be.751a.6166  ARPA   Vlan777
+Internet  10.111.1.61           185   00be.751a.60dc  ARPA   Vlan777
+Internet  10.111.1.72            43   4c77.6dee.5c20  ARPA   Vlan777
+Internet  10.111.1.76            17   7070.8b0c.2c22  ARPA   Vlan777
+Internet  10.111.1.80            33   00be.751a.6116  ARPA   Vlan777
+Internet  10.111.1.82           183   4c77.6ded.7d00  ARPA   Vlan777
+Internet  10.111.1.85            44   4c77.6ded.7ce6  ARPA   Vlan777
+Internet  10.111.1.92            34   4c77.6ded.7cec  ARPA   Vlan777
+Internet  10.111.1.94           218   00be.751a.613c  ARPA   Vlan777
+Internet  10.111.1.95           184   4c77.6d93.13e8  ARPA   Vlan777
+Internet  10.111.1.97            20   4c77.6d93.13de  ARPA   Vlan777
+Internet  10.111.1.100          117   00be.751a.6176  ARPA   Vlan777
+Internet  10.111.1.101           82   4c77.6dee.5c22  ARPA   Vlan777
+Internet  10.249.0.90             -   68ef.bdbf.de7f  ARPA   TenGigabitEthernet3/2
+Memorial-4507R-88018#sh module
+Chassis Type : WS-C4507R-E
+
+Power consumed by backplane : 40 Watts
+
+Mod Ports Card Type                              Model              Serial No.
+---+-----+--------------------------------------+------------------+-----------
+ 1    48  10/100/1000BaseT (RJ45)                WS-X4548-GB-RJ45   JAE08041MAC 
+ 2    18  10GE (X2), 1000BaseX (SFP)             WS-X4606-X2-E      JAE1410055M 
+ 3     6  Sup 6-E 10GE (X2), 1000BaseX (SFP)     WS-X45-SUP6-E      JAE14140FXK 
+ 5    48  10/100/1000BaseT (RJ45)                WS-X4548-GB-RJ45   JAE140804KR 
+ 6    48  10/100/1000BaseT (RJ45)                WS-X4548-GB-RJ45   JAE1004UNQP 
+ 7    48  10/100/1000BaseT (RJ45)V, Cisco/IEEE   WS-X4548-RJ45V+    JAE17090201 
+
+ M MAC addresses                    Hw  Fw           Sw               Status
+--+--------------------------------+---+------------+----------------+---------
+ 1 000e.d7cb.0ac0 to 000e.d7cb.0aef 1.0                               Ok       
+ 2 0026.99ae.06f3 to 0026.99ae.0704 1.2                               Ok       
+ 3 68ef.bdbf.de40 to 68ef.bdbf.de45 1.6 12.2(44r)SG5 15.2(2)E2        Ok       
+ 5 68ef.bd78.a9f0 to 68ef.bd78.aa1f 2.5                               Ok       
+ 6 0016.c833.77a0 to 0016.c833.77cf 2.2                               Ok       
+ 7 b0fa.ebf4.b238 to b0fa.ebf4.b267 2.1                               Ok       
+
+Mod  Redundancy role     Operating mode      Redundancy status
+----+-------------------+-------------------+----------------------------------
+ 3   Active Supervisor   RPR                 Active                            
+
+Memorial-4507R-88018#sh etherchannel summary
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 0
+Number of aggregators:           0
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+
+Memorial-4507R-88018#sh int description
+Interface                      Status         Protocol Description
+Fa1                            down           down     
+Gi1/1                          up             up       Printer
+Gi1/2                          down           down     Printer
+Gi1/3                          down           down     Printer
+Gi1/4                          down           down     Printer
+Gi1/5                          down           down     PC_Data
+Gi1/6                          down           down     PC_Data
+Gi1/7                          down           down     PC_Data
+Gi1/8                          down           down     PC_Data
+Gi1/9                          down           down     PC_Data
+Gi1/10                         down           down     PC_Data
+Gi1/11                         down           down     PC_Data
+Gi1/12                         down           down     PC_Data
+Gi1/13                         down           down     PC_Data
+Gi1/14                         down           down     PC_Data
+Gi1/15                         down           down     PC_Data
+Gi1/16                         down           down     PC_Data
+Gi1/17                         down           down     PC_Data
+Gi1/18                         down           down     PC_Data
+Gi1/19                         down           down     PC_Data
+Gi1/20                         down           down     PC_Data
+Gi1/21                         down           down     PC_Data
+Gi1/22                         down           down     PC_Data
+Gi1/23                         down           down     PC_Data
+Gi1/24                         down           down     PC_Data
+Gi1/25                         down           down     PC_Data
+Gi1/26                         down           down     PC_Data
+Gi1/27                         down           down     PC_Data
+Gi1/28                         down           down     PC_Data
+Gi1/29                         down           down     PC_Data
+Gi1/30                         down           down     PC_Data
+Gi1/31                         down           down     PC_Data
+Gi1/32                         down           down     PC_Data
+Gi1/33                         down           down     PC_Data
+Gi1/34                         down           down     PC_Data
+Gi1/35                         down           down     PC_Data
+Gi1/36                         down           down     PC_Data
+Gi1/37                         down           down     PC_Data
+Gi1/38                         down           down     PC_Data
+Gi1/39                         down           down     PC_Data
+Gi1/40                         down           down     PC_Data
+Gi1/41                         down           down     PC_Data
+Gi1/42                         down           down     PC_Data
+Gi1/43                         down           down     PC_Data
+Gi1/44                         down           down     PC_Data
+Gi1/45                         down           down     PC_Data
+Gi1/46                         down           down     PC_Data
+Gi1/47                         down           down     PC_Data
+Gi1/48                         down           down     PC_Data
+Te2/1                          up             up       IDF:A
+Te2/2                          up             up       IDF:B
+Te2/3                          admin down     down     
+Te2/4                          admin down     down     
+Te2/5                          admin down     down     
+Te2/6                          admin down     down     
+Gi2/7                          admin down     down     
+Gi2/8                          admin down     down     
+Gi2/9                          admin down     down     
+Gi2/10                         admin down     down     
+Gi2/11                         admin down     down     
+Gi2/12                         admin down     down     
+Gi2/13                         up             up       IDF:C
+Gi2/14                         up             up       IDF:D
+Gi2/15                         admin down     down     
+Gi2/16                         admin down     down     
+Gi2/17                         admin down     down     
+Gi2/18                         admin down     down     
+Te3/1                          up             up       NOC_6513E;Ten12/3;EMAN;23-24
+Te3/2                          down           down     NOC_6513W;Ten12/3;WMAN;23-24
+Gi3/3                          admin down     down     
+Gi3/4                          admin down     down     
+Gi3/5                          admin down     down     
+Gi3/6                          admin down     down     
+Gi5/1                          down           down     PRINTER VLAN
+Gi5/2                          up             up       PRINTER VLAN
+Gi5/3                          up             up       PRINTER VLAN
+Gi5/4                          down           down     PRINTER VLAN
+Gi5/5                          down           down     PC_Data
+Gi5/6                          down           down     PC_Data
+Gi5/7                          down           down     PC_Data
+Gi5/8                          down           down     PC_Data
+Gi5/9                          down           down     PC_Data
+Gi5/10                         down           down     PC_Data
+Gi5/11                         down           down     PC_Data
+Gi5/12                         down           down     PC_Data
+Gi5/13                         down           down     PC_Data
+Gi5/14                         down           down     PC_Data
+Gi5/15                         down           down     PC_Data
+Gi5/16                         down           down     PC_Data
+Gi5/17                         down           down     PC_Data
+Gi5/18                         down           down     PC_Data
+Gi5/19                         down           down     PC_Data
+Gi5/20                         down           down     PC_Data
+Gi5/21                         down           down     PC_Data
+Gi5/22                         down           down     PC_Data
+Gi5/23                         down           down     PC_Data
+Gi5/24                         down           down     PC_Data
+Gi5/25                         down           down     PC_Data
+Gi5/26                         down           down     PC_Data
+Gi5/27                         down           down     PC_Data
+Gi5/28                         down           down     PC_Data
+Gi5/29                         down           down     PC_Data
+Gi5/30                         down           down     PC_Data
+Gi5/31                         down           down     PC_Data
+Gi5/32                         down           down     PC_Data
+Gi5/33                         down           down     PC_Data
+Gi5/34                         down           down     PC_Data
+Gi5/35                         down           down     PC_Data
+Gi5/36                         down           down     PC_Data
+Gi5/37                         down           down     PC_Data
+Gi5/38                         down           down     PC_Data
+Gi5/39                         down           down     PC_Data
+Gi5/40                         down           down     PC_Data
+Gi5/41                         down           down     PC_Data
+Gi5/42                         down           down     PC_Data
+Gi5/43                         down           down     PC_Data
+Gi5/44                         down           down     PC_Data
+Gi5/45                         down           down     PC_Data
+Gi5/46                         down           down     PC_Data
+Gi5/47                         down           down     PC_Data
+Gi5/48                         up             up       Server
+Gi6/1                          down           down     PRINTER VLAN
+Gi6/2                          down           down     PRINTER VLAN
+Gi6/3                          down           down     PRINTER VLAN
+Gi6/4                          down           down     PRINTER VLAN
+Gi6/5                          down           down     PC_Data
+Gi6/6                          down           down     PC_Data
+Gi6/7                          down           down     PC_Data
+Gi6/8                          down           down     PC_Data
+Gi6/9                          down           down     PC_Data
+Gi6/10                         up             up       PC_Data
+Gi6/11                         down           down     PC_Data
+Gi6/12                         down           down     PC_Data
+Gi6/13                         down           down     PC_Data
+Gi6/14                         down           down     PC_Data
+Gi6/15                         down           down     PC_Data
+Gi6/16                         down           down     PC_Data
+Gi6/17                         down           down     PC_Data
+Gi6/18                         down           down     PC_Data
+Gi6/19                         down           down     PC_Data
+Gi6/20                         down           down     PC_Data
+Gi6/21                         down           down     PC_Data
+Gi6/22                         down           down     PC_Data
+Gi6/23                         down           down     PC_Data
+Gi6/24                         down           down     PC_Data
+Gi6/25                         down           down     PC_Data
+Gi6/26                         down           down     PC_Data
+Gi6/27                         down           down     PC_Data
+Gi6/28                         down           down     PC_Data
+Gi6/29                         up             up       SERVER VLAN
+Gi6/30                         down           down     PC_Data
+Gi6/31                         down           down     SERVER VLAN
+Gi6/32                         down           down     SERVER VLAN
+Gi6/33                         down           down     PC_Data
+Gi6/34                         down           down     PC_Data
+Gi6/35                         down           down     PC_Data
+Gi6/36                         down           down     PC_Data
+Gi6/37                         down           down     PC_Data
+Gi6/38                         down           down     PC_Data
+Gi6/39                         down           down     PC_Data
+Gi6/40                         down           down     PC_Data
+Gi6/41                         down           down     PC_Data
+Gi6/42                         down           down     PC_Data
+Gi6/43                         down           down     PC_Data
+Gi6/44                         down           down     PC_Data
+Gi6/45                         down           down     PC_Data
+Gi6/46                         down           down     PC_Data
+Gi6/47                         up             up       VG202
+Gi6/48                         down           down     UPS VLAN
+Gi7/1                          up             up       PRINTER VLAN
+Gi7/2                          down           down     PC_Data 
+Gi7/3                          down           down     PC_Data 
+Gi7/4                          down           down     PC_Data 
+Gi7/5                          up             up       PC_Data & VoIP
+Gi7/6                          up             up       PC_Data & VoIP
+Gi7/7                          down           down     PC_Data & VoIP
+Gi7/8                          up             up       PC_Data & VoIP
+Gi7/9                          up             up       PC_Data & VoIP
+Gi7/10                         up             up       PC_Data & VoIP
+Gi7/11                         down           down     PC_Data
+Gi7/12                         down           down     PC_Data
+Gi7/13                         down           down     PC_Data
+Gi7/14                         down           down     PC_Data
+Gi7/15                         down           down     PC_Data
+Gi7/16                         down           down     PC_Data
+Gi7/17                         down           down     PC_Data
+Gi7/18                         down           down     PC_Data
+Gi7/19                         up             up       Access Control
+Gi7/20                         up             up       Access SIP Station
+Gi7/21                         up             up       Access Control
+Gi7/22                         up             up       Access Master Station
+Gi7/23                         down           down     PC_Data
+Gi7/24                         up             up       PC_Data
+Gi7/25                         up             up       PC_Data
+Gi7/26                         down           down     PC_Data
+Gi7/27                         up             up       PC_Data & VoIP
+Gi7/28                         down           down     PC_Data
+Gi7/29                         down           down     PC_Data
+Gi7/30                         up             up       Security
+Gi7/31                         down           down     Security
+Gi7/32                         down           down     Security
+Gi7/33                         up             up       Security Camera
+Gi7/34                         up             up       Security Camera
+Gi7/35                         down           down     Security Camera
+Gi7/36                         up             up       **CAFE**
+Gi7/37                         up             up       TimeClock
+Gi7/38                         up             up       *LWAPP*
+Gi7/39                         down           down     *LWAPP*
+Gi7/40                         up             up       *LWAPP*
+Gi7/41                         down           down     *LWAPP*
+Gi7/42                         up             up       *LWAPP*
+Gi7/43                         down           down     *LWAPP*
+Gi7/44                         up             up       *LWAPP*
+Gi7/45                         down           down     *LWAPP*
+Gi7/46                         up             up       *LWAPP*
+Gi7/47                         down           down     *LWAPP*
+Gi7/48                         up             up       *LWAPP*
+Tu0                            up             up       Pim Register Tunnel (Encap) for RP 2.1.1.1
+Vl1                            admin down     down     
+Vl3                            up             up       Printers
+Vl5                            up             up       Security Camera
+Vl6                            up             up       UPS
+Vl8                            up             up       Projectors
+Vl9                            up             up       Video
+Vl10                           up             up       Servers
+Vl20                           up             up       Management
+Vl22                           down           down     printer
+Vl30                           up             up       miscellaneous
+Vl50                           up             up       Students
+Vl120                          admin down     down     
+Vl172                          up             up       Voice
+Vl777                          up             up       LAN
+Vl778                          admin down     down     
+Vl779                          admin down     down     
+Memorial-4507R-88018#sh ip pim neighbor
+PIM Neighbor Table
+Mode: B - Bidir Capable, DR - Designated Router, N - Default DR Priority,
+      P - Proxy Capable, S - State Refresh Capable, G - GenID Capable
+Neighbor          Interface                Uptime/Expires    Ver   DR
+Address                                                            Prio/Mode
+Memorial-4507R-88018#sh ip mroute
+IP Multicast Routing Table
+Flags: D - Dense, S - Sparse, B - Bidir Group, s - SSM Group, C - Connected,
+       L - Local, P - Pruned, R - RP-bit set, F - Register flag,
+       T - SPT-bit set, J - Join SPT, M - MSDP created entry, E - Extranet,
+       X - Proxy Join Timer Running, A - Candidate for MSDP Advertisement,
+       U - URD, I - Received Source Specific Host Report, 
+       Z - Multicast Tunnel, z - MDT-data group sender, 
+       Y - Joined MDT-data group, y - Sending to MDT-data group, 
+       G - Received BGP C-Mroute, g - Sent BGP C-Mroute, 
+       N - Received BGP Shared-Tree Prune, n - BGP C-Mroute suppressed, 
+       Q - Received BGP S-A Route, q - Sent BGP S-A Route, 
+       V - RD & Vector, v - Vector, p - PIM Joins on route, 
+       x - VxLAN group
+Outgoing interface flags: H - Hardware switched, A - Assert winner, p - PIM Join
+ Timers: Uptime/Expires
+ Interface state: Interface, Next-Hop or VCD, State/Mode
+
+(*, 239.200.192.25), 7w0d/00:02:07, RP 2.1.1.1, flags: SJPC
+  Incoming interface: Vlan777, RPF nbr 10.111.0.1
+  Outgoing interface list: Null
+
+(*, 224.0.1.40), 7w0d/00:01:59, RP 2.1.1.1, flags: SJPCL
+  Incoming interface: Vlan777, RPF nbr 10.111.0.1
+  Outgoing interface list: Null
+
+Memorial-4507R-88018#sh int trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Te2/1       on               802.1q         trunking      1
+Te2/2       on               802.1q         trunking      1
+Gi2/13      on               802.1q         trunking      1
+Gi2/14      on               802.1q         trunking      1
+Te3/1       on               802.1q         trunking      1
+Gi7/36      on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Te2/1       1-4094
+Te2/2       1-4094
+Gi2/13      1-4094
+Gi2/14      1-4094
+Te3/1       1-4094
+Gi7/36      1-4094
+
+Port        Vlans allowed and active in management domain
+Te2/1       1,3,5-6,8-10,20,30,50,172,777
+Te2/2       1,3,5-6,8-10,20,30,50,172,777
+Gi2/13      1,3,5-6,8-10,20,30,50,172,777
+Gi2/14      1,3,5-6,8-10,20,30,50,172,777
+Te3/1       1,3,5-6,8-10,20,30,50,172,777
+Gi7/36      1,3,5-6,8-10,20,30,50,172,777
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Te2/1       1,3,5,30,50,172,777
+Te2/2       1,3,5,50,172,777
+Gi2/13      1,3,5-6,8-10,20,30,50,172,777
+Gi2/14      1,3,5-6,8-10,20,30,50,172,777
+Te3/1       1,3,5-6,8-10,20,30,50,172,777
+Gi7/36      1,3,5,50,172,777
+Memorial-4507R-88018#sh spanning-tree
+
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24577
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24577  (priority 24576 sys-id-ext 1)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0003
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24579
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24579  (priority 24576 sys-id-ext 3)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/1               Desg FWD 19        128.1    P2p Edge 
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi5/2               Desg FWD 4         128.514  P2p Edge 
+Gi5/3               Desg FWD 19        128.515  P2p Edge 
+Gi7/1               Desg FWD 19        128.769  P2p Edge 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0005
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24581
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24581  (priority 24576 sys-id-ext 5)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi7/30              Desg FWD 19        128.798  P2p Edge 
+Gi7/33              Desg FWD 19        128.801  P2p Edge 
+Gi7/34              Desg FWD 19        128.802  P2p Edge 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0006
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24582
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24582  (priority 24576 sys-id-ext 6)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0008
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24584
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24584  (priority 24576 sys-id-ext 8)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0009
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24585
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24585  (priority 24576 sys-id-ext 9)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0010
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24586
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24586  (priority 24576 sys-id-ext 10)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi5/48              Desg FWD 4         128.560  P2p Edge 
+Gi6/29              Desg FWD 4         128.669  P2p Edge 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0020
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24596
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24596  (priority 24576 sys-id-ext 20)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi7/19              Desg FWD 19        128.787  P2p Edge 
+Gi7/20              Desg FWD 19        128.788  P2p Edge 
+Gi7/21              Desg FWD 19        128.789  P2p Edge 
+Gi7/22              Desg FWD 4         128.790  P2p Edge 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0030
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    32798
+             Address     0016.9dbc.4500
+             Cost        2
+             Port        129 (TenGigabitEthernet2/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32798  (priority 32768 sys-id-ext 30)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Root FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi7/36              Desg FWD 4         128.804  P2p 
+Gi7/37              Desg FWD 4         128.805  P2p Edge 
+
+
+
+VLAN0050
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24626
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24626  (priority 24576 sys-id-ext 50)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi6/10              Desg FWD 100       128.650  P2p Edge 
+Gi7/5               Desg FWD 19        128.773  P2p Edge 
+Gi7/6               Desg FWD 4         128.774  P2p Edge 
+Gi7/8               Desg FWD 19        128.776  P2p Edge 
+Gi7/9               Desg FWD 19        128.777  P2p Edge 
+Gi7/10              Desg FWD 19        128.778  P2p Edge 
+Gi7/24              Desg FWD 19        128.792  P2p Edge 
+Gi7/25              Desg FWD 19        128.793  P2p Edge 
+Gi7/27              Desg FWD 19        128.795  P2p Edge 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0172
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24748
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24748  (priority 24576 sys-id-ext 172)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi6/47              Desg FWD 19        128.687  P2p 
+Gi7/5               Desg FWD 19        128.773  P2p Edge 
+Gi7/6               Desg FWD 4         128.774  P2p Edge 
+Gi7/8               Desg FWD 19        128.776  P2p Edge 
+Gi7/9               Desg FWD 19        128.777  P2p Edge 
+Gi7/10              Desg FWD 19        128.778  P2p Edge 
+Gi7/27              Desg FWD 19        128.795  P2p Edge 
+Gi7/36              Desg FWD 4         128.804  P2p 
+
+
+
+VLAN0777
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    25353
+             Address     68ef.bdbf.de40
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    25353  (priority 24576 sys-id-ext 777)
+             Address     68ef.bdbf.de40
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Te2/1               Desg FWD 2         128.129  P2p 
+Te2/2               Desg FWD 2         128.130  P2p 
+Gi2/13              Desg FWD 4         128.141  P2p 
+Gi2/14              Desg FWD 4         128.142  P2p 
+Te3/1               Desg FWD 2         128.257  P2p 
+Gi7/36              Desg FWD 4         128.804  P2p 
+Gi7/38              Desg FWD 4         128.806  P2p Edge 
+Gi7/40              Desg FWD 4         128.808  P2p Edge 
+Gi7/42              Desg FWD 4         128.810  P2p Edge 
+Gi7/44              Desg FWD 4         128.812  P2p Edge 
+Gi7/46              Desg FWD 4         128.814  P2p Edge 
+Gi7/48              Desg FWD 4         128.816  P2p Edge 
+
+
+Memorial-4507R-88018#sh ip dhcp binding
+Bindings from all pools not associated with VRF:
+IP address      Client-ID/              Lease expiration        Type       State      Interface
+                Hardware address/
+                User name
+Memorial-4507R-88018#sh ntp associations
+
+  address         ref clock       st   when   poll reach  delay  offset   disp
+*~10.200.0.1      10.200.10.33     4     66   1024   377  0.784 -67.923  0.119
+ * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured
+Memorial-4507R-88018#sh clock
+16:37:53.652 CDT Thu Oct 22 2020
+Memorial-4507R-88018#wr mem
+Building configuration...
+Compressed configuration from 42153 bytes to 11382 bytes[OK]
+Memorial-4507R-88018#exit

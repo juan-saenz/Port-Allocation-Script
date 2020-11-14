@@ -1,0 +1,1028 @@
+﻿
+username: netsync
+password: 
+
+E-3750-88013>en
+password: 
+E-3750-88013#ter len 0
+E-3750-88013#sh ver
+Cisco IOS Software, C3750 Software (C3750-IPBASE-M), Version 12.2(35)SE5, RELEASE SOFTWARE (fc1)
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Thu 19-Jul-07 19:15 by nachen
+Image text-base: 0x00003000, data-base: 0x01080000
+
+ROM: Bootstrap program is C3750 boot loader
+BOOTLDR: C3750 Boot Loader (C3750-HBOOT-M) Version 12.2(25r)SEE4, RELEASE SOFTWARE (fc1)
+
+E-3750-88013 uptime is 7 weeks, 6 days, 1 hour, 4 minutes
+System returned to ROM by power-on
+System image file is "flash:c3750-ipbase-mz.122-35.SE5/c3750-ipbase-mz.122-35.SE5.bin"
+
+cisco WS-C3750G-24PS (PowerPC405) processor (revision H0) with 118784K/12280K bytes of memory.
+Processor board ID FOC1405Y0EM
+Last reset from power-on
+2 Virtual Ethernet interfaces
+28 Gigabit Ethernet interfaces
+The password-recovery mechanism is enabled.
+
+512K bytes of flash-simulated non-volatile configuration memory.
+Base ethernet MAC Address       : 30:37:A6:60:64:80
+Motherboard assembly number     : 73-10217-08
+Power supply part number        : 341-0108-04
+Motherboard serial number       : FOC14053JDG
+Power supply serial number      : DCA1351A1W2
+Model revision number           : H0
+Motherboard revision number     : C0
+Model number                    : WS-C3750G-24PS-S
+System serial number            : FOC1405Y0EM
+Top Assembly Part Number        : 800-26855-02
+Top Assembly Revision Number    : E0
+Version ID                      : V06
+CLEI Code Number                : COMXD00ARA
+Hardware Board Revision Number  : 0x09
+
+
+Switch   Ports  Model              SW Version              SW Image            
+------   -----  -----              ----------              ----------          
+*    1   28     WS-C3750G-24PS     12.2(35)SE5             C3750-IPBASE-M      
+
+
+Configuration register is 0xF
+
+E-3750-88013#sh inventory
+NAME: "1", DESCR: "WS-C3750G-24PS"
+PID: WS-C3750G-24PS-S  , VID: V06, SN: FOC1405Y0EM
+
+
+E-3750-88013#sh switch
+Switch/Stack Mac Address : 3037.a660.6480
+                                           H/W   Current
+Switch#  Role   Mac Address     Priority Version  State 
+----------------------------------------------------------
+*1       Master 3037.a660.6480     1      0       Ready               
+
+
+
+E-3750-88013#sh run
+Building configuration...
+
+Current configuration : 5981 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime
+service timestamps log datetime
+service password-encryption
+!
+hostname E-3750-88013
+!
+enable secret 5 $1$jD/k$Px3kCEykBkZxo0lVAJ/Lh/
+!
+aaa new-model
+aaa authentication login default group tacacs+ enable
+aaa authentication enable default group tacacs+ enable
+!
+aaa session-id common
+clock timezone CST -6
+clock summer-time CDT recurring
+switch 1 provision ws-c3750g-24ps
+system mtu routing 1500
+ip subnet-zero
+no ip domain-lookup
+ip domain-name wisd.us
+ip name-server 10.200.10.33
+!
+!
+!
+!
+no file verify auto
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+interface GigabitEthernet1/0/1
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/2
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/3
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/4
+ description PRINTER VLAN
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/5
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/7
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/8
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/9
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/10
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/12
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/13
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/14
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/15
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/16
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/17
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/18
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/19
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/20
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/21
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/22
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/23
+ description CAFE
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/24
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet1/0/25
+ shutdown
+!
+interface GigabitEthernet1/0/26
+ shutdown
+!
+interface GigabitEthernet1/0/27
+ shutdown
+!
+interface GigabitEthernet1/0/28
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan777
+ description LAN Routers_Switches
+ ip address 10.111.0.51 255.255.255.0
+ no ip redirects
+ no ip unreachables
+!
+ip default-gateway 10.111.0.1
+ip classless
+no ip http server
+!
+snmp-server community wisdCommStr RO
+snmp-server community defconSeven RW
+snmp-server community WisdMonitor RW
+snmp-server location IDF:E
+snmp-server contact Help Desk x6956
+snmp-server enable traps license
+snmp-server host 10.200.10.93 WisdMonitor 
+tacacs-server host 10.200.10.18
+tacacs-server directed-request
+tacacs-server key 7 141F410700543D7B362437
+radius-server source-ports 1645-1646
+!
+control-plane
+!
+!
+line con 0
+ logging synchronous
+line vty 0 4
+ logging synchronous
+line vty 5 15
+!
+ntp clock-period 36028715
+ntp server 173.8.198.243
+end
+
+E-3750-88013#sh vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi1/0/25, Gi1/0/26, Gi1/0/27, Gi1/0/28
+3    Printers                         active    Gi1/0/1, Gi1/0/2, Gi1/0/3, Gi1/0/4
+5    Security                         active    Gi1/0/21, Gi1/0/22
+6    UPS                              active    
+8    Projectors                       active    
+9    Video                            active    
+10   Servers                          active    
+20   Management                       active    
+30   misc                             active    
+50   PC_Data                          active    Gi1/0/5, Gi1/0/6, Gi1/0/7, Gi1/0/8, Gi1/0/9, Gi1/0/10, Gi1/0/11
+                                                Gi1/0/12, Gi1/0/13, Gi1/0/14, Gi1/0/15, Gi1/0/16, Gi1/0/17
+                                                Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/23
+172  Voice                            active    Gi1/0/5, Gi1/0/6, Gi1/0/7, Gi1/0/8, Gi1/0/9, Gi1/0/10, Gi1/0/11
+                                                Gi1/0/12, Gi1/0/13, Gi1/0/14, Gi1/0/15, Gi1/0/16, Gi1/0/17
+                                                Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/23
+777  LAN                              active    
+1002 fddi-default                     act/unsup 
+1003 trcrf-default                    act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trbrf-default                    act/unsup 
+E-3750-88013#sh vtp status
+VTP Version                     : 2
+Configuration Revision          : 36
+Maximum VLANs supported locally : 1005
+Number of existing VLANs        : 16
+VTP Operating Mode              : Client
+VTP Domain Name                 : Memorial
+VTP Pruning Mode                : Enabled
+VTP V2 Mode                     : Enabled
+VTP Traps Generation            : Disabled
+MD5 digest                      : 0x95 0x99 0x36 0x25 0x15 0x9F 0x00 0x36 
+Configuration last modified by 10.111.3.1 at 5-22-19 13:30:45
+E-3750-88013#sh vtp pass
+The VTP password is not configured.
+E-3750-88013#sh ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES NVRAM  administratively down down    
+Vlan777                10.111.0.51     YES NVRAM  up                    up      
+GigabitEthernet1/0/1   unassigned      YES unset  up                    up      
+GigabitEthernet1/0/2   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/3   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/4   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/5   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/6   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/7   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/8   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/9   unassigned      YES unset  down                  down    
+GigabitEthernet1/0/10  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/11  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/12  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/13  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/14  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/15  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/16  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/17  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/18  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/19  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/20  unassigned      YES unset  down                  down    
+GigabitEthernet1/0/21  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/22  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/23  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/24  unassigned      YES unset  up                    up      
+GigabitEthernet1/0/25  unassigned      YES unset  administratively down down    
+GigabitEthernet1/0/26  unassigned      YES unset  administratively down down    
+GigabitEthernet1/0/27  unassigned      YES unset  administratively down down    
+GigabitEthernet1/0/28  unassigned      YES unset  administratively down down    
+E-3750-88013#sh ip route
+Default gateway is 10.111.0.1
+
+Host               Gateway           Last Use    Total Uses  Interface
+ICMP redirect cache is empty
+E-3750-88013#sh cdp neigh
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+SEPc46413014d50  Gig 1/0/12        146           H P      IP Phone  Port 1
+SEPc46413014e40  Gig 1/0/10        146           H P      IP Phone  Port 1
+Memorial-4507R-88018.wisd.us
+                 Gig 1/0/24        171          R S I     WS-C4507R Gig 7/36
+E-3750-88013#sh cdp neigh detail
+-------------------------
+Device ID: SEPc46413014d50
+Entry address(es): 
+  IP address: 172.16.27.14
+Platform: Cisco IP Phone 6945 ,  Capabilities: Host Phone 
+Interface: GigabitEthernet1/0/12,  Port ID (outgoing port): Port 1
+Holdtime : 146 sec
+
+Version :
+SCCP 9-4-1-3
+
+advertisement version: 2
+Duplex: full
+Power drawn: 3.840 Watts
+Power request id: 17529, Power management id: 3
+Power request levels are:3840 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEPc46413014e40
+Entry address(es): 
+  IP address: 172.16.27.143
+Platform: Cisco IP Phone 6945 ,  Capabilities: Host Phone 
+Interface: GigabitEthernet1/0/10,  Port ID (outgoing port): Port 1
+Holdtime : 146 sec
+
+Version :
+SCCP 9-4-1-3
+
+advertisement version: 2
+Duplex: full
+Power drawn: 3.840 Watts
+Power request id: 5832, Power management id: 3
+Power request levels are:3840 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: Memorial-4507R-88018.wisd.us
+Entry address(es): 
+  IP address: 10.111.0.254
+Platform: cisco WS-C4507R-E,  Capabilities: Router Switch IGMP 
+Interface: GigabitEthernet1/0/24,  Port ID (outgoing port): GigabitEthernet7/36
+Holdtime : 170 sec
+
+Version :
+Cisco IOS Software, Catalyst 4500 L3 Switch  Software (cat4500e-ENTSERVICESK9-M), Version 15.2(2)E2, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2015 by Cisco Systems, Inc.
+Compiled Wed 25-Mar-15 07:04 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF0102250000000000000068EFBDBFDE7FFF0000
+VTP Management Domain: 'Memorial'
+Native VLAN: 1
+Duplex: full
+Management address(es): 
+  IP address: 10.111.0.254
+
+E-3750-88013#sh int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down     
+Vl777                          up             up       LAN Routers_Switches
+Gi1/0/1                        up             up       PRINTER VLAN
+Gi1/0/2                        down           down     PRINTER VLAN
+Gi1/0/3                        down           down     PRINTER VLAN
+Gi1/0/4                        down           down     PRINTER VLAN
+Gi1/0/5                        down           down     PC_Data
+Gi1/0/6                        down           down     PC_Data
+Gi1/0/7                        down           down     PC_Data
+Gi1/0/8                        down           down     PC_Data
+Gi1/0/9                        down           down     PC_Data
+Gi1/0/10                       up             up       PC_Data
+Gi1/0/11                       up             up       PC_Data
+Gi1/0/12                       up             up       PC_Data
+Gi1/0/13                       down           down     PC_Data
+Gi1/0/14                       down           down     PC_Data
+Gi1/0/15                       down           down     PC_Data
+Gi1/0/16                       down           down     PC_Data
+Gi1/0/17                       down           down     PC_Data
+Gi1/0/18                       down           down     PC_Data
+Gi1/0/19                       down           down     PC_Data
+Gi1/0/20                       down           down     PC_Data
+Gi1/0/21                       up             up       Security Camera
+Gi1/0/22                       up             up       Security Camera
+Gi1/0/23                       up             up       CAFE
+Gi1/0/24                       up             up       
+Gi1/0/25                       admin down     down     
+Gi1/0/26                       admin down     down     
+Gi1/0/27                       admin down     down     
+Gi1/0/28                       admin down     down     
+E-3750-88013#sh ip eigrp neigh
+E-3750-88013#sh ip protocols
+*** IP Routing is NSF aware ***
+
+E-3750-88013#sh int status
+
+Port      Name               Status       Vlan       Duplex  Speed Type
+Gi1/0/1   PRINTER VLAN       connected    3          a-full  a-100 10/100/1000BaseTX
+Gi1/0/2   PRINTER VLAN       notconnect   3            auto   auto 10/100/1000BaseTX
+Gi1/0/3   PRINTER VLAN       notconnect   3            auto   auto 10/100/1000BaseTX
+Gi1/0/4   PRINTER VLAN       notconnect   3            auto   auto 10/100/1000BaseTX
+Gi1/0/5   PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/6   PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/7   PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/8   PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/9   PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/10  PC_Data            connected    50         a-full a-1000 10/100/1000BaseTX
+Gi1/0/11  PC_Data            connected    50         a-full a-1000 10/100/1000BaseTX
+Gi1/0/12  PC_Data            connected    50         a-full a-1000 10/100/1000BaseTX
+Gi1/0/13  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/14  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/15  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/16  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/17  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/18  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/19  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/20  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi1/0/21  Security Camera    connected    5          a-full  a-100 10/100/1000BaseTX
+Gi1/0/22  Security Camera    connected    5          a-full  a-100 10/100/1000BaseTX
+Gi1/0/23  CAFE               connected    50         a-full  a-100 10/100/1000BaseTX
+Gi1/0/24                     connected    trunk      a-full a-1000 10/100/1000BaseTX
+Gi1/0/25                     disabled     1            auto   auto Not Present
+Gi1/0/26                     disabled     1            auto   auto Not Present
+Gi1/0/27                     disabled     1            auto   auto Not Present
+Gi1/0/28                     disabled     1            auto   auto Not Present
+E-3750-88013#sh power inline
+
+Module   Available     Used     Remaining
+          (Watts)     (Watts)    (Watts) 
+------   ---------   --------   ---------
+1           370.0       38.5       331.5
+Interface Admin  Oper       Power   Device              Class Max
+                            (Watts)                            
+--------- ------ ---------- ------- ------------------- ----- ----
+Gi1/0/1   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/2   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/3   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/4   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/5   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/6   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/7   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/8   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/9   auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/10  auto   on         3.8     IP Phone 6945       1     15.4 
+Gi1/0/11  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/12  auto   on         3.8     IP Phone 6945       1     15.4 
+Gi1/0/13  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/14  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/15  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/16  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/17  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/18  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/19  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/20  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/21  auto   on         15.4    Ieee PD             3     15.4 
+Gi1/0/22  auto   on         15.4    Ieee PD             3     15.4 
+Gi1/0/23  auto   off        0.0     n/a                 n/a   15.4 
+Gi1/0/24  auto   off        0.0     n/a                 n/a   15.4 
+E-3750-88013#sh mac address
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+ All    0100.0ccc.cccc    STATIC      CPU
+ All    0100.0ccc.cccd    STATIC      CPU
+ All    0180.c200.0000    STATIC      CPU
+ All    0180.c200.0001    STATIC      CPU
+ All    0180.c200.0002    STATIC      CPU
+ All    0180.c200.0003    STATIC      CPU
+ All    0180.c200.0004    STATIC      CPU
+ All    0180.c200.0005    STATIC      CPU
+ All    0180.c200.0006    STATIC      CPU
+ All    0180.c200.0007    STATIC      CPU
+ All    0180.c200.0008    STATIC      CPU
+ All    0180.c200.0009    STATIC      CPU
+ All    0180.c200.000a    STATIC      CPU
+ All    0180.c200.000b    STATIC      CPU
+ All    0180.c200.000c    STATIC      CPU
+ All    0180.c200.000d    STATIC      CPU
+ All    0180.c200.000e    STATIC      CPU
+ All    0180.c200.000f    STATIC      CPU
+ All    0180.c200.0010    STATIC      CPU
+ All    ffff.ffff.ffff    STATIC      CPU
+  50    0004.96a1.e7a0    DYNAMIC     Gi1/0/24
+  50    0040.9d75.be5e    DYNAMIC     Gi1/0/23
+  50    00e0.4c68.0b46    DYNAMIC     Gi1/0/24
+  50    1803.73d6.07e1    DYNAMIC     Gi1/0/24
+  50    1803.73e8.1974    DYNAMIC     Gi1/0/24
+  50    3417.ebbe.4d41    DYNAMIC     Gi1/0/24
+  50    6400.6a3a.bbe6    DYNAMIC     Gi1/0/24
+  50    782b.cbb4.67ea    DYNAMIC     Gi1/0/24
+  50    b083.fe4d.80dd    DYNAMIC     Gi1/0/24
+  50    b083.fe4e.2472    DYNAMIC     Gi1/0/24
+  50    b083.fe4e.5fff    DYNAMIC     Gi1/0/24
+  50    b083.fe63.5a48    DYNAMIC     Gi1/0/24
+  50    b083.fe63.665d    DYNAMIC     Gi1/0/24
+  50    b083.fe83.e2c5    DYNAMIC     Gi1/0/24
+  50    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+  50    b4b5.2fc8.fca2    DYNAMIC     Gi1/0/24
+  50    b4b5.2fca.35b2    DYNAMIC     Gi1/0/24
+  50    b4b5.2fcc.6df2    DYNAMIC     Gi1/0/24
+  50    b8ca.3ab9.43da    DYNAMIC     Gi1/0/24
+  50    b8ca.3aff.dd8c    DYNAMIC     Gi1/0/24
+  50    c464.1301.4d50    DYNAMIC     Gi1/0/12
+  50    c464.1301.4e40    DYNAMIC     Gi1/0/10
+  50    d4be.d98d.92d4    DYNAMIC     Gi1/0/24
+  50    d4be.d993.c983    DYNAMIC     Gi1/0/24
+  50    d89e.f31e.4224    DYNAMIC     Gi1/0/12
+  50    f8b1.569d.a518    DYNAMIC     Gi1/0/24
+  50    f8b1.56df.e7f1    DYNAMIC     Gi1/0/11
+  50    f8bc.12a9.227a    DYNAMIC     Gi1/0/24
+  50    f8bc.12a9.2df1    DYNAMIC     Gi1/0/24
+ 172    0004.96a1.e7a0    DYNAMIC     Gi1/0/24
+ 172    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+ 172    c464.1301.4d50    DYNAMIC     Gi1/0/12
+ 172    c464.1301.4e40    DYNAMIC     Gi1/0/10
+   3    0004.96a1.e7a0    DYNAMIC     Gi1/0/24
+   3    0011.0ac1.32c9    DYNAMIC     Gi1/0/24
+   3    0021.b729.5448    DYNAMIC     Gi1/0/24
+   3    0021.b742.c3f2    DYNAMIC     Gi1/0/24
+   3    0021.b781.68e9    DYNAMIC     Gi1/0/24
+   3    0021.b795.a728    DYNAMIC     Gi1/0/24
+   3    0021.b795.dbed    DYNAMIC     Gi1/0/24
+   3    0021.b795.dbee    DYNAMIC     Gi1/0/24
+   3    0021.b7e2.5844    DYNAMIC     Gi1/0/24
+   3    0021.b7f1.0aeb    DYNAMIC     Gi1/0/24
+   3    0021.b7f1.7fa8    DYNAMIC     Gi1/0/24
+   3    0021.b7f1.7fcc    DYNAMIC     Gi1/0/24
+   3    0080.8702.622a    DYNAMIC     Gi1/0/24
+   3    0080.87ab.44a0    DYNAMIC     Gi1/0/24
+   3    0080.87c2.21b8    DYNAMIC     Gi1/0/24
+   3    0080.87c2.2d7f    DYNAMIC     Gi1/0/24
+   3    0080.87c2.e5a7    DYNAMIC     Gi1/0/24
+   3    0080.87c2.e5fa    DYNAMIC     Gi1/0/24
+   3    0800.37ea.bc5e    DYNAMIC     Gi1/0/24
+   3    3c2a.f4a2.c340    DYNAMIC     Gi1/0/1
+   3    4437.e6ac.6b2f    DYNAMIC     Gi1/0/24
+   3    80e8.2c0b.5ddb    DYNAMIC     Gi1/0/24
+   3    80e8.2ca6.e7ad    DYNAMIC     Gi1/0/24
+   3    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+   5    0004.96a1.e7a0    DYNAMIC     Gi1/0/24
+   5    0009.1861.1497    DYNAMIC     Gi1/0/24
+   5    0009.1861.1498    DYNAMIC     Gi1/0/24
+   5    0009.1861.1499    DYNAMIC     Gi1/0/24
+   5    0009.1861.149a    DYNAMIC     Gi1/0/24
+   5    0009.1861.149f    DYNAMIC     Gi1/0/24
+   5    0009.1861.14a0    DYNAMIC     Gi1/0/24
+   5    0009.1861.14a1    DYNAMIC     Gi1/0/24
+   5    0009.1861.14a2    DYNAMIC     Gi1/0/24
+   5    001a.0703.938b    DYNAMIC     Gi1/0/24
+   5    001a.0703.93f4    DYNAMIC     Gi1/0/24
+   5    001a.0706.925c    DYNAMIC     Gi1/0/24
+   5    001a.070c.1257    DYNAMIC     Gi1/0/24
+   5    4419.b643.ca1b    DYNAMIC     Gi1/0/24
+   5    4419.b647.994e    DYNAMIC     Gi1/0/24
+   5    4419.b647.994f    DYNAMIC     Gi1/0/24
+   5    4419.b647.9956    DYNAMIC     Gi1/0/24
+   5    4419.b647.996b    DYNAMIC     Gi1/0/24
+   5    4419.b647.997c    DYNAMIC     Gi1/0/24
+   5    4419.b647.9981    DYNAMIC     Gi1/0/24
+   5    4419.b647.9986    DYNAMIC     Gi1/0/24
+   5    4419.b647.9995    DYNAMIC     Gi1/0/24
+   5    accc.8e07.4efd    DYNAMIC     Gi1/0/24
+   5    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+   5    c42f.90cb.ac86    DYNAMIC     Gi1/0/24
+   5    e430.220e.a987    DYNAMIC     Gi1/0/21
+   5    e430.220e.a989    DYNAMIC     Gi1/0/24
+   5    e430.220e.a98a    DYNAMIC     Gi1/0/24
+   5    e430.220e.a98b    DYNAMIC     Gi1/0/22
+   5    e430.220e.a98c    DYNAMIC     Gi1/0/24
+   1    00e0.2b00.0001    DYNAMIC     Gi1/0/24
+   1    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+   6    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+   8    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+   9    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+  10    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+  20    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+  30    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+ 777    0004.96a1.e7a0    DYNAMIC     Gi1/0/24
+ 777    0204.969a.5317    DYNAMIC     Gi1/0/24
+ 777    68ef.bdbf.de7f    DYNAMIC     Gi1/0/24
+ 777    7070.8b0c.2c20    DYNAMIC     Gi1/0/24
+ 777    b0fa.ebf4.b25b    DYNAMIC     Gi1/0/24
+Total Mac Addresses for this criterion: 120
+E-3750-88013#sh ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.111.0.51             -   3037.a660.64c1  ARPA   Vlan777
+Internet  10.111.0.1              5   0004.96a1.e7a0  ARPA   Vlan777
+E-3750-88013#sh module
+                  ^
+% Invalid input detected at '^' marker.
+
+E-3750-88013#sh etherchannel summary
+Flags:  D - down        P - in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 0
+Number of aggregators:           0
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+
+E-3750-88013#sh int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down     
+Vl777                          up             up       LAN Routers_Switches
+Gi1/0/1                        up             up       PRINTER VLAN
+Gi1/0/2                        down           down     PRINTER VLAN
+Gi1/0/3                        down           down     PRINTER VLAN
+Gi1/0/4                        down           down     PRINTER VLAN
+Gi1/0/5                        down           down     PC_Data
+Gi1/0/6                        down           down     PC_Data
+Gi1/0/7                        down           down     PC_Data
+Gi1/0/8                        down           down     PC_Data
+Gi1/0/9                        down           down     PC_Data
+Gi1/0/10                       up             up       PC_Data
+Gi1/0/11                       up             up       PC_Data
+Gi1/0/12                       up             up       PC_Data
+Gi1/0/13                       down           down     PC_Data
+Gi1/0/14                       down           down     PC_Data
+Gi1/0/15                       down           down     PC_Data
+Gi1/0/16                       down           down     PC_Data
+Gi1/0/17                       down           down     PC_Data
+Gi1/0/18                       down           down     PC_Data
+Gi1/0/19                       down           down     PC_Data
+Gi1/0/20                       down           down     PC_Data
+Gi1/0/21                       up             up       Security Camera
+Gi1/0/22                       up             up       Security Camera
+Gi1/0/23                       up             up       CAFE
+Gi1/0/24                       up             up       
+Gi1/0/25                       admin down     down     
+Gi1/0/26                       admin down     down     
+Gi1/0/27                       admin down     down     
+Gi1/0/28                       admin down     down     
+E-3750-88013#sh ip pim neighbor
+                    ^
+% Invalid input detected at '^' marker.
+
+E-3750-88013#sh ip mroute
+                    ^
+% Invalid input detected at '^' marker.
+
+E-3750-88013#sh int trunk
+
+Port        Mode         Encapsulation  Status        Native vlan
+Gi1/0/24    on           802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gi1/0/24    1-4094
+
+Port        Vlans allowed and active in management domain
+Gi1/0/24    1,3,5-6,8-10,20,30,50,172,777
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gi1/0/24    1,3,5-6,8-10,20,30,50,172,777
+E-3750-88013#sh spanning-tree
+
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24577
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0003
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24579
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32771  (priority 32768 sys-id-ext 3)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1          Desg FWD 19        128.1    Edge P2p 
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0005
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24581
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32773  (priority 32768 sys-id-ext 5)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/21         Desg FWD 19        128.21   Edge P2p 
+Gi1/0/22         Desg FWD 19        128.22   Edge P2p 
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0006
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24582
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32774  (priority 32768 sys-id-ext 6)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0008
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24584
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32776  (priority 32768 sys-id-ext 8)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0009
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24585
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32777  (priority 32768 sys-id-ext 9)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0010
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24586
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32778  (priority 32768 sys-id-ext 10)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0020
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24596
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32788  (priority 32768 sys-id-ext 20)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0030
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    32798
+             Address     0016.9dbc.4500
+             Cost        6
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32798  (priority 32768 sys-id-ext 30)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0050
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24626
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32818  (priority 32768 sys-id-ext 50)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/10         Desg FWD 4         128.10   Edge P2p 
+Gi1/0/11         Desg FWD 4         128.11   Edge P2p 
+Gi1/0/12         Desg FWD 4         128.12   Edge P2p 
+Gi1/0/23         Desg FWD 19        128.23   Edge P2p 
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0172
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24748
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32940  (priority 32768 sys-id-ext 172)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/10         Desg FWD 4         128.10   Edge P2p 
+Gi1/0/11         Desg FWD 4         128.11   Edge P2p 
+Gi1/0/12         Desg FWD 4         128.12   Edge P2p 
+Gi1/0/23         Desg FWD 19        128.23   Edge P2p 
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+
+VLAN0777
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    25353
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        24 (GigabitEthernet1/0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    33545  (priority 32768 sys-id-ext 777)
+             Address     3037.a660.6480
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Gi1/0/24         Root FWD 4         128.24   P2p 
+
+E-3750-88013#sh ip dhcp binding
+IP address       Client-ID/              Lease expiration        Type
+                 Hardware address
+E-3750-88013#sh ntp associations
+
+      address         ref clock     st  when  poll reach  delay  offset    disp
+ ~173.8.198.243    0.0.0.0          16     -    64    0     0.0    0.00  16000.
+ * master (synced), # master (unsynced), + selected, - candidate, ~ configured
+E-3750-88013#sh clock
+*20:04:37.453 CDT Sat Apr 24 1993
+E-3750-88013#wr mem
+Building configuration...
+[OK]
+E-3750-88013#exit

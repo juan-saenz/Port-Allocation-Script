@@ -1,0 +1,3348 @@
+﻿UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED
+C-3750-77765>en
+password: 
+C-3750-77765#ter len 0
+C-3750-77765#sh ver
+Cisco IOS Software, C3750 Software (C3750-IPBASEK9-M), Version 12.2(55)SE9, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Mon 03-Mar-14 22:44 by prod_rel_team
+Image text-base: 0x01000000, data-base: 0x02D00000
+
+ROM: Bootstrap program is C3750 boot loader
+BOOTLDR: C3750 Boot Loader (C3750-HBOOT-M) Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)
+
+C-3750-77765 uptime is 22 weeks, 6 days, 8 hours, 27 minutes
+System returned to ROM by power-on
+System restarted at 08:09:22 CDT Fri May 15 2020
+System image file is "flash:/c3750-ipbasek9-mz.122-55.SE9/c3750-ipbasek9-mz.122-55.SE9.bin"
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+cisco WS-C3750-48P (PowerPC405) processor (revision J0) with 131072K bytes of memory.
+Processor board ID CAT1005R1WE
+Last reset from power-on
+4 Virtual Ethernet interfaces
+96 FastEthernet interfaces
+60 Gigabit Ethernet interfaces
+The password-recovery mechanism is enabled.
+
+512K bytes of flash-simulated non-volatile configuration memory.
+Base ethernet MAC Address       : 00:17:0E:1A:A0:00
+Motherboard assembly number     : 73-9675-10
+Power supply part number        : 341-0029-04
+Motherboard serial number       : CAT100413GS
+Power supply serial number      : LIT100106R3
+Model revision number           : J0
+Motherboard revision number     : A0
+Model number                    : WS-C3750-48PS-E
+System serial number            : CAT1005R1WE
+SFP Module assembly part number : 73-7757-03
+SFP Module revision Number      : A0
+SFP Module serial number        : CAT100500CR
+Top Assembly Part Number        : 800-26377-03
+Top Assembly Revision Number    : E0
+Version ID                      : V05
+CLEI Code Number                : COM1Y00ARB
+Hardware Board Revision Number  : 0x01
+
+
+Switch Ports Model              SW Version            SW Image                 
+------ ----- -----              ----------            ----------               
+*    1 52    WS-C3750-48P       12.2(55)SE9           C3750-IPBASEK9-M         
+     2 52    WS-C3750G-48TS     12.2(55)SE9           C3750-IPBASEK9-M         
+
+
+Switch 02
+---------
+Switch Uptime                   : 22 weeks, 6 days, 8 hours, 28 minutes 
+Base ethernet MAC Address       : 1C:17:D3:9D:6B:00
+Motherboard assembly number     : 73-10218-08
+Power supply part number        : 341-0107-01
+Motherboard serial number       : FOC141662VD
+Power supply serial number      : AZS141206LA
+Model revision number           : F0
+Motherboard revision number     : G0
+Model number                    : WS-C3750G-48TS-S
+System serial number            : FOC1416Y453
+Top assembly part number        : 800-26857-02
+Top assembly revision number    : D0
+Version ID                      : V04
+CLEI Code Number                : COM7X10ARA
+
+Configuration register is 0xF
+
+C-3750-77765#sh inventory
+NAME: "1", DESCR: "WS-C3750-48P"
+PID: WS-C3750-48PS-E   , VID: V05  , SN: CAT1005R1WE
+
+NAME: "GigabitEthernet1/0/1", DESCR: "1000BaseSX SFP"
+PID: Unspecified       , VID:      , SN: WSCT547         
+
+NAME: "2", DESCR: "WS-C3750G-48TS"
+PID: WS-C3750G-48TS-S  , VID: V04  , SN: FOC1416Y453
+
+
+C-3750-77765#sh switch
+Switch/Stack Mac Address : 0017.0e1a.a000
+                                           H/W   Current
+Switch#  Role   Mac Address     Priority Version  State 
+----------------------------------------------------------
+*1       Master 0017.0e1a.a000     5      0       Ready               
+ 2       Member 1c17.d39d.6b00     3      0       Ready               
+ 3       Member 0000.0000.0000     0      0       Provisioned         
+
+
+
+C-3750-77765#sh run
+Building configuration...
+
+Current configuration : 49077 bytes
+!
+! Last configuration change at 14:17:36 CDT Thu Jun 18 2020 by jcbeltran
+! NVRAM config last updated at 14:17:39 CDT Thu Jun 18 2020 by jcbeltran
+!
+version 12.2
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname C-3750-77765
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$pn8n$189QlkiDoBjNSrSiTZXTn0
+!
+!
+!
+macro global description cisco-global
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ enable
+aaa authentication enable default group tacacs+ enable
+aaa authentication dot1x default group radius
+aaa authorization network default group radius 
+aaa accounting dot1x default start-stop group radius
+!
+!
+aaa server radius dynamic-author
+ client 10.200.10.221 server-key 7 132023213438250D1417001207073738252622647C6C
+ client 10.200.10.222 server-key 7 106B3D2A3A23332C3337020A160D170A113624242635
+ auth-type any
+!
+aaa session-id common
+clock timezone CST -6
+clock summer-time CDT recurring
+switch 1 provision ws-c3750-48p
+switch 2 provision ws-c3750g-48ts
+switch 3 provision ws-c3750-48p
+system mtu routing 1500
+udld aggressive
+
+no ip domain-lookup
+ip domain-name wisd.us
+ip name-server 10.200.10.33
+!
+!
+ip device tracking
+!
+mls qos map policed-dscp  24 26 46 to 0
+mls qos map cos-dscp 0 8 16 24 32 46 48 56
+mls qos srr-queue input bandwidth 90 10
+mls qos srr-queue input threshold 1 8 16
+mls qos srr-queue input threshold 2 34 66
+mls qos srr-queue input buffers 67 33 
+mls qos srr-queue input cos-map queue 1 threshold 2 1
+mls qos srr-queue input cos-map queue 1 threshold 3 0
+mls qos srr-queue input cos-map queue 2 threshold 1 2
+mls qos srr-queue input cos-map queue 2 threshold 2 4 6 7
+mls qos srr-queue input cos-map queue 2 threshold 3 3 5
+mls qos srr-queue input dscp-map queue 1 threshold 2 9 10 11 12 13 14 15
+mls qos srr-queue input dscp-map queue 1 threshold 3 0 1 2 3 4 5 6 7
+mls qos srr-queue input dscp-map queue 1 threshold 3 32
+mls qos srr-queue input dscp-map queue 2 threshold 1 16 17 18 19 20 21 22 23
+mls qos srr-queue input dscp-map queue 2 threshold 2 33 34 35 36 37 38 39 48
+mls qos srr-queue input dscp-map queue 2 threshold 2 49 50 51 52 53 54 55 56
+mls qos srr-queue input dscp-map queue 2 threshold 2 57 58 59 60 61 62 63
+mls qos srr-queue input dscp-map queue 2 threshold 3 24 25 26 27 28 29 30 31
+mls qos srr-queue input dscp-map queue 2 threshold 3 40 41 42 43 44 45 46 47
+mls qos srr-queue output cos-map queue 1 threshold 3 5
+mls qos srr-queue output cos-map queue 2 threshold 3 3 6 7
+mls qos srr-queue output cos-map queue 3 threshold 3 2 4
+mls qos srr-queue output cos-map queue 4 threshold 2 1
+mls qos srr-queue output cos-map queue 4 threshold 3 0
+mls qos srr-queue output dscp-map queue 1 threshold 3 40 41 42 43 44 45 46 47
+mls qos srr-queue output dscp-map queue 2 threshold 3 24 25 26 27 28 29 30 31
+mls qos srr-queue output dscp-map queue 2 threshold 3 48 49 50 51 52 53 54 55
+mls qos srr-queue output dscp-map queue 2 threshold 3 56 57 58 59 60 61 62 63
+mls qos srr-queue output dscp-map queue 3 threshold 3 16 17 18 19 20 21 22 23
+mls qos srr-queue output dscp-map queue 3 threshold 3 32 33 34 35 36 37 38 39
+mls qos srr-queue output dscp-map queue 4 threshold 1 8
+mls qos srr-queue output dscp-map queue 4 threshold 2 9 10 11 12 13 14 15
+mls qos srr-queue output dscp-map queue 4 threshold 3 0 1 2 3 4 5 6 7
+mls qos queue-set output 1 threshold 1 138 138 92 138
+mls qos queue-set output 1 threshold 2 138 138 92 400
+mls qos queue-set output 1 threshold 3 36 77 100 318
+mls qos queue-set output 1 threshold 4 20 50 67 400
+mls qos queue-set output 2 threshold 1 149 149 100 149
+mls qos queue-set output 2 threshold 2 118 118 100 235
+mls qos queue-set output 2 threshold 3 41 68 100 272
+mls qos queue-set output 2 threshold 4 42 72 100 242
+mls qos queue-set output 1 buffers 10 10 26 54
+mls qos queue-set output 2 buffers 16 6 17 61
+mls qos
+password encryption aes
+!
+crypto pki trustpoint TP-self-signed-236625920
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-236625920
+ revocation-check none
+ rsakeypair TP-self-signed-236625920
+!
+!
+crypto pki certificate chain TP-self-signed-236625920
+ certificate self-signed 01
+  3082024A 308201B3 A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32333636 32353932 30301E17 0D393330 33303130 30303435 
+  395A170D 32303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F 
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3233 36363235 
+  39323030 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100 
+  B7ED0C44 B91AB58D 8BC4F6B9 4E843BE0 69A827AB 36FD45FD 8FDFE3CA 5CCB52F0 
+  B5615380 02875FA5 A906C50C 58BCAC1A D2031A48 F5716BD6 0D3511E7 9FE7AE98 
+  290E53DB B2566821 12631344 16BB092B F2FE2CDE 9F07F4A1 F0EA80A5 74FAC94D 
+  D0AC86EA 9DED217C 88919722 8B76A781 D5734B0B 1417070B 66F65559 14519E0B 
+  02030100 01A37430 72300F06 03551D13 0101FF04 05300301 01FF301F 0603551D 
+  11041830 16821443 2D333735 302D3737 3736352E 77697364 2E757330 1F060355 
+  1D230418 30168014 4C90C078 17AAA345 AB3C3BFB 9FCE7406 2DE20FDD 301D0603 
+  551D0E04 1604144C 90C07817 AAA345AB 3C3BFB9F CE74062D E20FDD30 0D06092A 
+  864886F7 0D010104 05000381 81009D55 10CA9A64 5CF35B54 28AACAAD 8DE751D2 
+  DD81DBDD 61C93E7C 7274AFC1 3F0AF300 CDF0B415 0538520D 46A1BCD3 9E5F966B 
+  94CACAA0 4FD63B66 98243B43 20829F9F E135FC03 BDBB1C61 D1002130 8ABFE91C 
+  821590E4 9BD2FDFD 7324246F D68A7664 B2EE5568 6FCCC52F 3EFDF474 A43EFA4D 
+  2C7CA4DB 4D2C6BC6 B820E771 0204
+  quit
+dot1x system-auth-control
+dot1x critical eapol
+!
+!
+!
+errdisable recovery cause link-flap
+errdisable recovery interval 60
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+lldp run
+!
+ip ssh version 2
+!
+class-map match-all AutoQoS-VoIP-RTP-Trust
+ match ip dscp ef 
+class-map match-all AutoQoS-VoIP-Control-Trust
+ match ip dscp cs3  af31 
+!
+!
+policy-map AutoQoS-Police-CiscoPhone
+ class AutoQoS-VoIP-RTP-Trust
+  set dscp ef
+  police 320000 8000 exceed-action policed-dscp-transmit
+ class AutoQoS-VoIP-Control-Trust
+  set dscp cs3
+  police 32000 8000 exceed-action policed-dscp-transmit
+!
+!
+!
+interface FastEthernet1/0/1
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/2
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/3
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/4
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/5
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/6
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/7
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/8
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/9
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/10
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/11
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/12
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/13
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/14
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/15
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/16
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/17
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/18
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/19
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/20
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/21
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/22
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/23
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/24
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/25
+ description TimeClock
+ switchport access vlan 30
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/26
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/27
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/28
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/29
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/30
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/31
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/32
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/33
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/34
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/35
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/36
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/37
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/38
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/39
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet1/0/40
+ description Security
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/41
+ description Security
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/42
+ description Security
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/43
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/44
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/45
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/46
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/47
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet1/0/48
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/1
+ description MDF
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/2
+ shutdown
+!
+interface GigabitEthernet1/0/3
+ shutdown
+!
+interface GigabitEthernet1/0/4
+ shutdown
+!
+interface GigabitEthernet2/0/1
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/2
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/3
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/4
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/5
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/6
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/7
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/8
+ description PRINTER
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/9
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/10
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/11
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/12
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/13
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/14
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/15
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/16
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/17
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/18
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/19
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/20
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/21
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/22
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/23
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/24
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/25
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/26
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/27
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/28
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/29
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/30
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/31
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/32
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/33
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/34
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/35
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/36
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/37
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/38
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/39
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/40
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/41
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/42
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/43
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/44
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/45
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/46
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/47
+ description PC_Data
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/48
+ description UPS
+ switchport access vlan 6
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/49
+ shutdown
+!
+interface GigabitEthernet2/0/50
+ shutdown
+!
+interface GigabitEthernet2/0/51
+ shutdown
+!
+interface GigabitEthernet2/0/52
+ shutdown
+!
+interface FastEthernet3/0/1
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet3/0/2
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet3/0/3
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet3/0/4
+ description PRINTER
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet3/0/5
+ description PC_Data & VoIP
+ switchport access vlan 3
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/6
+ description PC_Data & VoIP
+ switchport access vlan 3
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/7
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/8
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/9
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/10
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/11
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/12
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/13
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/14
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/15
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/16
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/17
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/18
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/19
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/20
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/21
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/22
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/23
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/24
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/25
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/26
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/27
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/28
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/29
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/30
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/31
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/32
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/33
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/34
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/35
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet3/0/36
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet3/0/37
+ description Security Camera
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet3/0/38
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/39
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/40
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/41
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/42
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/43
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/44
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/45
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/46
+ description PC_Data & VoIP
+ switchport access vlan 50
+ switchport mode access
+ switchport voice vlan 172
+ srr-queue bandwidth share 10 10 60 20
+ priority-queue out 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ macro description cisco-phone
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ service-policy input AutoQoS-Police-CiscoPhone
+!
+interface FastEthernet3/0/47
+ description SECURITY CAMERA
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet3/0/48
+ description SECURITY CAMERA
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet3/0/1
+ shutdown
+!
+interface GigabitEthernet3/0/2
+ shutdown
+!
+interface GigabitEthernet3/0/3
+ shutdown
+!
+interface GigabitEthernet3/0/4
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan3
+ no ip address
+!
+interface Vlan5
+ no ip address
+!
+interface Vlan777
+ description LAN Routers_Switches
+ ip address 10.111.0.32 255.255.254.0
+ no ip redirects
+ no ip unreachables
+!
+ip default-gateway 10.111.0.1
+ip classless
+no ip http server
+no ip http secure-server
+!
+ip radius source-interface Vlan777 
+ip sla enable reaction-alerts
+snmp-server group V3Group v3 auth read V3Read write V3Write 
+snmp-server view V3Read iso included
+snmp-server view V3Write iso included
+snmp-server community wisdCommStr RO
+snmp-server community defconSeven RW
+snmp-server location IDF:C
+snmp-server contact Help Desk x6956
+snmp-server enable traps license
+tacacs-server host 10.200.10.18
+tacacs-server directed-request
+tacacs-server key 7 09441D0515550042190000
+radius-server attribute nas-port format c
+radius-server host 10.200.10.228 auth-port 1812 acct-port 1813 key 7 01363237643F27281E7F66282B20332D382927180E10
+radius-server host 10.200.10.229 auth-port 1812 acct-port 1813 key 7 112C2D3628262A2B3B1903051A16111D202235312462
+radius-server vsa send accounting
+radius-server vsa send authentication
+!
+banner motd ^CUNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED^C
+!
+line con 0
+ logging synchronous
+line vty 0 4
+ logging synchronous
+ length 0
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+ntp clock-period 36028998
+ntp server 10.200.0.1
+end
+
+C-3750-77765#sh vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi1/0/2, Gi1/0/3, Gi1/0/4, Gi2/0/49, Gi2/0/50, Gi2/0/51, Gi2/0/52
+3    Printers                         active    Fa1/0/1, Fa1/0/2, Fa1/0/3, Fa1/0/4, Fa1/0/5, Fa1/0/6, Fa1/0/7
+                                                Gi2/0/1, Gi2/0/2, Gi2/0/3, Gi2/0/4, Gi2/0/5, Gi2/0/6, Gi2/0/7
+                                                Gi2/0/9
+5    Security                         active    Fa1/0/40, Fa1/0/41, Fa1/0/42, Fa1/0/43, Fa1/0/44, Fa1/0/45
+                                                Fa1/0/46, Fa1/0/47, Fa1/0/48
+6    UPS                              active    Gi2/0/48
+8    Projectors                       active    
+9    Video                            active    
+10   Servers                          active    
+20   Management                       active    
+30   misc                             active    Fa1/0/25
+50   PC_Data                          active    Fa1/0/8, Fa1/0/9, Fa1/0/10, Fa1/0/11, Fa1/0/12, Fa1/0/13, Fa1/0/14
+                                                Fa1/0/15, Fa1/0/16, Fa1/0/17, Fa1/0/18, Fa1/0/19, Fa1/0/20
+                                                Fa1/0/21, Fa1/0/22, Fa1/0/23, Fa1/0/24, Fa1/0/26, Fa1/0/27
+                                                Fa1/0/28, Fa1/0/29, Fa1/0/30, Fa1/0/31, Fa1/0/32, Fa1/0/33
+                                                Fa1/0/34, Fa1/0/35, Fa1/0/36, Fa1/0/37, Fa1/0/38, Fa1/0/39
+                                                Gi2/0/8, Gi2/0/10, Gi2/0/11, Gi2/0/12, Gi2/0/13, Gi2/0/14
+                                                Gi2/0/15, Gi2/0/16, Gi2/0/17, Gi2/0/18, Gi2/0/19, Gi2/0/20
+                                                Gi2/0/21, Gi2/0/22, Gi2/0/23, Gi2/0/24, Gi2/0/25, Gi2/0/26
+                                                Gi2/0/27, Gi2/0/28, Gi2/0/29, Gi2/0/30, Gi2/0/31, Gi2/0/32
+                                                Gi2/0/33, Gi2/0/34, Gi2/0/35, Gi2/0/36, Gi2/0/37, Gi2/0/38
+                                                Gi2/0/39, Gi2/0/40, Gi2/0/41, Gi2/0/42, Gi2/0/43, Gi2/0/44
+                                                Gi2/0/45, Gi2/0/46, Gi2/0/47
+172  Voice                            active    Fa1/0/8, Fa1/0/9, Fa1/0/10, Fa1/0/11, Fa1/0/12, Fa1/0/13, Fa1/0/14
+                                                Fa1/0/15, Fa1/0/16, Fa1/0/17, Fa1/0/18, Fa1/0/19, Fa1/0/20
+                                                Fa1/0/21, Fa1/0/22, Fa1/0/23, Fa1/0/24, Fa1/0/26, Fa1/0/27
+                                                Fa1/0/28, Fa1/0/29, Fa1/0/30, Fa1/0/31, Fa1/0/32, Fa1/0/33
+                                                Fa1/0/34, Fa1/0/35, Fa1/0/36, Fa1/0/37, Fa1/0/38, Fa1/0/39
+777  LAN                              active    
+1002 fddi-default                     act/unsup 
+1003 trcrf-default                    act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trbrf-default                    act/unsup 
+C-3750-77765#sh vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 2
+VTP Domain Name                 : Memorial
+VTP Pruning Mode                : Enabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0017.0e1a.a000
+Configuration last modified by 10.111.3.1 at 5-22-19 13:30:45
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Client
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 16
+Configuration Revision            : 36
+MD5 digest                        : 0x95 0x99 0x36 0x25 0x15 0x9F 0x00 0x36 
+                                    0xD7 0x99 0x71 0x30 0xBE 0x55 0x79 0x63 
+C-3750-77765#sh vtp pass
+The VTP password is not configured.
+C-3750-77765#sh ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES NVRAM  administratively down down    
+Vlan3                  unassigned      YES NVRAM  up                    up      
+Vlan5                  unassigned      YES NVRAM  up                    up      
+Vlan777                10.111.0.32     YES NVRAM  up                    up      
+FastEthernet1/0/1      unassigned      YES unset  up                    up      
+FastEthernet1/0/2      unassigned      YES unset  up                    up      
+FastEthernet1/0/3      unassigned      YES unset  down                  down    
+FastEthernet1/0/4      unassigned      YES unset  up                    up      
+FastEthernet1/0/5      unassigned      YES unset  up                    up      
+FastEthernet1/0/6      unassigned      YES unset  down                  down    
+FastEthernet1/0/7      unassigned      YES unset  down                  down    
+FastEthernet1/0/8      unassigned      YES unset  up                    up      
+FastEthernet1/0/9      unassigned      YES unset  up                    up      
+FastEthernet1/0/10     unassigned      YES unset  down                  down    
+FastEthernet1/0/11     unassigned      YES unset  down                  down    
+FastEthernet1/0/12     unassigned      YES unset  down                  down    
+FastEthernet1/0/13     unassigned      YES unset  down                  down    
+FastEthernet1/0/14     unassigned      YES unset  down                  down    
+FastEthernet1/0/15     unassigned      YES unset  down                  down    
+FastEthernet1/0/16     unassigned      YES unset  down                  down    
+FastEthernet1/0/17     unassigned      YES unset  down                  down    
+FastEthernet1/0/18     unassigned      YES unset  down                  down    
+FastEthernet1/0/19     unassigned      YES unset  down                  down    
+FastEthernet1/0/20     unassigned      YES unset  up                    up      
+FastEthernet1/0/21     unassigned      YES unset  down                  down    
+FastEthernet1/0/22     unassigned      YES unset  up                    up      
+FastEthernet1/0/23     unassigned      YES unset  down                  down    
+FastEthernet1/0/24     unassigned      YES unset  up                    up      
+FastEthernet1/0/25     unassigned      YES unset  up                    up      
+FastEthernet1/0/26     unassigned      YES unset  up                    up      
+FastEthernet1/0/27     unassigned      YES unset  down                  down    
+FastEthernet1/0/28     unassigned      YES unset  down                  down    
+FastEthernet1/0/29     unassigned      YES unset  down                  down    
+FastEthernet1/0/30     unassigned      YES unset  down                  down    
+FastEthernet1/0/31     unassigned      YES unset  down                  down    
+FastEthernet1/0/32     unassigned      YES unset  down                  down    
+FastEthernet1/0/33     unassigned      YES unset  up                    up      
+FastEthernet1/0/34     unassigned      YES unset  up                    up      
+FastEthernet1/0/35     unassigned      YES unset  down                  down    
+FastEthernet1/0/36     unassigned      YES unset  down                  down    
+FastEthernet1/0/37     unassigned      YES unset  down                  down    
+FastEthernet1/0/38     unassigned      YES unset  down                  down    
+FastEthernet1/0/39     unassigned      YES unset  down                  down    
+FastEthernet1/0/40     unassigned      YES unset  up                    up      
+FastEthernet1/0/41     unassigned      YES unset  up                    up      
+FastEthernet1/0/42     unassigned      YES unset  up                    up      
+FastEthernet1/0/43     unassigned      YES unset  down                  down    
+FastEthernet1/0/44     unassigned      YES unset  up                    up      
+FastEthernet1/0/45     unassigned      YES unset  up                    up      
+FastEthernet1/0/46     unassigned      YES unset  up                    up      
+FastEthernet1/0/47     unassigned      YES unset  up                    up      
+FastEthernet1/0/48     unassigned      YES unset  up                    up      
+GigabitEthernet1/0/1   unassigned      YES unset  up                    up      
+GigabitEthernet1/0/2   unassigned      YES unset  administratively down down    
+GigabitEthernet1/0/3   unassigned      YES unset  administratively down down    
+GigabitEthernet1/0/4   unassigned      YES unset  administratively down down    
+GigabitEthernet2/0/1   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/2   unassigned      YES unset  up                    up      
+GigabitEthernet2/0/3   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/4   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/5   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/6   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/7   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/8   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/9   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/10  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/11  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/12  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/13  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/14  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/15  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/16  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/17  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/18  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/19  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/20  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/21  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/22  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/23  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/24  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/25  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/26  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/27  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/28  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/29  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/30  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/31  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/32  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/33  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/34  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/35  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/36  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/37  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/38  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/39  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/40  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/41  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/42  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/43  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/44  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/45  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/46  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/47  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/48  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/49  unassigned      YES unset  administratively down down    
+GigabitEthernet2/0/50  unassigned      YES unset  administratively down down    
+GigabitEthernet2/0/51  unassigned      YES unset  administratively down down    
+GigabitEthernet2/0/52  unassigned      YES unset  administratively down down    
+FastEthernet3/0/1      unassigned      YES unset  down                  down    
+FastEthernet3/0/2      unassigned      YES unset  down                  down    
+FastEthernet3/0/3      unassigned      YES unset  down                  down    
+FastEthernet3/0/4      unassigned      YES unset  down                  down    
+FastEthernet3/0/5      unassigned      YES unset  down                  down    
+FastEthernet3/0/6      unassigned      YES unset  down                  down    
+FastEthernet3/0/7      unassigned      YES unset  down                  down    
+FastEthernet3/0/8      unassigned      YES unset  down                  down    
+FastEthernet3/0/9      unassigned      YES unset  down                  down    
+FastEthernet3/0/10     unassigned      YES unset  down                  down    
+FastEthernet3/0/11     unassigned      YES unset  down                  down    
+FastEthernet3/0/12     unassigned      YES unset  down                  down    
+FastEthernet3/0/13     unassigned      YES unset  down                  down    
+FastEthernet3/0/14     unassigned      YES unset  down                  down    
+FastEthernet3/0/15     unassigned      YES unset  down                  down    
+FastEthernet3/0/16     unassigned      YES unset  down                  down    
+FastEthernet3/0/17     unassigned      YES unset  down                  down    
+FastEthernet3/0/18     unassigned      YES unset  down                  down    
+FastEthernet3/0/19     unassigned      YES unset  down                  down    
+FastEthernet3/0/20     unassigned      YES unset  down                  down    
+FastEthernet3/0/21     unassigned      YES unset  down                  down    
+FastEthernet3/0/22     unassigned      YES unset  down                  down    
+FastEthernet3/0/23     unassigned      YES unset  down                  down    
+FastEthernet3/0/24     unassigned      YES unset  down                  down    
+FastEthernet3/0/25     unassigned      YES unset  down                  down    
+FastEthernet3/0/26     unassigned      YES unset  down                  down    
+FastEthernet3/0/27     unassigned      YES unset  down                  down    
+FastEthernet3/0/28     unassigned      YES unset  down                  down    
+FastEthernet3/0/29     unassigned      YES unset  down                  down    
+FastEthernet3/0/30     unassigned      YES unset  down                  down    
+FastEthernet3/0/31     unassigned      YES unset  down                  down    
+FastEthernet3/0/32     unassigned      YES unset  down                  down    
+FastEthernet3/0/33     unassigned      YES unset  down                  down    
+FastEthernet3/0/34     unassigned      YES unset  down                  down    
+FastEthernet3/0/35     unassigned      YES unset  down                  down    
+FastEthernet3/0/36     unassigned      YES unset  down                  down    
+FastEthernet3/0/37     unassigned      YES unset  down                  down    
+FastEthernet3/0/38     unassigned      YES unset  down                  down    
+FastEthernet3/0/39     unassigned      YES unset  down                  down    
+FastEthernet3/0/40     unassigned      YES unset  down                  down    
+FastEthernet3/0/41     unassigned      YES unset  down                  down    
+FastEthernet3/0/42     unassigned      YES unset  down                  down    
+FastEthernet3/0/43     unassigned      YES unset  down                  down    
+FastEthernet3/0/44     unassigned      YES unset  down                  down    
+FastEthernet3/0/45     unassigned      YES unset  down                  down    
+FastEthernet3/0/46     unassigned      YES unset  down                  down    
+FastEthernet3/0/47     unassigned      YES unset  down                  down    
+FastEthernet3/0/48     unassigned      YES unset  down                  down    
+GigabitEthernet3/0/1   unassigned      YES unset  administratively down down    
+GigabitEthernet3/0/2   unassigned      YES unset  administratively down down    
+GigabitEthernet3/0/3   unassigned      YES unset  administratively down down    
+GigabitEthernet3/0/4   unassigned      YES unset  administratively down down    
+C-3750-77765#sh ip route
+Default gateway is 10.111.0.1
+
+Host               Gateway           Last Use    Total Uses  Interface
+ICMP redirect cache is empty
+C-3750-77765#sh cdp neigh
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+SEP0021D8BAAF94  Fas 1/0/20        167             H P M  IP Phone  Port 1
+SEP8875567B5535  Fas 1/0/24        175             H P M  IP Phone  Port 1
+SEP8875567B5781  Fas 1/0/33        171             H P M  IP Phone  Port 1
+02:04:96:98:D2:E8
+                 Gig 1/0/1         122               S    Stack     Slot:  1, Port: 50
+SEP8875567B5833  Fas 1/0/22        152             H P M  IP Phone  Port 1
+SEP8875567B56D6  Fas 1/0/9         135             H P M  IP Phone  Port 1
+SEP8875567B52F6  Fas 1/0/34        156             H P M  IP Phone  Port 1
+SEP8875567B57B5  Fas 1/0/8         179             H P M  IP Phone  Port 1
+C-3750-77765#sh cdp neigh detail
+-------------------------
+Device ID: SEP0021D8BAAF94
+Entry address(es): 
+  IP address: 172.16.27.27
+Platform: Cisco IP Phone 7911,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: FastEthernet1/0/20,  Port ID (outgoing port): Port 1
+Holdtime : 167 sec
+Second Port Status: Down
+
+Version :
+SCCP11.9-4-2-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 5.000 Watts
+Power request id: 44948, Power management id: 3
+Power request levels are:5000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP8875567B5535
+Entry address(es): 
+  IP address: 172.16.27.35
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: FastEthernet1/0/24,  Port ID (outgoing port): Port 1
+Holdtime : 175 sec
+Second Port Status: Down
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 22383, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP8875567B5781
+Entry address(es): 
+  IP address: 172.16.27.23
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: FastEthernet1/0/33,  Port ID (outgoing port): Port 1
+Holdtime : 171 sec
+Second Port Status: Down
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 8337, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: 02:04:96:98:D2:E8
+Entry address(es): 
+  IP address: 192.0.2.100
+  IP address: 10.111.0.31
+Platform: Stack,  Capabilities: Switch 
+Interface: GigabitEthernet1/0/1,  Port ID (outgoing port): Slot:  1, Port: 50
+Holdtime : 122 sec
+
+Version :
+ExtremeXOS version 30.2.1.8 by release-manager
+     on Tue Apr 30 19:53:38 EDT 2019
+
+
+advertisement version: 2
+Duplex: full
+Management address(es): 
+  IP address: 192.0.2.100
+
+-------------------------
+Device ID: SEP8875567B5833
+Entry address(es): 
+  IP address: 172.16.27.8
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: FastEthernet1/0/22,  Port ID (outgoing port): Port 1
+Holdtime : 152 sec
+Second Port Status: Down
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 30504, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP8875567B56D6
+Entry address(es): 
+  IP address: 172.16.27.145
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: FastEthernet1/0/9,  Port ID (outgoing port): Port 1
+Holdtime : 135 sec
+Second Port Status: Up
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 14829, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP8875567B52F6
+Entry address(es): 
+  IP address: 172.16.27.13
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: FastEthernet1/0/34,  Port ID (outgoing port): Port 1
+Holdtime : 156 sec
+Second Port Status: Down
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 13737, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP8875567B57B5
+Entry address(es): 
+  IP address: 172.16.27.9
+Platform: Cisco IP Phone 6941 ,  Capabilities: Host Phone Two-port Mac Relay 
+Interface: FastEthernet1/0/8,  Port ID (outgoing port): Port 1
+Holdtime : 179 sec
+Second Port Status: Down
+
+Version :
+SCCP 9.4.1.3.SR1
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.000 Watts
+Power request id: 24046, Power management id: 3
+Power request levels are:6000 0 0 0 0 
+Management address(es): 
+
+C-3750-77765#sh int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down     
+Vl3                            up             up       
+Vl5                            up             up       
+Vl777                          up             up       LAN Routers_Switches
+Fa1/0/1                        up             up       PRINTER
+Fa1/0/2                        up             up       PRINTER
+Fa1/0/3                        down           down     PRINTER
+Fa1/0/4                        up             up       PRINTER
+Fa1/0/5                        up             up       PRINTER
+Fa1/0/6                        down           down     PRINTER
+Fa1/0/7                        down           down     PRINTER
+Fa1/0/8                        up             up       PC_Data & VoIP
+Fa1/0/9                        up             up       PC_Data & VoIP
+Fa1/0/10                       down           down     PC_Data & VoIP
+Fa1/0/11                       down           down     PC_Data & VoIP
+Fa1/0/12                       down           down     PC_Data & VoIP
+Fa1/0/13                       down           down     PC_Data & VoIP
+Fa1/0/14                       down           down     PC_Data & VoIP
+Fa1/0/15                       down           down     PC_Data & VoIP
+Fa1/0/16                       down           down     PC_Data & VoIP
+Fa1/0/17                       down           down     PC_Data & VoIP
+Fa1/0/18                       down           down     PC_Data & VoIP
+Fa1/0/19                       down           down     PC_Data & VoIP
+Fa1/0/20                       up             up       PC_Data & VoIP
+Fa1/0/21                       down           down     PC_Data & VoIP
+Fa1/0/22                       up             up       PC_Data & VoIP
+Fa1/0/23                       down           down     PC_Data & VoIP
+Fa1/0/24                       up             up       PC_Data & VoIP
+Fa1/0/25                       up             up       TimeClock
+Fa1/0/26                       up             up       PC_Data & VoIP
+Fa1/0/27                       down           down     PC_Data & VoIP
+Fa1/0/28                       down           down     PC_Data & VoIP
+Fa1/0/29                       down           down     PC_Data & VoIP
+Fa1/0/30                       down           down     PC_Data & VoIP
+Fa1/0/31                       down           down     PC_Data & VoIP
+Fa1/0/32                       down           down     PC_Data & VoIP
+Fa1/0/33                       up             up       PC_Data & VoIP
+Fa1/0/34                       up             up       PC_Data & VoIP
+Fa1/0/35                       down           down     PC_Data & VoIP
+Fa1/0/36                       down           down     PC_Data & VoIP
+Fa1/0/37                       down           down     PC_Data & VoIP
+Fa1/0/38                       down           down     PC_Data & VoIP
+Fa1/0/39                       down           down     PC_Data & VoIP
+Fa1/0/40                       up             up       Security
+Fa1/0/41                       up             up       Security
+Fa1/0/42                       up             up       Security
+Fa1/0/43                       down           down     Security Camera
+Fa1/0/44                       up             up       Security Camera
+Fa1/0/45                       up             up       Security Camera
+Fa1/0/46                       up             up       Security Camera
+Fa1/0/47                       up             up       Security Camera
+Fa1/0/48                       up             up       Security Camera
+Gi1/0/1                        up             up       MDF
+Gi1/0/2                        admin down     down     
+Gi1/0/3                        admin down     down     
+Gi1/0/4                        admin down     down     
+Gi2/0/1                        down           down     PRINTER
+Gi2/0/2                        up             up       PRINTER
+Gi2/0/3                        down           down     PRINTER
+Gi2/0/4                        down           down     PRINTER
+Gi2/0/5                        down           down     PRINTER
+Gi2/0/6                        down           down     PRINTER
+Gi2/0/7                        down           down     PRINTER
+Gi2/0/8                        down           down     PRINTER
+Gi2/0/9                        down           down     PRINTER
+Gi2/0/10                       down           down     PC_Data
+Gi2/0/11                       down           down     PC_Data
+Gi2/0/12                       down           down     PC_Data
+Gi2/0/13                       down           down     PC_Data
+Gi2/0/14                       down           down     PC_Data
+Gi2/0/15                       down           down     PC_Data
+Gi2/0/16                       down           down     PC_Data
+Gi2/0/17                       down           down     PC_Data
+Gi2/0/18                       down           down     PC_Data
+Gi2/0/19                       down           down     PC_Data
+Gi2/0/20                       down           down     PC_Data
+Gi2/0/21                       down           down     PC_Data
+Gi2/0/22                       down           down     PC_Data
+Gi2/0/23                       down           down     PC_Data
+Gi2/0/24                       down           down     PC_Data
+Gi2/0/25                       down           down     PC_Data
+Gi2/0/26                       down           down     PC_Data
+Gi2/0/27                       up             up       PC_Data
+Gi2/0/28                       down           down     PC_Data
+Gi2/0/29                       down           down     PC_Data
+Gi2/0/30                       down           down     PC_Data
+Gi2/0/31                       down           down     PC_Data
+Gi2/0/32                       down           down     PC_Data
+Gi2/0/33                       down           down     PC_Data
+Gi2/0/34                       down           down     PC_Data
+Gi2/0/35                       down           down     PC_Data
+Gi2/0/36                       down           down     PC_Data
+Gi2/0/37                       down           down     PC_Data
+Gi2/0/38                       down           down     PC_Data
+Gi2/0/39                       down           down     PC_Data
+Gi2/0/40                       down           down     PC_Data
+Gi2/0/41                       down           down     PC_Data
+Gi2/0/42                       down           down     PC_Data
+Gi2/0/43                       down           down     PC_Data
+Gi2/0/44                       down           down     PC_Data
+Gi2/0/45                       down           down     PC_Data
+Gi2/0/46                       down           down     PC_Data
+Gi2/0/47                       down           down     PC_Data
+Gi2/0/48                       down           down     UPS
+Gi2/0/49                       admin down     down     
+Gi2/0/50                       admin down     down     
+Gi2/0/51                       admin down     down     
+Gi2/0/52                       admin down     down     
+Fa3/0/1                        down           down     PRINTER
+Fa3/0/2                        down           down     PRINTER
+Fa3/0/3                        down           down     PRINTER
+Fa3/0/4                        down           down     PRINTER
+Fa3/0/5                        down           down     PC_Data & VoIP
+Fa3/0/6                        down           down     PC_Data & VoIP
+Fa3/0/7                        down           down     PC_Data & VoIP
+Fa3/0/8                        down           down     PC_Data & VoIP
+Fa3/0/9                        down           down     PC_Data & VoIP
+Fa3/0/10                       down           down     PC_Data & VoIP
+Fa3/0/11                       down           down     PC_Data & VoIP
+Fa3/0/12                       down           down     PC_Data & VoIP
+Fa3/0/13                       down           down     PC_Data & VoIP
+Fa3/0/14                       down           down     PC_Data & VoIP
+Fa3/0/15                       down           down     PC_Data & VoIP
+Fa3/0/16                       down           down     PC_Data & VoIP
+Fa3/0/17                       down           down     PC_Data & VoIP
+Fa3/0/18                       down           down     PC_Data & VoIP
+Fa3/0/19                       down           down     PC_Data & VoIP
+Fa3/0/20                       down           down     PC_Data & VoIP
+Fa3/0/21                       down           down     PC_Data & VoIP
+Fa3/0/22                       down           down     PC_Data & VoIP
+Fa3/0/23                       down           down     PC_Data & VoIP
+Fa3/0/24                       down           down     PC_Data & VoIP
+Fa3/0/25                       down           down     PC_Data & VoIP
+Fa3/0/26                       down           down     PC_Data & VoIP
+Fa3/0/27                       down           down     PC_Data & VoIP
+Fa3/0/28                       down           down     PC_Data & VoIP
+Fa3/0/29                       down           down     PC_Data & VoIP
+Fa3/0/30                       down           down     PC_Data & VoIP
+Fa3/0/31                       down           down     PC_Data & VoIP
+Fa3/0/32                       down           down     PC_Data & VoIP
+Fa3/0/33                       down           down     PC_Data & VoIP
+Fa3/0/34                       down           down     PC_Data & VoIP
+Fa3/0/35                       down           down     Security Camera
+Fa3/0/36                       down           down     Security Camera
+Fa3/0/37                       down           down     Security Camera
+Fa3/0/38                       down           down     PC_Data & VoIP
+Fa3/0/39                       down           down     PC_Data & VoIP
+Fa3/0/40                       down           down     PC_Data & VoIP
+Fa3/0/41                       down           down     PC_Data & VoIP
+Fa3/0/42                       down           down     PC_Data & VoIP
+Fa3/0/43                       down           down     PC_Data & VoIP
+Fa3/0/44                       down           down     PC_Data & VoIP
+Fa3/0/45                       down           down     PC_Data & VoIP
+Fa3/0/46                       down           down     PC_Data & VoIP
+Fa3/0/47                       down           down     SECURITY CAMERA
+Fa3/0/48                       down           down     SECURITY CAMERA
+Gi3/0/1                        admin down     down     
+Gi3/0/2                        admin down     down     
+Gi3/0/3                        admin down     down     
+Gi3/0/4                        admin down     down     
+C-3750-77765#sh ip eigrp neigh
+
+C-3750-77765#sh ip protocols
+*** IP Routing is NSF aware ***
+
+C-3750-77765#sh int status
+
+Port      Name               Status       Vlan       Duplex  Speed Type
+Fa1/0/1   PRINTER            connected    3          a-full  a-100 10/100BaseTX
+Fa1/0/2   PRINTER            connected    3          a-full  a-100 10/100BaseTX
+Fa1/0/3   PRINTER            notconnect   3            auto   auto 10/100BaseTX
+Fa1/0/4   PRINTER            connected    3          a-full  a-100 10/100BaseTX
+Fa1/0/5   PRINTER            connected    3          a-full  a-100 10/100BaseTX
+Fa1/0/6   PRINTER            notconnect   3            auto   auto 10/100BaseTX
+Fa1/0/7   PRINTER            notconnect   3            auto   auto 10/100BaseTX
+Fa1/0/8   PC_Data & VoIP     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/9   PC_Data & VoIP     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/10  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/11  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/12  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/13  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/14  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/15  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/16  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/17  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/18  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/19  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/20  PC_Data & VoIP     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/21  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/22  PC_Data & VoIP     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/23  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/24  PC_Data & VoIP     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/25  TimeClock          connected    30         a-full  a-100 10/100BaseTX
+Fa1/0/26  PC_Data & VoIP     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/27  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/28  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/29  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/30  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/31  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/32  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/33  PC_Data & VoIP     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/34  PC_Data & VoIP     connected    50         a-full  a-100 10/100BaseTX
+Fa1/0/35  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/36  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/37  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/38  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/39  PC_Data & VoIP     notconnect   50           auto   auto 10/100BaseTX
+Fa1/0/40  Security           connected    5          a-full  a-100 10/100BaseTX
+Fa1/0/41  Security           connected    5          a-full  a-100 10/100BaseTX
+Fa1/0/42  Security           connected    5          a-full  a-100 10/100BaseTX
+Fa1/0/43  Security Camera    notconnect   5            auto   auto 10/100BaseTX
+Fa1/0/44  Security Camera    connected    5          a-full  a-100 10/100BaseTX
+Fa1/0/45  Security Camera    connected    5          a-full  a-100 10/100BaseTX
+Fa1/0/46  Security Camera    connected    5          a-full  a-100 10/100BaseTX
+Fa1/0/47  Security Camera    connected    5          a-full  a-100 10/100BaseTX
+Fa1/0/48  Security Camera    connected    5          a-full  a-100 10/100BaseTX
+Gi1/0/1   MDF                connected    trunk      a-full a-1000 1000BaseSX SFP
+Gi1/0/2                      disabled     1            auto   auto Not Present
+Gi1/0/3                      disabled     1            auto   auto Not Present
+Gi1/0/4                      disabled     1            auto   auto Not Present
+Gi2/0/1   PRINTER            notconnect   3            auto   auto 10/100/1000BaseTX
+Gi2/0/2   PRINTER            connected    3          a-full  a-100 10/100/1000BaseTX
+Gi2/0/3   PRINTER            notconnect   3            auto   auto 10/100/1000BaseTX
+Gi2/0/4   PRINTER            notconnect   3            auto   auto 10/100/1000BaseTX
+Gi2/0/5   PRINTER            notconnect   3            auto   auto 10/100/1000BaseTX
+Gi2/0/6   PRINTER            notconnect   3            auto   auto 10/100/1000BaseTX
+Gi2/0/7   PRINTER            notconnect   3            auto   auto 10/100/1000BaseTX
+Gi2/0/8   PRINTER            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/9   PRINTER            notconnect   3            auto   auto 10/100/1000BaseTX
+Gi2/0/10  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/11  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/12  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/13  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/14  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/15  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/16  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/17  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/18  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/19  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/20  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/21  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/22  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/23  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/24  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/25  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/26  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/27  PC_Data            connected    50         a-full   a-10 10/100/1000BaseTX
+Gi2/0/28  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/29  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/30  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/31  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/32  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/33  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/34  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/35  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/36  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/37  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/38  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/39  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/40  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/41  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/42  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/43  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/44  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/45  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/46  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/47  PC_Data            notconnect   50           auto   auto 10/100/1000BaseTX
+Gi2/0/48  UPS                notconnect   6            auto   auto 10/100/1000BaseTX
+Gi2/0/49                     disabled     1            auto   auto Not Present
+Gi2/0/50                     disabled     1            auto   auto Not Present
+Gi2/0/51                     disabled     1            auto   auto Not Present
+Gi2/0/52                     disabled     1            auto   auto Not Present
+C-3750-77765#sh power inline
+
+Module   Available     Used     Remaining
+          (Watts)     (Watts)    (Watts) 
+------   ---------   --------   ---------
+1           370.0      154.4       215.6
+2             n/a        n/a         n/a
+Interface Admin  Oper       Power   Device              Class Max
+                            (Watts)                            
+--------- ------ ---------- ------- ------------------- ----- ----
+Fa1/0/1   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/2   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/3   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/4   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/5   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/6   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/7   auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/8   auto   on         6.0     IP Phone 6941       2     15.4 
+Fa1/0/9   auto   on         6.0     IP Phone 6941       2     15.4 
+Fa1/0/10  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/11  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/12  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/13  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/14  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/15  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/16  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/17  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/18  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/19  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/20  auto   on         5.0     IP Phone 7911       2     15.4 
+Fa1/0/21  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/22  auto   on         6.0     IP Phone 6941       2     15.4 
+Fa1/0/23  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/24  auto   on         6.0     IP Phone 6941       2     15.4 
+Fa1/0/25  auto   on         15.4    Ieee PD             0     15.4 
+Fa1/0/26  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/27  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/28  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/29  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/30  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/31  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/32  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/33  auto   on         6.0     IP Phone 6941       2     15.4 
+Fa1/0/34  auto   on         6.0     IP Phone 6941       2     15.4 
+Fa1/0/35  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/36  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/37  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/38  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/39  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/40  auto   on         15.4    Ieee PD             3     15.4 
+Fa1/0/41  auto   on         15.4    Ieee PD             4     15.4 
+Fa1/0/42  auto   on         15.4    Ieee PD             4     15.4 
+Fa1/0/43  auto   off        0.0     n/a                 n/a   15.4 
+Fa1/0/44  auto   on         15.4    Ieee PD             3     15.4 
+Fa1/0/45  auto   on         7.0     Ieee PD             2     15.4 
+Fa1/0/46  auto   on         7.0     Ieee PD             2     15.4 
+Fa1/0/47  auto   on         15.4    Ieee PD             3     15.4 
+Fa1/0/48  auto   on         7.0     Ieee PD             2     15.4 
+Fa3/0/1   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/2   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/3   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/4   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/5   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/6   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/7   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/8   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/9   auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/10  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/11  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/12  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/13  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/14  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/15  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/16  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/17  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/18  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/19  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/20  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/21  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/22  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/23  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/24  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/25  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/26  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/27  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/28  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/29  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/30  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/31  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/32  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/33  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/34  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/35  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/36  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/37  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/38  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/39  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/40  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/41  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/42  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/43  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/44  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/45  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/46  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/47  auto   off        0.0     n/a                 n/a   15.4 
+Fa3/0/48  auto   off        0.0     n/a                 n/a   15.4 
+C-3750-77765#sh mac address
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+ All    0100.0ccc.cccc    STATIC      CPU
+ All    0100.0ccc.cccd    STATIC      CPU
+ All    0180.c200.0000    STATIC      CPU
+ All    0180.c200.0001    STATIC      CPU
+ All    0180.c200.0002    STATIC      CPU
+ All    0180.c200.0003    STATIC      CPU
+ All    0180.c200.0004    STATIC      CPU
+ All    0180.c200.0005    STATIC      CPU
+ All    0180.c200.0006    STATIC      CPU
+ All    0180.c200.0007    STATIC      CPU
+ All    0180.c200.0008    STATIC      CPU
+ All    0180.c200.0009    STATIC      CPU
+ All    0180.c200.000a    STATIC      CPU
+ All    0180.c200.000b    STATIC      CPU
+ All    0180.c200.000c    STATIC      CPU
+ All    0180.c200.000d    STATIC      CPU
+ All    0180.c200.000e    STATIC      CPU
+ All    0180.c200.000f    STATIC      CPU
+ All    0180.c200.0010    STATIC      CPU
+ All    ffff.ffff.ffff    STATIC      CPU
+   1    00e0.2b00.0001    DYNAMIC     Gi1/0/1
+   1    0204.9698.d2e8    DYNAMIC     Gi1/0/1
+   3    0004.96a1.e7a0    DYNAMIC     Gi1/0/1
+   3    0011.0ac1.32c9    DYNAMIC     Gi1/0/1
+   3    0021.b729.5448    DYNAMIC     Gi1/0/1
+   3    0021.b742.c3f2    DYNAMIC     Gi1/0/1
+   3    0021.b781.68e9    DYNAMIC     Gi1/0/1
+   3    0021.b795.a728    DYNAMIC     Gi2/0/2
+   3    0021.b795.dbed    DYNAMIC     Gi1/0/1
+   3    0021.b795.dbee    DYNAMIC     Gi1/0/1
+   3    0021.b7e2.5844    DYNAMIC     Gi1/0/1
+   3    0021.b7f1.0aeb    DYNAMIC     Gi1/0/1
+   3    0021.b7f1.7fa8    DYNAMIC     Gi1/0/1
+   3    0021.b7f1.7fcc    DYNAMIC     Gi1/0/1
+   3    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+   3    0080.8702.622a    DYNAMIC     Gi1/0/1
+   3    0080.87ab.44a0    DYNAMIC     Fa1/0/1
+   3    0080.87c2.21b8    DYNAMIC     Gi1/0/1
+   3    0080.87c2.2d7f    DYNAMIC     Gi1/0/1
+   3    0080.87c2.e5a7    DYNAMIC     Gi1/0/1
+   3    0080.87c2.e5fa    DYNAMIC     Gi1/0/1
+   3    0800.37ea.bc5e    DYNAMIC     Gi1/0/1
+   3    3005.5cbd.5da8    DYNAMIC     Fa1/0/4
+   3    4437.e6ac.6b2f    DYNAMIC     Gi1/0/1
+   3    80e8.2c0b.5ddb    DYNAMIC     Fa1/0/5
+   3    80e8.2ca6.e7ad    DYNAMIC     Fa1/0/2
+   5    0004.96a1.e7a0    DYNAMIC     Gi1/0/1
+   5    0009.1861.1497    DYNAMIC     Gi1/0/1
+   5    0009.1861.1498    DYNAMIC     Gi1/0/1
+   5    0009.1861.1499    DYNAMIC     Gi1/0/1
+   5    0009.1861.149a    DYNAMIC     Gi1/0/1
+   5    0009.1861.149f    DYNAMIC     Gi1/0/1
+   5    0009.1861.14a0    DYNAMIC     Fa1/0/41
+   5    0009.1861.14a1    DYNAMIC     Fa1/0/42
+   5    0009.1861.14a2    DYNAMIC     Gi1/0/1
+   5    001a.0703.938b    DYNAMIC     Gi1/0/1
+   5    001a.0703.93f4    DYNAMIC     Gi1/0/1
+   5    001a.0706.925c    DYNAMIC     Fa1/0/44
+   5    001a.070c.1257    DYNAMIC     Fa1/0/47
+   5    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+   5    4419.b643.ca1b    DYNAMIC     Fa1/0/48
+   5    4419.b647.994e    DYNAMIC     Gi1/0/1
+   5    4419.b647.994f    DYNAMIC     Gi1/0/1
+   5    4419.b647.9956    DYNAMIC     Gi1/0/1
+   5    4419.b647.996b    DYNAMIC     Gi1/0/1
+   5    4419.b647.997c    DYNAMIC     Gi1/0/1
+   5    4419.b647.9981    DYNAMIC     Gi1/0/1
+   5    4419.b647.9986    DYNAMIC     Gi1/0/1
+   5    4419.b647.9995    DYNAMIC     Gi1/0/1
+   5    accc.8e07.4efd    DYNAMIC     Fa1/0/45
+   5    c42f.90cb.ac86    DYNAMIC     Fa1/0/46
+   5    e430.220e.a987    DYNAMIC     Gi1/0/1
+   5    e430.220e.a989    DYNAMIC     Gi1/0/1
+   5    e430.220e.a98a    DYNAMIC     Fa1/0/40
+   5    e430.220e.a98b    DYNAMIC     Gi1/0/1
+   5    e430.220e.a98c    DYNAMIC     Gi1/0/1
+   6    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+   8    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+   9    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+  10    0022.1927.f2d8    DYNAMIC     Gi1/0/1
+  10    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+  20    0004.96a1.e7a0    DYNAMIC     Gi1/0/1
+  20    0015.dc00.8f64    DYNAMIC     Gi1/0/1
+  20    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+  20    dc09.1400.0c89    DYNAMIC     Gi1/0/1
+  30    0004.96a1.e7a0    DYNAMIC     Gi1/0/1
+  30    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+  30    40ac.8d00.0b56    DYNAMIC     Fa1/0/25
+  50    0004.96a1.e7a0    DYNAMIC     Gi1/0/1
+  50    0021.d8ba.af94    DYNAMIC     Fa1/0/20
+  50    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+  50    00e0.4c68.0b46    DYNAMIC     Gi1/0/1
+  50    1803.73d6.07e1    DYNAMIC     Gi1/0/1
+  50    1803.73e8.1974    DYNAMIC     Gi1/0/1
+  50    3417.ebbe.4d41    DYNAMIC     Gi1/0/1
+  50    6400.6a3a.bbe6    DYNAMIC     Gi1/0/1
+  50    782b.cbb4.67ea    DYNAMIC     Gi1/0/1
+  50    8875.567b.52f6    DYNAMIC     Fa1/0/34
+  50    8875.567b.5535    DYNAMIC     Fa1/0/24
+  50    8875.567b.56d6    DYNAMIC     Fa1/0/9
+  50    8875.567b.5781    DYNAMIC     Fa1/0/33
+  50    8875.567b.57b5    DYNAMIC     Fa1/0/8
+  50    8875.567b.5833    DYNAMIC     Fa1/0/22
+  50    b083.fe4d.80dd    DYNAMIC     Gi1/0/1
+  50    b083.fe4e.2472    DYNAMIC     Gi1/0/1
+  50    b083.fe4e.5fff    DYNAMIC     Gi1/0/1
+  50    b083.fe63.5a48    DYNAMIC     Gi1/0/1
+  50    b083.fe63.665d    DYNAMIC     Gi1/0/1
+  50    b083.fe83.e2c5    DYNAMIC     Fa1/0/26
+  50    b4b5.2fc8.fca2    DYNAMIC     Gi1/0/1
+  50    b4b5.2fca.35b2    DYNAMIC     Gi1/0/1
+  50    b4b5.2fcc.6df2    DYNAMIC     Fa1/0/9
+  50    b8ca.3ab9.43da    DYNAMIC     Gi1/0/1
+  50    b8ca.3aff.dd8c    DYNAMIC     Gi1/0/1
+  50    d4be.d98d.92d4    DYNAMIC     Gi1/0/1
+  50    d4be.d993.c983    DYNAMIC     Gi1/0/1
+  50    d89e.f31e.4224    DYNAMIC     Gi1/0/1
+  50    f8b1.569d.a518    DYNAMIC     Gi1/0/1
+  50    f8b1.56df.e7f1    DYNAMIC     Gi1/0/1
+  50    f8bc.12a9.227a    DYNAMIC     Gi1/0/1
+  50    f8bc.12a9.2df1    DYNAMIC     Gi1/0/1
+ 172    0004.96a1.e7a0    DYNAMIC     Gi1/0/1
+ 172    0021.d8ba.af94    DYNAMIC     Fa1/0/20
+ 172    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+ 172    8875.567b.52f6    DYNAMIC     Fa1/0/34
+ 172    8875.567b.5535    DYNAMIC     Fa1/0/24
+ 172    8875.567b.56d6    DYNAMIC     Fa1/0/9
+ 172    8875.567b.5781    DYNAMIC     Fa1/0/33
+ 172    8875.567b.57b5    DYNAMIC     Fa1/0/8
+ 172    8875.567b.5833    DYNAMIC     Fa1/0/22
+ 777    0004.96a1.e7a0    DYNAMIC     Gi1/0/1
+ 777    0026.99ae.06ff    DYNAMIC     Gi1/0/1
+ 777    68ef.bdbf.de7f    DYNAMIC     Gi1/0/1
+ 777    7070.8b0c.2c20    DYNAMIC     Gi1/0/1
+Total Mac Addresses for this criterion: 134
+C-3750-77765#sh ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.111.0.32             -   0017.0e1a.a043  ARPA   Vlan777
+Internet  10.111.0.1              5   0004.96a1.e7a0  ARPA   Vlan777
+Internet  10.111.0.31             9   0204.9698.d2e8  ARPA   Vlan777
+C-3750-77765#sh module
+                  ^
+% Invalid input detected at '^' marker.
+
+C-3750-77765#sh etherchannel summary
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 0
+Number of aggregators:           0
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+
+C-3750-77765#sh int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down     
+Vl3                            up             up       
+Vl5                            up             up       
+Vl777                          up             up       LAN Routers_Switches
+Fa1/0/1                        up             up       PRINTER
+Fa1/0/2                        up             up       PRINTER
+Fa1/0/3                        down           down     PRINTER
+Fa1/0/4                        up             up       PRINTER
+Fa1/0/5                        up             up       PRINTER
+Fa1/0/6                        down           down     PRINTER
+Fa1/0/7                        down           down     PRINTER
+Fa1/0/8                        up             up       PC_Data & VoIP
+Fa1/0/9                        up             up       PC_Data & VoIP
+Fa1/0/10                       down           down     PC_Data & VoIP
+Fa1/0/11                       down           down     PC_Data & VoIP
+Fa1/0/12                       down           down     PC_Data & VoIP
+Fa1/0/13                       down           down     PC_Data & VoIP
+Fa1/0/14                       down           down     PC_Data & VoIP
+Fa1/0/15                       down           down     PC_Data & VoIP
+Fa1/0/16                       down           down     PC_Data & VoIP
+Fa1/0/17                       down           down     PC_Data & VoIP
+Fa1/0/18                       down           down     PC_Data & VoIP
+Fa1/0/19                       down           down     PC_Data & VoIP
+Fa1/0/20                       up             up       PC_Data & VoIP
+Fa1/0/21                       down           down     PC_Data & VoIP
+Fa1/0/22                       up             up       PC_Data & VoIP
+Fa1/0/23                       down           down     PC_Data & VoIP
+Fa1/0/24                       up             up       PC_Data & VoIP
+Fa1/0/25                       up             up       TimeClock
+Fa1/0/26                       up             up       PC_Data & VoIP
+Fa1/0/27                       down           down     PC_Data & VoIP
+Fa1/0/28                       down           down     PC_Data & VoIP
+Fa1/0/29                       down           down     PC_Data & VoIP
+Fa1/0/30                       down           down     PC_Data & VoIP
+Fa1/0/31                       down           down     PC_Data & VoIP
+Fa1/0/32                       down           down     PC_Data & VoIP
+Fa1/0/33                       up             up       PC_Data & VoIP
+Fa1/0/34                       up             up       PC_Data & VoIP
+Fa1/0/35                       down           down     PC_Data & VoIP
+Fa1/0/36                       down           down     PC_Data & VoIP
+Fa1/0/37                       down           down     PC_Data & VoIP
+Fa1/0/38                       down           down     PC_Data & VoIP
+Fa1/0/39                       down           down     PC_Data & VoIP
+Fa1/0/40                       up             up       Security
+Fa1/0/41                       up             up       Security
+Fa1/0/42                       up             up       Security
+Fa1/0/43                       down           down     Security Camera
+Fa1/0/44                       up             up       Security Camera
+Fa1/0/45                       up             up       Security Camera
+Fa1/0/46                       up             up       Security Camera
+Fa1/0/47                       up             up       Security Camera
+Fa1/0/48                       up             up       Security Camera
+Gi1/0/1                        up             up       MDF
+Gi1/0/2                        admin down     down     
+Gi1/0/3                        admin down     down     
+Gi1/0/4                        admin down     down     
+Gi2/0/1                        down           down     PRINTER
+Gi2/0/2                        up             up       PRINTER
+Gi2/0/3                        down           down     PRINTER
+Gi2/0/4                        down           down     PRINTER
+Gi2/0/5                        down           down     PRINTER
+Gi2/0/6                        down           down     PRINTER
+Gi2/0/7                        down           down     PRINTER
+Gi2/0/8                        down           down     PRINTER
+Gi2/0/9                        down           down     PRINTER
+Gi2/0/10                       down           down     PC_Data
+Gi2/0/11                       down           down     PC_Data
+Gi2/0/12                       down           down     PC_Data
+Gi2/0/13                       down           down     PC_Data
+Gi2/0/14                       down           down     PC_Data
+Gi2/0/15                       down           down     PC_Data
+Gi2/0/16                       down           down     PC_Data
+Gi2/0/17                       down           down     PC_Data
+Gi2/0/18                       down           down     PC_Data
+Gi2/0/19                       down           down     PC_Data
+Gi2/0/20                       down           down     PC_Data
+Gi2/0/21                       down           down     PC_Data
+Gi2/0/22                       down           down     PC_Data
+Gi2/0/23                       down           down     PC_Data
+Gi2/0/24                       down           down     PC_Data
+Gi2/0/25                       down           down     PC_Data
+Gi2/0/26                       down           down     PC_Data
+Gi2/0/27                       up             up       PC_Data
+Gi2/0/28                       down           down     PC_Data
+Gi2/0/29                       down           down     PC_Data
+Gi2/0/30                       down           down     PC_Data
+Gi2/0/31                       down           down     PC_Data
+Gi2/0/32                       down           down     PC_Data
+Gi2/0/33                       down           down     PC_Data
+Gi2/0/34                       down           down     PC_Data
+Gi2/0/35                       down           down     PC_Data
+Gi2/0/36                       down           down     PC_Data
+Gi2/0/37                       down           down     PC_Data
+Gi2/0/38                       down           down     PC_Data
+Gi2/0/39                       down           down     PC_Data
+Gi2/0/40                       down           down     PC_Data
+Gi2/0/41                       down           down     PC_Data
+Gi2/0/42                       down           down     PC_Data
+Gi2/0/43                       down           down     PC_Data
+Gi2/0/44                       down           down     PC_Data
+Gi2/0/45                       down           down     PC_Data
+Gi2/0/46                       down           down     PC_Data
+Gi2/0/47                       down           down     PC_Data
+Gi2/0/48                       down           down     UPS
+Gi2/0/49                       admin down     down     
+Gi2/0/50                       admin down     down     
+Gi2/0/51                       admin down     down     
+Gi2/0/52                       admin down     down     
+Fa3/0/1                        down           down     PRINTER
+Fa3/0/2                        down           down     PRINTER
+Fa3/0/3                        down           down     PRINTER
+Fa3/0/4                        down           down     PRINTER
+Fa3/0/5                        down           down     PC_Data & VoIP
+Fa3/0/6                        down           down     PC_Data & VoIP
+Fa3/0/7                        down           down     PC_Data & VoIP
+Fa3/0/8                        down           down     PC_Data & VoIP
+Fa3/0/9                        down           down     PC_Data & VoIP
+Fa3/0/10                       down           down     PC_Data & VoIP
+Fa3/0/11                       down           down     PC_Data & VoIP
+Fa3/0/12                       down           down     PC_Data & VoIP
+Fa3/0/13                       down           down     PC_Data & VoIP
+Fa3/0/14                       down           down     PC_Data & VoIP
+Fa3/0/15                       down           down     PC_Data & VoIP
+Fa3/0/16                       down           down     PC_Data & VoIP
+Fa3/0/17                       down           down     PC_Data & VoIP
+Fa3/0/18                       down           down     PC_Data & VoIP
+Fa3/0/19                       down           down     PC_Data & VoIP
+Fa3/0/20                       down           down     PC_Data & VoIP
+Fa3/0/21                       down           down     PC_Data & VoIP
+Fa3/0/22                       down           down     PC_Data & VoIP
+Fa3/0/23                       down           down     PC_Data & VoIP
+Fa3/0/24                       down           down     PC_Data & VoIP
+Fa3/0/25                       down           down     PC_Data & VoIP
+Fa3/0/26                       down           down     PC_Data & VoIP
+Fa3/0/27                       down           down     PC_Data & VoIP
+Fa3/0/28                       down           down     PC_Data & VoIP
+Fa3/0/29                       down           down     PC_Data & VoIP
+Fa3/0/30                       down           down     PC_Data & VoIP
+Fa3/0/31                       down           down     PC_Data & VoIP
+Fa3/0/32                       down           down     PC_Data & VoIP
+Fa3/0/33                       down           down     PC_Data & VoIP
+Fa3/0/34                       down           down     PC_Data & VoIP
+Fa3/0/35                       down           down     Security Camera
+Fa3/0/36                       down           down     Security Camera
+Fa3/0/37                       down           down     Security Camera
+Fa3/0/38                       down           down     PC_Data & VoIP
+Fa3/0/39                       down           down     PC_Data & VoIP
+Fa3/0/40                       down           down     PC_Data & VoIP
+Fa3/0/41                       down           down     PC_Data & VoIP
+Fa3/0/42                       down           down     PC_Data & VoIP
+Fa3/0/43                       down           down     PC_Data & VoIP
+Fa3/0/44                       down           down     PC_Data & VoIP
+Fa3/0/45                       down           down     PC_Data & VoIP
+Fa3/0/46                       down           down     PC_Data & VoIP
+Fa3/0/47                       down           down     SECURITY CAMERA
+Fa3/0/48                       down           down     SECURITY CAMERA
+Gi3/0/1                        admin down     down     
+Gi3/0/2                        admin down     down     
+Gi3/0/3                        admin down     down     
+Gi3/0/4                        admin down     down     
+C-3750-77765#sh ip pim neighbor
+PIM Neighbor Table
+Mode: B - Bidir Capable, DR - Designated Router, N - Default DR Priority,
+      P - Proxy Capable, S - State Refresh Capable
+Neighbor          Interface                Uptime/Expires    Ver   DR
+Address                                                            Prio/Mode
+C-3750-77765#sh ip mroute
+IP Multicast Forwarding is not enabled.
+IP Multicast Routing Table
+Flags: D - Dense, S - Sparse, B - Bidir Group, s - SSM Group, C - Connected,
+       L - Local, P - Pruned, R - RP-bit set, F - Register flag,
+       T - SPT-bit set, J - Join SPT, M - MSDP created entry,
+       X - Proxy Join Timer Running, A - Candidate for MSDP Advertisement,
+       U - URD, I - Received Source Specific Host Report, 
+       Z - Multicast Tunnel, z - MDT-data group sender, 
+       Y - Joined MDT-data group, y - Sending to MDT-data group
+       V - RD & Vector, v - Vector
+Outgoing interface flags: H - Hardware switched, A - Assert winner
+ Timers: Uptime/Expires
+ Interface state: Interface, Next-Hop or VCD, State/Mode
+
+C-3750-77765#sh int trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Gi1/0/1     on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gi1/0/1     1-4094
+
+Port        Vlans allowed and active in management domain
+Gi1/0/1     1,3,5-6,8-10,20,30,50,172,777
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gi1/0/1     1,3,5-6,8-10,20,30,50,172,777
+C-3750-77765#sh spanning-tree
+
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24577
+             Address     68ef.bdbf.de40
+             Cost        20004
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0003
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24579
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32771  (priority 32768 sys-id-ext 3)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+Fa1/0/1             Desg FWD 19        128.3    P2p Edge 
+Fa1/0/2             Desg FWD 19        128.4    P2p Edge 
+Fa1/0/4             Desg FWD 19        128.6    P2p Edge 
+Fa1/0/5             Desg FWD 19        128.7    P2p Edge 
+Gi2/0/2             Desg FWD 19        128.56   P2p Edge 
+
+
+
+VLAN0005
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24581
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32773  (priority 32768 sys-id-ext 5)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+Fa1/0/40            Desg FWD 19        128.44   P2p Edge 
+Fa1/0/41            Desg FWD 19        128.45   P2p Edge 
+Fa1/0/42            Desg FWD 19        128.46   P2p Edge 
+Fa1/0/44            Desg FWD 19        128.48   P2p Edge 
+Fa1/0/45            Desg FWD 19        128.49   P2p Edge 
+Fa1/0/46            Desg FWD 19        128.50   P2p Edge 
+Fa1/0/47            Desg FWD 19        128.51   P2p Edge 
+Fa1/0/48            Desg FWD 19        128.52   P2p Edge 
+
+
+
+VLAN0006
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24582
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32774  (priority 32768 sys-id-ext 6)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0008
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24584
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32776  (priority 32768 sys-id-ext 8)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0009
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24585
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32777  (priority 32768 sys-id-ext 9)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0010
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24586
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32778  (priority 32768 sys-id-ext 10)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0020
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24596
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32788  (priority 32768 sys-id-ext 20)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+
+VLAN0030
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    32798
+             Address     0016.9dbc.4500
+             Cost        6
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32798  (priority 32768 sys-id-ext 30)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+Fa1/0/25            Desg FWD 19        128.29   P2p Edge 
+
+
+
+VLAN0050
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24626
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32818  (priority 32768 sys-id-ext 50)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+Fa1/0/8             Desg FWD 19        128.10   P2p Edge 
+Fa1/0/9             Desg FWD 19        128.11   P2p Edge 
+Fa1/0/20            Desg FWD 19        128.22   P2p Edge 
+Fa1/0/22            Desg FWD 19        128.24   P2p Edge 
+Fa1/0/24            Desg FWD 19        128.26   P2p Edge 
+Fa1/0/26            Desg FWD 19        128.30   P2p Edge 
+Fa1/0/33            Desg FWD 19        128.37   P2p Edge 
+Fa1/0/34            Desg FWD 19        128.38   P2p Edge 
+Gi2/0/27            Desg FWD 100       128.81   P2p Edge 
+
+
+
+VLAN0172
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24748
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32940  (priority 32768 sys-id-ext 172)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+Fa1/0/8             Desg FWD 19        128.10   P2p Edge 
+Fa1/0/9             Desg FWD 19        128.11   P2p Edge 
+Fa1/0/20            Desg FWD 19        128.22   P2p Edge 
+Fa1/0/22            Desg FWD 19        128.24   P2p Edge 
+Fa1/0/24            Desg FWD 19        128.26   P2p Edge 
+Fa1/0/26            Desg FWD 19        128.30   P2p Edge 
+Fa1/0/33            Desg FWD 19        128.37   P2p Edge 
+Fa1/0/34            Desg FWD 19        128.38   P2p Edge 
+
+
+
+VLAN0777
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    25353
+             Address     68ef.bdbf.de40
+             Cost        4
+             Port        1 (GigabitEthernet1/0/1)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    33545  (priority 32768 sys-id-ext 777)
+             Address     0017.0e1a.a000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi1/0/1             Root FWD 4         128.1    P2p 
+
+
+C-3750-77765#sh ip dhcp binding
+Bindings from all pools not associated with VRF:
+IP address          Client-ID/              Lease expiration        Type
+                    Hardware address/
+                    User name
+C-3750-77765#sh ntp associations
+
+      address         ref clock     st  when  poll reach  delay  offset    disp
+*~10.200.0.1       10.200.10.33      4    14    64  377     2.6   -0.77     0.7
+ * master (synced), # master (unsynced), + selected, - candidate, ~ configured
+C-3750-77765#sh clock
+16:37:55.915 CDT Thu Oct 22 2020
+C-3750-77765#wr mem
+Building configuration...
+[OK]
+C-3750-77765#exit
