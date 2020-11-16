@@ -5,6 +5,7 @@ This script helps facilitate to export all the port allocations from a cisco swi
 
 ## Requirements
 
+###MAC
 ```bash
 sudo easy_install pip
 ```
@@ -13,8 +14,11 @@ sudo easy_install pip
 pip install xlwt
 ```
 
+###Windows
+Download and install Visual Studio Code, download Python package from the Marketplace.
+
 ```bash
-pip3 install easygui
+pip install xlwt
 ```
 
 ## Usage
