@@ -14,11 +14,19 @@ sudo easy_install pip
 pip install xlwt
 ```
 
+```bash
+pip install pyexcel pyexcel-xls pyexcel-xlsx
+```
+
 ###### Windows
 Download and install Visual Studio Code, download Python package from the Marketplace.
 
 ```bash
 pip install xlwt
+```
+
+```bash
+pip install pyexcel pyexcel-xls pyexcel-xlsx
 ```
 
 ## Usage

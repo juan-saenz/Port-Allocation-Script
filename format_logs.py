@@ -11,6 +11,7 @@ import time
 import os
 import easygui
 from os import name
+import pyexcel as p
 
 def expand(s, list):
     for item in list:
@@ -94,7 +95,10 @@ if len(sys.argv) < 3:
                             outfile.write(line)
                         
     for i in files:
-        os.system('python format_logs.py "'+i+'.xls" "'+i+'.txt"')
+        if i.startswith( '.' ):
+            continue
+        else:
+            os.system('python format_logs.py "'+i+'.xls" "'+i+'.txt"')
 
 commands = [["show"], \
             ["version", "cdp", "technical-support", "running-config", "interfaces", "diag", "inventory"], \
@@ -804,14 +808,18 @@ if len(sys.argv) > 2:
 
                 row = row + 1
 
-        try:
+        try: #converts the created .xls file into .xlsx
+            temp = sys.argv[1]
+            temp = temp[:-4] + '.xlsx'
             wb.save(sys.argv[1])
-            print("Created: " + sys.argv[1])
+            p.save_book_as(file_name=sys.argv[1],dest_file_name=temp)
+            os.remove(sys.argv[1])
+            print("Created: " + temp)
         except IOError as e:
             print("Could not write " + sys.argv[1] + ". Check if file is not open in Excel. \nError: ", e)
             sys.exit(1)
 
     else:
-        print("No device found")
+        print(sys.argv[2] + " does not contain devices.")
 
 #print("%s seconds" %(time.time() - start_time))
