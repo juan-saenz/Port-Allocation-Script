@@ -23,10 +23,17 @@ pip install xlwt
 
 ## Usage
 
-Drag and drop python script in folder with all the other subfolders of schools that each contain complete MDF/IDF .txt files. 
+Drag and drop folders of log text files to the DRAG_CONFIGS_HERE of your cloned repository.
 
 ```bash
 python format_logs.py 
 ```
 
 Next add the provided .xlam to your Excel Add-Ins to have the macro filter and sort the information to it's respective location.
+
+Shortcut for the Macro is defaulted to 
+###### MAC OS
+⌘ + ⌥ + X
+
+###### Windows
+Windows + Ctrl + X
