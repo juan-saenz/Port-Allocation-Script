@@ -154,8 +154,6 @@ masks = ["128.0.0.0","192.0.0.0","224.0.0.0","240.0.0.0","248.0.0.0","252.0.0.0"
 # python format_logs.py sample.xls sample.txt
 if len(sys.argv) > 2:
     file = sys.argv[2]
-    if file == ".DS_STORE.txt":
-        continue
     path = os.path.join(os.getcwd(),"./DRAG_CONFIGS_HERE")
     # uses glob to consider wildcards
     infile = open(os.path.join(path,file), "r")
@@ -728,91 +726,92 @@ style_header = xlwt.easyxf('font: bold 1')
 cont = len(systeminfo.keys())
 #print(cont, " devices")
 
-if cont > 0:
-    wb = xlwt.Workbook()
-    ws_system = wb.add_sheet('System')
-
-    for i, value in enumerate(systemfields):
-        ws_system.write(0, i, value, style_header)
-
-    row = 1
-    for name in systeminfo.keys():
-        wb.add_sheet(name)
-        for col in range(0,len(systemfields)):
-            ws_system.write(row, col, systeminfo[name][systemfields[col]])
-
-        row = row + 1
-
-    # Writes interface information
-    cont = 0
-    for name in intinfo.keys():
-        cont = cont + len(intinfo[name])
-    #print(cont, " interfaces")
-
+if len(sys.argv) > 2:
     if cont > 0:
-        ws_int = wb.add_sheet('Interfaces')
+        wb = xlwt.Workbook()
+        ws_system = wb.add_sheet('System')
 
-        for i, value in enumerate(intfields):
-            ws_int.write(0, i, value, style_header)
+        for i, value in enumerate(systemfields):
+            ws_system.write(0, i, value, style_header)
 
         row = 1
-        for name in intinfo.keys():
-            for item in intinfo[name].keys():
-
-                for col in range(0,len(intfields)):
-
-                    ws_int.write(row, col, intinfo[name][item][intfields[col]])
-
-                row = row + 1
-
-    # Writes CDP information
-    cont = 0
-    for name in cdpinfo.keys():
-        cont = cont + len(cdpinfo[name])
-    #print(cont, " neighbors")
-
-    if cont > 0:
-        ws_cdp = wb.add_sheet('CDP neighbors')
-
-        for i, value in enumerate(cdpfields):
-            ws_cdp.write(0, i, value, style_header)
-
-        row = 1
-        for name in cdpinfo.keys():
-            for item in cdpinfo[name].keys():
-
-                for col in range(0,len(cdpfields)):
-
-                    ws_cdp.write(row, col, cdpinfo[name][item][cdpfields[col]])
-
-                row = row + 1
-
-    # Writes show diag information
-    cont = len(diaginfo.keys())
-    #print(cont, " modules")
-
-    if cont > 0:
-        ws_diag = wb.add_sheet('Modules')
-
-        for i, value in enumerate(diagfields):
-            ws_diag.write(0, i, value, style_header)
-
-        row = 1
-        for item in diaginfo.keys():
-
-            for col in range(0,len(diagfields)):
-                ws_diag.write(row, col, diaginfo[item][diagfields[col]])
+        for name in systeminfo.keys():
+            wb.add_sheet(name)
+            for col in range(0,len(systemfields)):
+                ws_system.write(row, col, systeminfo[name][systemfields[col]])
 
             row = row + 1
 
-    try:
-        wb.save(sys.argv[1])
-        print("Created: " + sys.argv[1])
-    except IOError as e:
-        print("Could not write " + sys.argv[1] + ". Check if file is not open in Excel. \nError: ", e)
-        sys.exit(1)
+        # Writes interface information
+        cont = 0
+        for name in intinfo.keys():
+            cont = cont + len(intinfo[name])
+        #print(cont, " interfaces")
 
-else:
-    print("No device found")
+        if cont > 0:
+            ws_int = wb.add_sheet('Interfaces')
+
+            for i, value in enumerate(intfields):
+                ws_int.write(0, i, value, style_header)
+
+            row = 1
+            for name in intinfo.keys():
+                for item in intinfo[name].keys():
+
+                    for col in range(0,len(intfields)):
+
+                        ws_int.write(row, col, intinfo[name][item][intfields[col]])
+
+                    row = row + 1
+
+        # Writes CDP information
+        cont = 0
+        for name in cdpinfo.keys():
+            cont = cont + len(cdpinfo[name])
+        #print(cont, " neighbors")
+
+        if cont > 0:
+            ws_cdp = wb.add_sheet('CDP neighbors')
+
+            for i, value in enumerate(cdpfields):
+                ws_cdp.write(0, i, value, style_header)
+
+            row = 1
+            for name in cdpinfo.keys():
+                for item in cdpinfo[name].keys():
+
+                    for col in range(0,len(cdpfields)):
+
+                        ws_cdp.write(row, col, cdpinfo[name][item][cdpfields[col]])
+
+                    row = row + 1
+
+        # Writes show diag information
+        cont = len(diaginfo.keys())
+        #print(cont, " modules")
+
+        if cont > 0:
+            ws_diag = wb.add_sheet('Modules')
+
+            for i, value in enumerate(diagfields):
+                ws_diag.write(0, i, value, style_header)
+
+            row = 1
+            for item in diaginfo.keys():
+
+                for col in range(0,len(diagfields)):
+                    ws_diag.write(row, col, diaginfo[item][diagfields[col]])
+
+                row = row + 1
+
+        try:
+            wb.save(sys.argv[1])
+            print("Created: " + sys.argv[1])
+        except IOError as e:
+            print("Could not write " + sys.argv[1] + ". Check if file is not open in Excel. \nError: ", e)
+            sys.exit(1)
+
+    else:
+        print("No device found")
 
 #print("%s seconds" %(time.time() - start_time))
